@@ -2,6 +2,7 @@
 import HeroSlideShow from "../components/HeroSlideShow.vue";
 import OfferingsPane from "../components/OfferingsPane.vue";
 import TestimonialPane from "../components/TestimonialPane.vue";
+import ContactPane from "../components/ContactPane.vue";
 </script>
 
 <template>
@@ -34,6 +35,8 @@ import TestimonialPane from "../components/TestimonialPane.vue";
     <OfferingsPane />
 
     <TestimonialPane />
+
+    <ContactPane />
   </main>
 </template>
 

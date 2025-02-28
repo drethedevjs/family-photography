@@ -2,7 +2,7 @@
 import TestimonialBlock from "./TestimonialBlock.vue";
 </script>
 <template>
-  <div class="mx-auto p-20 flex">
+  <div class="mx-auto p-20 flex border-b-2">
     <div class="side">
       <h3>Kind Words</h3>
       <TestimonialBlock>

@@ -37,6 +37,17 @@ import ContactPane from "../components/ContactPane.vue";
     <TestimonialPane />
 
     <ContactPane />
+
+    <div class="text-center mt-16">
+      <p class="uppercase mb-10 text-xl font-medium">Follow me on Instagram</p>
+      <a
+        href="https://instagram.com/ctvphotovideo"
+        target="_blank"
+        class="hover:text-primary text-5xl"
+      >
+        @ctvphotovideo
+      </a>
+    </div>
   </main>
 </template>
 

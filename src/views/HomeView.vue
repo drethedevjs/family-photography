@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import HeroSlideShow from "../components/HeroSlideShow.vue";
+import OfferingsPane from "../components/OfferingsPane.vue";
+import TestimonialPane from "../components/TestimonialPane.vue";
 </script>
 
 <template>
@@ -28,89 +30,16 @@ import HeroSlideShow from "../components/HeroSlideShow.vue";
         <button class="about-btn ctv-btn"><RouterLink to="/about">Tell Me More</RouterLink></button>
       </div>
     </div>
-    <div id="offerings" class="flex">
-      <div class="w-7/12 place-items-center grid">
-        <div class="w-3/4 my-32 mx-auto overflow-hidden relative">
-          <img
-            src="/images/home/augusta-ga-family-photographer-love.jpg"
-            class="object-cover h-full w-full"
-          />
 
-          <div class="absolute inset-0 bg-black opacity-25"></div>
+    <OfferingsPane />
 
-          <div id="lifestyle-overlay" class="absolute inset-0 flex flex-col">
-            <h2 id="lifestyle-overlay-heading">Lifestyle</h2>
-            <p id="lifestyle-overlay-text">
-              Any idea, any location. Bring your best mood and I'll do the rest.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="w-5/12 bg-green-100 overflow-hidden">
-        <div class="relative w-full h-full object-cover">
-          <img
-            src="/images/home/augusta-ga-family-photographer-cold.jpg"
-            class="w-full h-full object-cover"
-          />
-
-          <div class="absolute inset-0 bg-black opacity-25"></div>
-
-          <div id="session-overlay" class="absolute inset-0">
-            <h2 id="session-overlay-heading">Full & Half Sessions</h2>
-            <p id="session-overlay-text">
-              Choose a session that suits your needs. One for a few pictures and one for fuller
-              families.
-            </p>
-            <button id="session-contact-btn" class="ctv-btn">Contact</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <TestimonialPane />
   </main>
 </template>
 
 <style scoped>
-#session-contact-btn {
-  @apply mt-16 border-0 shadow-none;
-}
-
-#lifestyle-overlay,
-#session-overlay {
-  @apply pl-16 pt-20;
-}
-
-#lifestyle-overlay-heading,
-#session-overlay-heading {
-  @apply mb-3 font-semibold drop-shadow-lg;
-}
-
-#lifestyle-overlay-text,
-#session-overlay-text {
-  @apply text-xl drop-shadow-lg;
-}
-
-#lifestyle-overlay-heading,
-#lifestyle-overlay-text,
-#session-overlay-heading,
-#session-overlay-text {
-  @apply text-white;
-}
-#offerings {
-  @apply flex w-full;
-}
 .about-btn {
   @apply ml-auto mt-20 mr-32;
-}
-
-h2,
-h3 {
-  @apply uppercase;
-}
-
-h2,
-h3,
-p {
-  @apply text-secondary;
 }
 
 h2 {
@@ -122,6 +51,6 @@ h3 {
 }
 
 .about-txt {
-  @apply mt-5 leading-10 text-3xl font-thin tracking-wider w-3/4 mx-auto;
+  @apply mt-5 text-3xl w-3/4 mx-auto leading-10;
 }
 </style>

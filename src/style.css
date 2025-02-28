@@ -20,3 +20,18 @@
     @apply font-light btn bg-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase px-14 py-8 tracking-wider;
   }
 }
+
+h2,
+h3 {
+  @apply uppercase;
+}
+
+h2,
+h3,
+p {
+  @apply text-secondary;
+}
+
+p {
+  @apply leading-10 text-3xl font-thin tracking-wider;
+}

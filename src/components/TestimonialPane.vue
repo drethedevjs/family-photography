@@ -7,7 +7,7 @@ import TestimonialBlock from "./TestimonialBlock.vue";
       <h3>Kind Words</h3>
       <TestimonialBlock>
         <template #image>
-          <img src="/images/home/augusta-ga-family-photographer-patterson.jpg" />
+          <img src="/images/home/augusta-ga-family-photographer-patterson.jpg" class="rounded-md" />
         </template>
 
         <template #reviewer>Yamel Patterson-Munoz</template>
@@ -26,7 +26,7 @@ import TestimonialBlock from "./TestimonialBlock.vue";
     <div class="side">
       <TestimonialBlock>
         <template #image>
-          <img src="/images/home/augusta-ga-family-photographer-johnson.jpg" />
+          <img src="/images/home/augusta-ga-family-photographer-johnson.jpg" class="rounded-md" />
         </template>
 
         <template #reviewer>Serriea Johnson</template>
@@ -59,7 +59,7 @@ h3 {
 }
 
 .side {
-  @apply w-1/2 flex flex-col p-40;
+  @apply w-1/2 flex flex-col 2xl:p-40 md:p-10;
 }
 
 .more-testimonials-link {

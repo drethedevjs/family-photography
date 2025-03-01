@@ -9,7 +9,7 @@
 
         <div class="absolute inset-0 bg-black opacity-25"></div>
 
-        <div id="lifestyle-overlay" class="absolute inset-0 flex flex-col">
+        <div id="lifestyle-overlay" class="absolute inset-0 flex flex-col p-7">
           <h2 id="lifestyle-overlay-heading">Lifestyle Photography</h2>
           <p id="lifestyle-overlay-text">
             Any idea, any location. Bring your best mood and I'll do the rest.
@@ -27,7 +27,7 @@
         <div class="absolute inset-0 bg-black opacity-25"></div>
 
         <div id="session-overlay" class="absolute inset-0">
-          <h2 id="session-overlay-heading">Full & Half Sessions</h2>
+          <h2 id="session-overlay-heading" class="w-4/5">Full & Half Sessions</h2>
           <p id="session-overlay-text">
             Choose a session that suits your needs. One for a few pictures and one for fuller
             families.

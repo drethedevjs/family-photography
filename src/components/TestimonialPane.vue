@@ -35,7 +35,7 @@ import TestimonialBlock from "./TestimonialBlock.vue";
           <p>
             Andre did an amazing job on our family fall pics. Our son was not feeling the best so he
             was not in a good mood. The pictures came out so good. Andre and his wife are dear
-            friends of ours so we are always happy to have him take our pics. I don’t know if we
+            friends of ours so we are always happy to have him take our pics. I don't know if we
             outdid our 2016 fall family photo shoot but we came really close. 😂 Thank you again for
             taking our pictures. They are great! 👍🏾👌🏾5 stars
           </p>
@@ -59,7 +59,7 @@ h3 {
 }
 
 .side {
-  @apply w-1/2 flex flex-col 2xl:p-40 md:p-10;
+  @apply w-1/2 flex flex-col 2xl:p-20 md:p-10;
 }
 
 .more-testimonials-link {

@@ -12,7 +12,9 @@
       very comfortable and, more importantly, that they have enjoy themselves!
     </p>
 
-    <button class="ctv-btn">Contact</button>
+    <RouterLink to="/contact">
+      <button class="ctv-btn">Contact</button>
+    </RouterLink>
   </div>
 </template>
 

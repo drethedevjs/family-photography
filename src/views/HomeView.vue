@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import ContactPane from "../components/ContactPane.vue";
 import HeroSlideShow from "../components/HeroSlideShow.vue";
 import OfferingsPane from "../components/OfferingsPane.vue";
 import TestimonialPane from "../components/TestimonialPane.vue";
-import ContactPane from "../components/ContactPane.vue";
-import TheFooter from "../components/TheFooter.vue";
 </script>
 
 <template>

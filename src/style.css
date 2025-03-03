@@ -17,7 +17,11 @@
   }
 
   .ctv-btn {
-    @apply font-light btn bg-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase px-14 py-8 tracking-wider;
+    @apply font-light btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase px-14 py-8 tracking-wider;
+  }
+
+  .ctv-img-overlay {
+    @apply absolute inset-0 bg-black opacity-25;
   }
 }
 

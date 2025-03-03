@@ -49,8 +49,6 @@ import TheFooter from "../components/TheFooter.vue";
         @ctvphotovideo
       </a>
     </div>
-
-    <TheFooter />
   </main>
 </template>
 

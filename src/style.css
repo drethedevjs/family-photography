@@ -39,3 +39,7 @@ p {
 p {
   @apply leading-10 text-3xl font-thin tracking-wider;
 }
+
+main {
+  @apply mt-10 min-h-screen;
+}

@@ -2,6 +2,16 @@
 import ContactPane from "@/components/ContactPane.vue";
 import FaqPoint from "@/components/FaqPoint.vue";
 import PriceBlurb from "@/components/PriceBlurb.vue";
+import imageHelper from "@/utils/ImageHelper";
+import type { _Object } from "@aws-sdk/client-s3";
+import { onBeforeMount, ref } from "vue";
+
+const imageData = ref<_Object[]>();
+const stockData = ref<_Object[]>();
+onBeforeMount(async () => {
+  imageData.value = await imageHelper.getImageData("tomfam");
+  stockData.value = await imageHelper.getImageData("investment");
+});
 </script>
 
 <template>
@@ -15,7 +25,7 @@ import PriceBlurb from "@/components/PriceBlurb.vue";
         </p>
       </div>
       <div class="w-1/2 px-20">
-        <img src="/images/andre/augusta-ga-family-photography-family-field.jpg" />
+        <img v-if="imageData !== undefined" :src="imageHelper.getImageSrc(imageData, '2')" />
         <p class="mt-10 mx-10 text-lg">
           Lifestyle portraits are exactly how they sound: It's your lifestyle! It captures beautiful
           moments, funny faces, amazing smiles, and more. Lifestyle happens everywhere; the park, a
@@ -26,8 +36,10 @@ import PriceBlurb from "@/components/PriceBlurb.vue";
     </div>
     <div id="offerings" class="flex mt-20 relative">
       <div class="w-7/12 h-[1000px] relative">
+        <!-- Reynolds family -->
         <img
-          src="/images/investment/augusta-ga-family-photographer-forrest.jpg"
+          v-if="stockData !== undefined"
+          :src="imageHelper.getImageSrc(stockData, '1')"
           class="w-full h-full object-cover"
         />
         <div class="ctv-img-overlay"></div>
@@ -46,8 +58,10 @@ import PriceBlurb from "@/components/PriceBlurb.vue";
         </div>
       </div>
       <div class="w-5/12 px-20">
+        <!-- McQuerry couple -->
         <img
-          src="/images/investment/augusta-ga-family-photographer-mcquerry.jpg"
+          v-if="stockData !== undefined"
+          :src="imageHelper.getImageSrc(stockData, '2')"
           class="rounded-lg"
         />
         <PriceBlurb textClass="text-secondary drop-shadow-2xl" :price="150">
@@ -78,10 +92,7 @@ import PriceBlurb from "@/components/PriceBlurb.vue";
     </div>
     <div id="faq" class="flex">
       <div class="w-4/12">
-        <img
-          src="/images/andre/augusta-ga-family-photography-bridge.jpg"
-          class="w-full h-full object-cover"
-        />
+        <img v-if="imageData !== undefined" :src="imageHelper.getImageSrc(imageData, '1')" />
       </div>
       <div class="w-8/12 px-20">
         <table class="table">

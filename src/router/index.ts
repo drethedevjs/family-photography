@@ -1,6 +1,5 @@
 import AboutView from "@/views/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
-import PortfolioView from "@/views/PortfolioView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import InvestmentView from "../views/InvestmentView.vue";
@@ -23,11 +22,11 @@ const router = createRouter({
       name: "investment",
       component: InvestmentView,
     },
-    {
-      path: "/portfolio",
-      name: "portfolio",
-      component: PortfolioView,
-    },
+    // {
+    //   path: "/portfolio",
+    //   name: "portfolio",
+    //   component: PortfolioView,
+    // },
     {
       path: "/contact",
       name: "contact",

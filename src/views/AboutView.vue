@@ -4,7 +4,7 @@ import AboutPoint from "../components/AboutPoint.vue";
 <template>
   <main>
     <div id="about-intro">
-      <div class="overflow-hidden h-[680px] relative text-center">
+      <div class="overflow-hidden lg:h-[900px] h-[680px] relative text-center">
         <img
           src="/images/andre/augusta-ga-family-photography-family-portraits.jpg"
           class="object-cover w-full h-full"
@@ -17,7 +17,7 @@ import AboutPoint from "../components/AboutPoint.vue";
             now and I must say that I have loved every second of it. The best part? Providing people
             with something that they will treasure for years.
           </p>
-          <small class="tracking-widest uppercase">scroll to continue</small>
+          <small class="tracking-widest uppercase animate-pulse">scroll to continue</small>
         </div>
       </div>
     </div>

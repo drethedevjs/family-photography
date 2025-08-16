@@ -45,7 +45,7 @@
           <ul class="gap-10 mt-4 menu-horizontal px-1 indent-0">
             <li><RouterLink to="/about">About</RouterLink></li>
             <li><RouterLink to="/investment">Investment</RouterLink></li>
-            <li><RouterLink to="/portfolio">Portfolio</RouterLink></li>
+            <!-- <li><RouterLink to="/portfolio">Portfolio</RouterLink></li> -->
             <li><RouterLink to="/contact">Contact</RouterLink></li>
           </ul>
         </div>

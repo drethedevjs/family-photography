@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import "dotenv";
 import ContactPane from "../components/ContactPane.vue";
 import HeroSlideShow from "../components/HeroSlideShow.vue";
 import OfferingsPane from "../components/OfferingsPane.vue";
 import TestimonialPane from "../components/TestimonialPane.vue";
+
+const andreImageUrl = `${import.meta.env.VITE_CDN_PREFIX}/andre/augusta-ga-family-photographer-andre-1.jpg`;
 </script>
 
 <template>
@@ -10,10 +13,7 @@ import TestimonialPane from "../components/TestimonialPane.vue";
   <main id="homeApp">
     <div class="flex">
       <div class="w-2/5">
-        <img
-          src="/images/andre/andre-augusta-family-photographer.jpg"
-          class="object-cover h-full w-full"
-        />
+        <img :src="andreImageUrl" class="object-cover h-full w-full" />
       </div>
       <div class="w-3/5 flex flex-col place-content-center text-center mb-10">
         <h2>Family Photographer</h2>
@@ -28,7 +28,9 @@ import TestimonialPane from "../components/TestimonialPane.vue";
           those photographs and remember some heart-warming past times.
         </p>
 
-        <button class="about-btn ctv-btn"><RouterLink to="/about">Tell Me More</RouterLink></button>
+        <button class="about-btn ctv-btn">
+          <RouterLink to="/about">Tell Me More</RouterLink>
+        </button>
       </div>
     </div>
 

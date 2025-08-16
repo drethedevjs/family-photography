@@ -1,5 +1,5 @@
 <template>
-  <div id="offerings" class="flex">
+  <section id="offerings" class="flex">
     <div class="w-7/12 place-items-center grid">
       <div class="w-3/4 my-32 mx-auto overflow-hidden relative">
         <img
@@ -32,11 +32,13 @@
             Choose a session that suits your needs. One for a few pictures and one for fuller
             families.
           </p>
-          <button id="session-contact-btn" class="ctv-btn">Book a Session</button>
+          <RouterLink to="/contact">
+            <button id="session-contact-btn" class="ctv-btn">Book a Session</button>
+          </RouterLink>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>

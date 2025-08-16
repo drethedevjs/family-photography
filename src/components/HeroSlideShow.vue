@@ -1,20 +1,22 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
+import imageHelper from "@/utils/ImageHelper";
+import type { _Object } from "@aws-sdk/client-s3";
+import { onBeforeMount, ref } from "vue";
 
 let slideIndex = 1;
-const numOfSlides = ref(0);
 const currentSlideNum = ref(1);
+const heroSlideImages = ref<_Object[]>();
 
-onMounted(() => {
-  numOfSlides.value = document.getElementsByClassName("slide-container").length;
+onBeforeMount(async () => {
+  heroSlideImages.value = await imageHelper.getImageData("home:slide");
 });
 
 // Next/previous controls
-const changeSlides = (n) => {
+const changeSlides = (n: number) => {
   showSlides((slideIndex += n));
 };
 
-const showSlides = (n) => {
+const showSlides = (n: number) => {
   const slides = document.getElementsByClassName("slide-container");
   let currentSlide = document.getElementsByClassName("current-slide")[0];
 
@@ -38,24 +40,22 @@ const showSlides = (n) => {
 
 <template>
   <div class="slideshow-container">
-    <div class="slide-container current-slide">
-      <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp" />
-    </div>
-
-    <div class="slide-container">
-      <img src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp" />
-    </div>
-
-    <div class="slide-container">
-      <img src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp" />
+    <div
+      v-for:="(image, idx) in heroSlideImages"
+      :key="idx"
+      class="slide-container"
+      :class="{ 'current-slide': currentSlideNum === idx + 1 }"
+    >
+      <img :src="'https://cdn.ctvphotovideo.com/' + image.Key" class="w-full" />
     </div>
   </div>
+
   <br />
 
   <!-- The Navigation Arrows -->
   <div class="slideshow-nav-container">
     <a class="prev" @click="changeSlides(-1)">&#10094;</a>
-    <p class="slide-nav-faction">{{ currentSlideNum }} / {{ numOfSlides }}</p>
+    <p class="slide-nav-faction">{{ currentSlideNum }} / {{ heroSlideImages?.length }}</p>
     <a class="next" @click="changeSlides(1)">&#10095;</a>
   </div>
 </template>
@@ -71,7 +71,7 @@ const showSlides = (n) => {
 
 /* Slideshow container */
 .slideshow-container {
-  @apply w-full relative m-auto mt-8;
+  @apply w-full relative m-auto mt-8 h-screen;
 }
 
 img {
@@ -80,7 +80,7 @@ img {
 
 /* Hide the images by default */
 .slide-container {
-  @apply hidden h-[500px] w-full;
+  @apply hidden h-full w-full;
 }
 
 .current-slide {

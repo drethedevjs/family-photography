@@ -1,11 +1,21 @@
 <script lang="ts" setup>
 import ContactView from "@/components/ContactForm.vue";
+import imageHelper from "@/utils/ImageHelper";
+import type { _Object } from "@aws-sdk/client-s3";
+import { onBeforeMount, ref } from "vue";
+
+const andreImg = ref<_Object[]>();
+
+onBeforeMount(async () => {
+  andreImg.value = await imageHelper.getImageData("andre");
+});
 </script>
 <template>
   <main class="flex">
     <div class="w-1/2">
       <img
-        src="/images/andre/augusta-ga-family-photography-andre.jpg"
+        v-if="andreImg !== undefined"
+        :src="imageHelper.getImageSrc(andreImg, 'andre-2')"
         class="w-full h-full object-cover"
       />
     </div>

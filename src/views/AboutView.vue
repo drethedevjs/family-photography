@@ -1,13 +1,22 @@
 <script lang="ts" setup>
+import imageHelper from "@/utils/ImageHelper";
+import type { _Object } from "@aws-sdk/client-s3";
+import { onBeforeMount, ref } from "vue";
 import AboutPoint from "../components/AboutPoint.vue";
+
+const imageData = ref<_Object[]>();
+onBeforeMount(async () => {
+  imageData.value = await imageHelper.getImageData("tomfam");
+});
 </script>
 <template>
   <main>
     <div id="about-intro">
       <div class="overflow-hidden lg:h-[900px] h-[680px] relative text-center">
         <img
-          src="/images/andre/augusta-ga-family-photography-family-portraits.jpg"
+          v-if="imageData !== undefined"
           class="object-cover w-full h-full"
+          :src="imageHelper.getImageSrc(imageData, '4')"
         />
         <div id="color-overlay"></div>
         <div id="intro-overlay">

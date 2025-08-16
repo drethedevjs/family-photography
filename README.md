@@ -20,6 +20,7 @@ Vercel (Deployment)
 
 ## 🎨 Features
 
+- 🚨 NOT YET OPTIMIZED FOR MOBILE 🚨
 - ✅ Beautiful, responsive UI with Tailwind CSS
 - ✅ Photo gallery to showcase portfolio
 - ✅ Contact form for inquiries

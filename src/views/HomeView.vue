@@ -1,11 +1,20 @@
 <script setup lang="ts">
+import imageHelper from "@/utils/ImageHelper";
+import type { _Object } from "@aws-sdk/client-s3";
 import "dotenv";
+import { onBeforeMount, ref } from "vue";
 import ContactPane from "../components/ContactPane.vue";
 import HeroSlideShow from "../components/HeroSlideShow.vue";
 import OfferingsPane from "../components/OfferingsPane.vue";
 import TestimonialPane from "../components/TestimonialPane.vue";
 
-const andreImageUrl = `${import.meta.env.VITE_CDN_PREFIX}/andre/augusta-ga-family-photographer-andre-1.jpg`;
+// const andreImageUrl = `${import.meta.env.VITE_CDN_PREFIX}/andre/augusta-ga-family-photographer-andre-1.jpg`;
+const andreImageData = ref<_Object[]>();
+const homeImageData = ref<_Object[]>();
+onBeforeMount(async () => {
+  andreImageData.value = await imageHelper.getImageData("andre");
+  homeImageData.value = await imageHelper.getImageData("home");
+});
 </script>
 
 <template>
@@ -13,7 +22,11 @@ const andreImageUrl = `${import.meta.env.VITE_CDN_PREFIX}/andre/augusta-ga-famil
   <main id="homeApp">
     <div class="flex">
       <div class="w-2/5">
-        <img :src="andreImageUrl" class="object-cover h-full w-full" />
+        <img
+          v-if="andreImageData !== undefined"
+          :src="imageHelper.getImageSrc(andreImageData, 'andre-1')"
+          class="object-cover h-full w-full"
+        />
       </div>
       <div class="w-3/5 flex flex-col place-content-center text-center mb-10">
         <h2>Family Photographer</h2>
@@ -34,9 +47,9 @@ const andreImageUrl = `${import.meta.env.VITE_CDN_PREFIX}/andre/augusta-ga-famil
       </div>
     </div>
 
-    <OfferingsPane />
+    <OfferingsPane v-if="homeImageData !== undefined" :imageData="homeImageData" />
 
-    <TestimonialPane />
+    <TestimonialPane v-if="homeImageData !== undefined" :imageData="homeImageData" />
 
     <ContactPane />
 

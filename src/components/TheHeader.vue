@@ -1,4 +1,13 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import imageHelper from "@/utils/ImageHelper";
+import type { _Object } from "@aws-sdk/client-s3";
+import { onBeforeMount, ref } from "vue";
+
+const logoImageData = ref<_Object[]>();
+onBeforeMount(async () => {
+  logoImageData.value = await imageHelper.getImageData("logo");
+});
+</script>
 
 <template>
   <header>
@@ -40,7 +49,12 @@
       <div class="navbar-center hidden lg:flex">
         <div class="flex flex-col items-center">
           <RouterLink to="/">
-            <img src="/images/logo/ctv-family-photography-logo.png" width="150" height="150" />
+            <img
+              v-if="logoImageData !== undefined"
+              :src="imageHelper.getImageSrc(logoImageData, 'family')"
+              width="150"
+              height="150"
+            />
           </RouterLink>
           <ul class="gap-10 mt-4 menu-horizontal px-1 indent-0">
             <li><RouterLink to="/about">About</RouterLink></li>

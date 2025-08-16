@@ -1,9 +1,17 @@
+<script lang="ts" setup>
+import imageHelper from "@/utils/ImageHelper";
+import type { _Object } from "@aws-sdk/client-s3";
+
+const props = defineProps<{
+  imageData: _Object[];
+}>();
+</script>
 <template>
   <section id="offerings" class="flex">
     <div class="w-7/12 place-items-center grid">
       <div class="w-3/4 my-32 mx-auto overflow-hidden relative">
         <img
-          src="/images/home/augusta-ga-family-photographer-love.jpg"
+          :src="imageHelper.getImageSrc(props.imageData, '3')"
           class="object-cover h-full w-full"
         />
 
@@ -20,7 +28,7 @@
     <div class="w-5/12 bg-green-100 overflow-hidden">
       <div class="relative w-full h-full object-cover">
         <img
-          src="/images/home/augusta-ga-family-photographer-cold.jpg"
+          :src="imageHelper.getImageSrc(props.imageData, '1')"
           class="w-full h-full object-cover"
         />
 

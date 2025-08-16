@@ -1,5 +1,11 @@
 <script lang="ts" setup>
+import imageHelper from "@/utils/ImageHelper";
+import type { _Object } from "@aws-sdk/client-s3";
 import TestimonialBlock from "./TestimonialBlock.vue";
+
+const props = defineProps<{
+  imageData: _Object[];
+}>();
 </script>
 <template>
   <div class="mx-auto p-20 flex border-b-2">
@@ -7,7 +13,7 @@ import TestimonialBlock from "./TestimonialBlock.vue";
       <h3>Kind Words</h3>
       <TestimonialBlock>
         <template #image>
-          <img src="/images/home/augusta-ga-family-photographer-patterson.jpg" class="rounded-md" />
+          <img :src="imageHelper.getImageSrc(props.imageData, '4')" class="rounded-md" />
         </template>
 
         <template #reviewer>Yamel Patterson-Munoz</template>
@@ -26,7 +32,7 @@ import TestimonialBlock from "./TestimonialBlock.vue";
     <div class="side">
       <TestimonialBlock>
         <template #image>
-          <img src="/images/home/augusta-ga-family-photographer-johnson.jpg" class="rounded-md" />
+          <img :src="imageHelper.getImageSrc(props.imageData, '2')" class="rounded-md" />
         </template>
 
         <template #reviewer>Serriea Johnson</template>

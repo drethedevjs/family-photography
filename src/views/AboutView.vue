@@ -63,7 +63,11 @@ onBeforeMount(async () => {
         </AboutPoint>
       </div>
       <div class="w-1/2 px-10 py-20">
-        <img src="/images/andre/augusta-ga-family-photography-family-hw.jpg" class="rounded-lg" />
+        <img
+          v-if="imageData !== undefined"
+          class="rounded-lg"
+          :src="imageHelper.getImageSrc(imageData, '3')"
+        />
       </div>
     </div>
   </main>

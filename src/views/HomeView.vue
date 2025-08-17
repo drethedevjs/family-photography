@@ -41,9 +41,9 @@ onBeforeMount(async () => {
           those photographs and remember some heart-warming past times.
         </p>
 
-        <button class="about-btn ctv-btn">
-          <RouterLink to="/about">Tell Me More</RouterLink>
-        </button>
+        <RouterLink to="/about">
+          <button class="about-btn ctv-btn">Tell Me More</button>
+        </RouterLink>
       </div>
     </div>
 

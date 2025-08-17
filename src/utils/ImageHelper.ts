@@ -5,7 +5,7 @@ import { ListObjectsV2Command, S3Client } from "@aws-sdk/client-s3";
 const imageHelper: ImageHelper = {
   async getImageData(prefix: string) {
     const s3 = new S3Client({
-      endpoint: "https://baba31124393bf6a21259678889d1ac2.r2.cloudflarestorage.com",
+      endpoint: import.meta.env.VITE_CLOUDFLARE_R2_ENDPOINT,
       region: "auto",
       credentials: {
         accessKeyId: import.meta.env.VITE_CLOUDFLARE_ACCESS_KEY ?? "",

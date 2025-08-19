@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ContactView from "@/components/ContactForm.vue";
+import ContactForm from "@/components/ContactForm.vue";
 import imageHelper from "@/utils/ImageHelper";
 import type { _Object } from "@aws-sdk/client-s3";
 import { onBeforeMount, ref } from "vue";
@@ -35,7 +35,7 @@ onBeforeMount(async () => {
           email: andre@ctvphotovideo.com
         </a>
       </div>
-      <ContactView />
+      <ContactForm />
     </div>
   </main>
 </template>

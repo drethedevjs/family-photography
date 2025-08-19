@@ -23,19 +23,33 @@ onBeforeMount(async () => {
       <h1 class="hidden">Contact Me</h1>
       <h2 class="text-6xl pb-20">Get In Touch</h2>
 
-      <p class="text-2xl">
-        If you have made it to this page then it must be that you're interested in connecting to
-        talk about getting some family portraits done so I must express my sincerest gratitude. Go
-        ahead and fill out the form below and I'll be sure to connect with you as soon as possible.
-        Talk soon!
+      <p class="mb-10">
+        If you have made it to this page then it must be that you're interested in getting your
+        family portraits done so I must express my sincerest gratitude.
+      </p>
+      <p>
+        Go ahead and click on one of the contact links below and I'll be sure to connect with you as
+        soon as possible. Talk soon!
       </p>
       <div class="grid grid-cols-2 place-items-start text-secondary pt-16 uppercase">
-        <a href="tel:5137650432" class="tracking-wider">tel: 513-765-0432</a>
-        <a href="mailto:andre@ctvphotovideo.com" class="tracking-wider">
-          email: andre@ctvphotovideo.com
-        </a>
+        <p class="text-xl font-semibold">
+          tel:
+          <a href="tel:5137650432" class="tracking-wider hover:text-primary">513-765-0432</a>
+        </p>
+        <p class="text-xl font-semibold">
+          email:
+          <a href="mailto:andre@ctvphotovideo.com" class="tracking-wider hover:text-primary">
+            andre@ctvphotovideo.com
+          </a>
+        </p>
       </div>
-      <ContactForm />
+      <p class="mt-16 hidden">
+        The contact form is currently out of commission. Please use the
+        <span class="text-primary font-semibold">phone number</span> or
+        <span class="text-primary font-semibold">email address</span> above to reach me. I look
+        forward to hearing from you!
+      </p>
+      <ContactForm v-if="false" />
     </div>
   </main>
 </template>

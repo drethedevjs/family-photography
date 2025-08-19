@@ -17,7 +17,7 @@ const props = defineProps<{
         </template>
 
         <template #reviewer>Yamel Patterson-Munoz</template>
-        <template #location>Lexington, KY</template>
+        <!-- <template #location>Lexington, KY</template> -->
         <template #review>
           <p>
             Andre is one of the best photographers that we have had. He is incredible with my kids,
@@ -36,7 +36,7 @@ const props = defineProps<{
         </template>
 
         <template #reviewer>Serriea Johnson</template>
-        <template #location>Lexington, KY</template>
+        <!-- <template #location>Lexington, KY</template> -->
         <template #review>
           <p>
             Andre did an amazing job on our family fall pics. Our son was not feeling the best so he

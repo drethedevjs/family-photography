@@ -43,13 +43,13 @@ onBeforeMount(async () => {
           class="w-full h-full object-cover"
         />
         <div class="ctv-img-overlay"></div>
-        <div class="absolute inset-0 px-20 pb-16 flex flex-col justify-end">
-          <PriceBlurb textClass="text-white drop-shadow-2xl" :price="200">
+        <div class="absolute inset-0 px-20 pt-20 flex flex-col justify-start">
+          <PriceBlurb textClass="text-white drop-shadow-2xl" :price="425">
             <template #heading="{ textClass }">
               <h2 :class="textClass" class="mt-10 normal-case mb-5">Full Session</h2>
             </template>
             <template #blurb="{ textClass }">
-              <p :class="textClass" class="text-xl mb-5">
+              <p :class="textClass" class="text-xl mb-5 font-semibold">
                 This is a 60 minute session at any location that is great for those who have one or
                 more of the following: large family, multiple outfits, and/or a lot of poses.
               </p>
@@ -64,7 +64,7 @@ onBeforeMount(async () => {
           :src="imageHelper.getImageSrc(stockData, '2')"
           class="rounded-lg"
         />
-        <PriceBlurb textClass="text-secondary drop-shadow-2xl" :price="150">
+        <PriceBlurb textClass="text-secondary drop-shadow-2xl" :price="350">
           <template #heading="{ textClass }">
             <h2 :class="textClass" class="mt-10 normal-case mb-5">Half Session</h2>
           </template>

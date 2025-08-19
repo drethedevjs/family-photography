@@ -78,14 +78,14 @@ router.beforeEach((to: RouteLocationNormalizedGeneric) => {
 
     // og image
     ogImage: {
-      url: "/images/families/augusta-ga-family-photographer-forrest.jpg",
+      url: "https://cdn.ctvphotovideo.com/investment%3Aaugusta-ga-family-photographer-investment-1.jpg",
       width: 1200,
       height: 600,
       alt: "Family walking among the trees in autumn.",
       type: "image/png",
     },
     twitterImage: {
-      url: "/images/families/augusta-ga-family-photographer-forrest.jpg",
+      url: "https://cdn.ctvphotovideo.com/investment%3Aaugusta-ga-family-photographer-investment-1.jpg",
       width: 1200,
       height: 600,
       alt: "Family walking among the trees in autumn.",

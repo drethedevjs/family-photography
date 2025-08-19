@@ -40,8 +40,11 @@ const props = defineProps<{
             Choose a session that suits your needs. One for a few pictures and one for fuller
             families.
           </p>
-          <RouterLink to="/contact">
+          <RouterLink to="contact">
             <button id="session-contact-btn" class="ctv-btn">Book a Session</button>
+          </RouterLink>
+          <RouterLink to="investment" class="ml-5">
+            <button id="session-contact-btn" class="ctv-btn">Details</button>
           </RouterLink>
         </div>
       </div>

@@ -30,7 +30,7 @@ onBeforeMount(async () => {
       </div>
       <div class="w-3/5 flex flex-col place-content-center text-center mb-10">
         <h2>Family Photographer</h2>
-        <h3>Andre Thomas</h3>
+        <h3 class="text-primary">Andre Thomas</h3>
 
         <p class="about-txt">
           I'm a family photographer in Augusta, GA who loves to create vibrant family portraits for

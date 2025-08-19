@@ -1,6 +1,6 @@
 import AboutView from "@/views/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, type RouteLocationNormalizedGeneric } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import InvestmentView from "../views/InvestmentView.vue";
 
@@ -33,6 +33,13 @@ const router = createRouter({
       component: ContactView,
     },
   ],
+});
+
+router.afterEach((to: RouteLocationNormalizedGeneric) => {
+  if (to.name && to.name !== "home")
+    document.title = `${to.name.toString().toUpperCase()} | Capture the Vision`;
+  else if (to.name?.toString().toLowerCase() === "home")
+    document.title = `Augusta, GA Family Photographer | Capture the Vision`;
 });
 
 export default router;

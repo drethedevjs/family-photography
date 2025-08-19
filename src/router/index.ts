@@ -1,7 +1,7 @@
 import pageDescriptions from "@/data/pageDescription";
 import AboutView from "@/views/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
-import { useHead, useSeoMeta } from "unhead";
+import { useHead, useSeoMeta } from "@unhead/vue";
 import { createRouter, createWebHistory, type RouteLocationNormalizedGeneric } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import InvestmentView from "../views/InvestmentView.vue";
@@ -39,7 +39,7 @@ const router = createRouter({
 
 router.beforeEach((to: RouteLocationNormalizedGeneric) => {
   const pageData = pageDescriptions.find((pd) => pd.pageName === to.name);
-  useHead(window.__UNHEAD__, {
+  useHead({
     htmlAttrs: { lang: "en-US" },
     link: [
       {
@@ -59,7 +59,7 @@ router.beforeEach((to: RouteLocationNormalizedGeneric) => {
       ? "Augusta, GA Family Photographer"
       : to.name?.toString().toUpperCase();
 
-  useSeoMeta(window.__UNHEAD__, {
+  useSeoMeta({
     title: pageTitle,
     author: "CSRA Web Dev Services",
     creator: "Andre Thomas",

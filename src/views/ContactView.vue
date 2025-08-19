@@ -34,7 +34,7 @@ onBeforeMount(async () => {
       <div class="grid grid-cols-2 place-items-start text-secondary pt-16 uppercase">
         <p class="text-xl font-semibold">
           tel:
-          <a href="tel:5137650432" class="tracking-wider hover:text-primary">513-765-0432</a>
+          <a href="tel:5137650432" class="tracking-wider hover:text-primary">706-426-3022</a>
         </p>
         <p class="text-xl font-semibold">
           email:

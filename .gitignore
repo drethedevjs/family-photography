@@ -28,7 +28,7 @@ coverage
 *.sw?
 
 /public/images
-
+package-lock.json
 *.tsbuildinfo
 
 .env

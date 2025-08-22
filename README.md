@@ -1,58 +1,75 @@
-# 📸 Family Photography Website
+# Nuxt Minimal Starter
 
-## 🏡 About the Project
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-This is a family photography website built using Vue 3, TypeScript, and Tailwind CSS. The website showcases family photography portfolios, pricing details, and contact information.
+## Setup
 
-## 🚀 Tech Stack
-
-Vue 3 (Composition API + TypeScript)
-
-Vite (Fast build tool)
-
-Tailwind CSS (Styling framework)
-
-DaisyUI (Component library for Tailwind CSS)
-
-Vue Router (For navigation)
-
-Vercel (Deployment)
-
-## 🎨 Features
-
-- 🚨 NOT YET OPTIMIZED FOR MOBILE 🚨
-- ✅ Beautiful, responsive UI with Tailwind CSS
-- ✅ Photo gallery to showcase portfolio
-- ✅ Contact form for inquiries
-- ✅ Pricing page for session details
-- ✅ Smooth navigation with Vue Router
-- ✅ Deployed on Vercel for fast performance
-
-## 🛠 Installation & Setup
-
-1️⃣ Clone the repository:
-
-git clone <https://github.com/yourusername/family-photography.git>
-cd family-photography
-
-2️⃣ Install dependencies:
+Make sure to install dependencies:
 
 ```bash
-  npm install
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-3️⃣ Run the development server:
+## Development Server
+
+Start the development server on `http://localhost:3000`:
 
 ```bash
+# npm
 npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-4️⃣ Open in browser:
+## Production
 
-<http://localhost:5173>
+Build the application for production:
 
-## 📞 Contact
+```bash
+# npm
+npm run build
 
-For inquiries or feedback, reach out via email at <drethedevjs@gmail.com> or visit the website at <https://andre-cv.vercel.app>.
+# pnpm
+pnpm build
 
-🚀 Built with love for family photography! ❤️
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

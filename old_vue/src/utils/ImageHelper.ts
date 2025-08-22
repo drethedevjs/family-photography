@@ -9,13 +9,13 @@ const imageHelper: ImageHelper = {
       region: "auto",
       credentials: {
         accessKeyId: import.meta.env.VITE_CLOUDFLARE_ACCESS_KEY ?? "",
-        secretAccessKey: import.meta.env.VITE_CLOUDFLARE_SECRET_KEY ?? "",
-      },
+        secretAccessKey: import.meta.env.VITE_CLOUDFLARE_SECRET_KEY ?? ""
+      }
     });
 
     const command = new ListObjectsV2Command({
       Bucket: "ctv-photo",
-      Prefix: prefix,
+      Prefix: prefix
     });
 
     try {
@@ -26,9 +26,11 @@ const imageHelper: ImageHelper = {
     }
   },
   getImageSrc(imageData: _Object[], tag: string) {
-    const key = imageData.length ? imageData.find((x) => x.Key?.includes(tag))?.Key : "";
+    const key = imageData.length
+      ? imageData.find((x) => x.Key?.includes(tag))?.Key
+      : "";
     return `${import.meta.env.VITE_CDN_PREFIX}/${key}`;
-  },
+  }
 };
 
 export default imageHelper;

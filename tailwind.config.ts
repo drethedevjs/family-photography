@@ -1,18 +1,19 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from "daisyui";
+// import daisyui from "daisyui";
+import type { Config } from "tailwindcss";
 
-module.exports = {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+export default <Partial<Config>>{
+  content: ["./index.html", "./app/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         primary: "#B8462F", // Your custom primary color for light theme
-        secondary: "#5a5a5a",
-      },
-    },
-  },
-  plugins: [daisyui],
-  daisyui: {
-    themes: ["light"],
-  },
+        secondary: "#5a5a5a"
+      }
+    }
+  }
+  // plugins: [daisyui],
+  // daisyui: {
+  //   themes: ["light"]
+  // }
 };

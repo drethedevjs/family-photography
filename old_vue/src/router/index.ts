@@ -12,17 +12,17 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView,
+      component: HomeView
     },
     {
       path: "/about",
       name: "about",
-      component: AboutView,
+      component: AboutView
     },
     {
       path: "/investment",
       name: "investment",
-      component: InvestmentView,
+      component: InvestmentView
     },
     // {
     //   path: "/portfolio",
@@ -32,9 +32,9 @@ const router = createRouter({
     {
       path: "/contact",
       name: "contact",
-      component: ContactView,
-    },
-  ],
+      component: ContactView
+    }
+  ]
 });
 
 router.beforeEach((to: RouteLocationNormalizedGeneric) => {
@@ -45,13 +45,13 @@ router.beforeEach((to: RouteLocationNormalizedGeneric) => {
       {
         rel: "icon",
         href: "/favicon.ico",
-        sizes: "16x16",
+        sizes: "16x16"
       },
       {
         rel: "me",
-        href: "https://csra-web-services.vercel.app/about",
-      },
-    ],
+        href: "https://csra-web-services.vercel.app/about"
+      }
+    ]
   });
 
   const pageTitle =
@@ -82,15 +82,15 @@ router.beforeEach((to: RouteLocationNormalizedGeneric) => {
       width: 1200,
       height: 600,
       alt: "Family walking among the trees in autumn.",
-      type: "image/png",
+      type: "image/png"
     },
     twitterImage: {
       url: "https://cdn.ctvphotovideo.com/investment%3Aaugusta-ga-family-photographer-investment-1.jpg",
       width: 1200,
       height: 600,
       alt: "Family walking among the trees in autumn.",
-      type: "image/png",
-    },
+      type: "image/png"
+    }
   });
 });
 

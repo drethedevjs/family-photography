@@ -53,11 +53,11 @@ const config = useRuntimeConfig();
 
   <!-- The Navigation Arrows -->
   <div class="slideshow-nav-container">
-    <a class="prev" @click="changeSlides(-1)">&#10094;</a>
+    <button class="prev" @click="changeSlides(-1)">&#10094;</button>
     <p class="slide-nav-faction">
       {{ currentSlideNum }} / {{ heroSlideImages?.length }}
     </p>
-    <a class="next" @click="changeSlides(1)">&#10095;</a>
+    <button class="next" @click="changeSlides(1)">&#10095;</button>
   </div>
 </template>
 

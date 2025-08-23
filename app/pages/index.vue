@@ -11,6 +11,11 @@ const { description } = pageDescription.find(pd => pd.pageName === "home")!;
 useHead({
   meta: [{ name: "description", content: description }]
 });
+
+useSeoMeta({
+  ogUrl: "https://ctvphotovideo.com",
+  ogType: "website"
+});
 </script>
 
 <template>

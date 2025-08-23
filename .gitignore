@@ -12,6 +12,7 @@ node_modules
 # Logs
 logs
 *.log
+npm-debug.log*
 
 # Misc
 .DS_Store
@@ -22,3 +23,25 @@ logs
 .env
 .env.*
 !.env.example
+
+package-lock.json
+
+dist-ssr
+coverage
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+/public/images
+
+*.tsbuildinfo
+
+.env

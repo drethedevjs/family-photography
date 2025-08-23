@@ -33,8 +33,6 @@ const showSlides = (n: number) => {
     currentSlide?.classList.add("slide-in", "current-slide");
   }, 1000);
 };
-
-const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -45,7 +43,11 @@ const config = useRuntimeConfig();
       class="slide-container"
       :class="{ 'current-slide': currentSlideNum === idx + 1 }"
     >
-      <img :src="`${$config.public.cdnPrefix}/${image.Key}`" class="w-full" />
+      <img
+        :src="`${$config.public.cdnPrefix}/${image.Key}`"
+        alt="A family enjoying one another's company at a local park."
+        class="w-full"
+      />
     </div>
   </div>
 

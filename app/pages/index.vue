@@ -27,6 +27,7 @@ useSeoMeta({
           v-if="andreImageData !== undefined"
           :src="imageHelper.getImageSrc(andreImageData, 'andre-1')"
           class="object-cover h-full w-full"
+          alt="Andre smiling holding two cameras."
         />
       </div>
       <div class="w-3/5 flex flex-col place-content-center text-center mb-10">

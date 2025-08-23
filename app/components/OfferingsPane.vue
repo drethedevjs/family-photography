@@ -14,6 +14,7 @@ const props = defineProps<{
         <img
           :src="imageHelper.getImageSrc(props.imageData, '3')"
           class="object-cover h-full w-full"
+          alt="A mom and dad walking while swinging their son between them."
         />
 
         <div class="absolute inset-0 bg-black opacity-25"></div>
@@ -31,6 +32,7 @@ const props = defineProps<{
         <img
           :src="imageHelper.getImageSrc(props.imageData, '1')"
           class="w-full h-full object-cover"
+          alt="A mom and dad holding one another by the hips while their son and daughter in front of them."
         />
 
         <div class="absolute inset-0 bg-black opacity-25"></div>

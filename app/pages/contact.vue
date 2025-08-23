@@ -1,17 +1,15 @@
 <script lang="ts" setup>
 import ContactForm from "@/components/ContactForm.vue";
 import imageHelper from "@/utils/ImageHelper";
-import type { _Object } from "@aws-sdk/client-s3";
-import { onBeforeMount, ref } from "vue";
+import { ref } from "vue";
 
-const andreImg = ref<_Object[]>();
+const { data: andreImgData } = await imageHelper.getImageData("andre");
 
-onBeforeMount(async () => {
-  andreImg.value = await imageHelper.getImageData("andre");
-});
+const andreImg = ref(andreImgData);
 </script>
 <template>
   <main class="flex">
+    <h1 class="hidden">Contact</h1>
     <div class="w-1/2">
       <img
         v-if="andreImg !== undefined"
@@ -21,7 +19,7 @@ onBeforeMount(async () => {
     </div>
     <div class="w-1/2 px-20 pt-32">
       <h1 class="hidden">Contact Me</h1>
-      <h2 class="text-6xl pb-20">Get In Touch</h2>
+      <h2 class="text-6xl pb-20 text-orange-700">Get In Touch</h2>
 
       <p class="mb-10">
         If you have made it to this page then it must be that you're interested

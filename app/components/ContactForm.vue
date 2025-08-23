@@ -10,19 +10,20 @@ import emailService from "@/services/emailService";
 const formData = reactive<ContactFormData>(new ContactFormData());
 const showNotification = ref<boolean>(false);
 
-const { resetForm, handleSubmit, isSubmitting, errors } = useForm<ContactFormData>({
-  validationSchema: toTypedSchema(
-    object({
-      firstName: string()
-        .transform((x) => x.trim())
-        .required("First name is required"),
-      lastName: string().required("Last name is required"),
-      email: string().email().required("Must be a valid email address."),
-      message: string().min(15, "Must be at least 15 characters."),
-      numOfSubjects: number().min(1).required("Must put family size."),
-    }),
-  ),
-});
+const { resetForm, handleSubmit, isSubmitting, errors } =
+  useForm<ContactFormData>({
+    validationSchema: toTypedSchema(
+      object({
+        firstName: string()
+          .transform(x => x.trim())
+          .required("First name is required"),
+        lastName: string().required("Last name is required"),
+        email: string().email().required("Must be a valid email address."),
+        message: string().min(15, "Must be at least 15 characters."),
+        numOfSubjects: number().min(1).required("Must put family size.")
+      })
+    )
+  });
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -42,19 +43,23 @@ const submitForm = handleSubmit(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.error(
-        error?.message ?? "There was an issue with sending the form. Please try again.",
+        error?.message ??
+          "There was an issue with sending the form. Please try again."
       );
     }
 
     scrollToTop();
   },
-  () => scrollToTop(),
+  () => scrollToTop()
 );
 </script>
 
 <template>
   <section>
-    <div class="notification-container" :class="showNotification ? 'flex' : 'hidden'">
+    <div
+      class="notification-container"
+      :class="showNotification ? 'flex' : 'hidden'"
+    >
       <p class="notification">✅ Form Sent!</p>
     </div>
     <div class="container mx-auto px-5">
@@ -150,15 +155,23 @@ const submitForm = handleSubmit(
           </div>
         </div>
 
-        <button type="submit" :disabled="isSubmitting" class="ctv-btn mt-5 ml-auto">Send</button>
+        <button
+          type="submit"
+          :disabled="isSubmitting"
+          class="ctv-btn mt-5 ml-auto"
+        >
+          Send
+        </button>
       </form>
     </div>
   </section>
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 textarea {
-  @apply border-b-2 border-b-primary  w-full h-36 p-5 text-2xl;
+  @apply border-b-2  w-full h-36 p-5 text-2xl;
 }
 
 .contact-container {
@@ -166,7 +179,7 @@ textarea {
 }
 
 label {
-  @apply sm:text-3xl text-xl text-secondary font-semibold hidden;
+  @apply sm:text-3xl text-xl font-semibold hidden;
 }
 
 small {
@@ -174,11 +187,11 @@ small {
 }
 
 input {
-  @apply h-24 pl-5 sm:text-4xl text-2xl block w-full py-1.5 text-secondary border-b-primary border-b-2 border-x-0 border-t-0 placeholder-secondary;
+  @apply h-24 pl-5 sm:text-4xl text-2xl block w-full py-1.5 border-b-2 border-x-0 border-t-0;
 }
 
 h1 {
-  @apply text-center sm:text-8xl text-5xl font-bold uppercase border-b-2 border-b-secondary text-secondary pb-3 mb-10;
+  @apply text-center sm:text-8xl text-5xl font-bold uppercase border-b-2 pb-3 mb-10;
 }
 
 .error-message {
@@ -186,10 +199,10 @@ h1 {
 }
 
 .notification-container {
-  @apply fixed justify-center inset-x-0 bg-gradient-to-r from-primary to-white rounded-lg p-5 md:w-52 w-3/4 mx-auto border-2 border-secondary text-secondary md:ml-10;
+  @apply fixed justify-center inset-x-0 bg-gradient-to-r from-orange-700 to-white rounded-lg p-5 md:w-52 w-3/4 mx-auto border-2 md:ml-10;
 }
 
 .notification {
-  @apply text-xl text-secondary animate-bounce;
+  @apply text-xl animate-bounce;
 }
 </style>

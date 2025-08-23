@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col place-items-center py-16 mx-auto 2xl:w-1/2 w-4/5">
     <h3 class="font-light tracking-widest">Let's Get Together</h3>
-    <h2>Contact Me</h2>
+    <h2 class="text-orange-700">Contact Me</h2>
     <p class="text-base mb-16 font-medium tracking-widest">
       Document your family history
     </p>

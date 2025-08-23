@@ -10,6 +10,7 @@ const imageData = ref(tomfamData);
 
 <template>
   <main>
+    <h1 class="hidden">About</h1>
     <div id="about-intro">
       <div class="overflow-hidden lg:h-[900px] h-[680px] relative text-center">
         <img

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>
+  <div class="mb-8">
+    <h2 class="text-primary">
       <slot name="heading"></slot>
     </h2>
     <p>

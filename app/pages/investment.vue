@@ -17,7 +17,7 @@ const stockData = ref(investmentData);
     <h1 class="hidden">Investment</h1>
     <div id="investment-intro" class="flex flex-row mt-10">
       <div class="w-1/2 mx-auto flex">
-        <p class="!text-7xl text-right my-auto px-5">
+        <p class="text-7xl text-right my-auto px-5 leading-20">
           Invest in me as your
           <span class="text-primary font-medium">family photographer</span>. I
           provide an experience you will always remember!
@@ -27,8 +27,9 @@ const stockData = ref(investmentData);
         <img
           v-if="imageData !== undefined"
           :src="imageHelper.getImageSrc(imageData, '2')"
+          class="rounded-lg"
         />
-        <p class="mt-10 mx-10 text-lg">
+        <p class="mt-10 mx-10 text-xl">
           Lifestyle portraits are exactly how they sound: It's your lifestyle!
           It captures beautiful moments, funny faces, amazing smiles, and more.
           Lifestyle happens everywhere; the park, a playground, a hiking trail,
@@ -47,7 +48,7 @@ const stockData = ref(investmentData);
         />
         <div class="ctv-img-overlay"></div>
         <div class="absolute inset-0 px-20 pt-20 flex flex-col justify-start">
-          <PriceBlurb textClass="!text-white drop-shadow-2xl" :price="425">
+          <PriceBlurb textClass="text-white drop-shadow-2xl" :price="425">
             <template #heading="{ textClass }">
               <h2 :class="textClass" class="mt-10 normal-case mb-5">
                 Full Session
@@ -87,7 +88,7 @@ const stockData = ref(investmentData);
     </div>
     <div id="faq-intro" class="px-10 py-20 flex">
       <div class="w-1/2">
-        <p class="!text-4xl">
+        <p class="text-4xl">
           You probably have a few questions before taking a decision to book me.
         </p>
       </div>

@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import type { _Object } from "@aws-sdk/client-s3";
 import { ref } from "vue";
 import imageHelper from "~/utils/ImageHelper";
 
 const { data: logoData } = await imageHelper.getImageData("logo");
-const logoImageData = ref<_Object[]>(logoData);
+const logoImageData = ref(logoData);
 </script>
 
 <template>

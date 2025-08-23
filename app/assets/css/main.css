@@ -32,20 +32,22 @@
   }
 }
 
-h2,
-h3 {
-  @apply uppercase;
-}
+@layer base {
+  h2,
+  h3 {
+    @apply uppercase;
+  }
 
-h2,
-p {
-  @apply text-secondary;
-}
+  h2,
+  p {
+    @apply text-secondary;
+  }
 
-p {
-  @apply leading-10 text-3xl font-thin tracking-wider dark:text-white;
-}
+  p {
+    @apply leading-10 text-3xl font-thin tracking-wider dark:text-white;
+  }
 
-main {
-  @apply mt-10 min-h-screen;
+  main {
+    @apply mt-10 min-h-screen;
+  }
 }

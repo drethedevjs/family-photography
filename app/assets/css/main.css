@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+/* #homeApp {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+} */
+
+@theme static {
+  --color-primary: #b8462f;
+  --color-secondary: #5a5a5a;
+}
+
+:root {
+  --ui-color-primary-500: #b8462f;
+}
+
+@layer components {
+  .ctv-border {
+    @apply border-4 border-primary;
+  }
+
+  .ctv-btn {
+    @apply font-light btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase px-14 py-8 tracking-wider;
+  }
+
+  .ctv-img-overlay {
+    @apply absolute inset-0 bg-black opacity-25;
+  }
+}
+
+h2,
+h3 {
+  @apply uppercase;
+}
+
+h2,
+p {
+  @apply text-secondary;
+}
+
+p {
+  @apply leading-10 text-3xl font-thin tracking-wider dark:text-white;
+}
+
+main {
+  @apply mt-10 min-h-screen;
+}

@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import imageHelper from "@/utils/ImageHelper";
-import type { _Object } from "@aws-sdk/client-s3";
-import { onBeforeMount, ref } from "vue";
+import { ref } from "vue";
 import AboutPoint from "../components/AboutPoint.vue";
 
-const imageData = ref<_Object[]>();
-onBeforeMount(async () => {
-  imageData.value = await imageHelper.getImageData("tomfam");
-});
+const { data: tomfamData } = await imageHelper.getImageData("tomfam");
+
+const imageData = ref(tomfamData);
 </script>
 
 <template>
@@ -81,12 +79,14 @@ onBeforeMount(async () => {
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 #intro-overlay {
   @apply absolute inset-0 flex flex-col w-3/5 mx-auto text-white justify-center font-light drop-shadow-lg;
 }
 
 #color-overlay {
-  @apply absolute inset-0 bg-primary opacity-25;
+  @apply absolute inset-0 bg-red-400 opacity-25;
 }
 
 h1 {

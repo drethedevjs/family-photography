@@ -1,24 +1,14 @@
 <script setup lang="ts">
-import imageHelper from "@/utils/ImageHelper";
-import type { _Object } from "@aws-sdk/client-s3";
-import "dotenv";
-import { onBeforeMount, ref } from "vue";
-import ContactPane from "../components/ContactPane.vue";
-import HeroSlideShow from "../components/HeroSlideShow.vue";
-import OfferingsPane from "../components/OfferingsPane.vue";
-import TestimonialPane from "../components/TestimonialPane.vue";
+import imageHelper from "~/utils/ImageHelper";
 
-// const andreImageUrl = `${import.meta.env.VITE_CDN_PREFIX}/andre/augusta-ga-family-photographer-andre-1.jpg`;
-const andreImageData = ref<_Object[]>();
-const homeImageData = ref<_Object[]>();
-onBeforeMount(async () => {
-  andreImageData.value = await imageHelper.getImageData("andre");
-  homeImageData.value = await imageHelper.getImageData("home");
-});
+const { data: andreData } = await imageHelper.getImageData("andre");
+const { data: homeData } = await imageHelper.getImageData("home");
+const andreImageData = ref(andreData.value);
+const homeImageData = ref(homeData.value);
 </script>
 
 <template>
-  <HeroSlideShow />
+  <!-- <HeroSlideShow /> -->
   <main id="homeApp">
     <div class="flex">
       <div class="w-2/5">
@@ -43,9 +33,7 @@ onBeforeMount(async () => {
           some heart-warming past times.
         </p>
 
-        <RouterLink to="/about">
-          <button class="about-btn ctv-btn">Tell Me More</button>
-        </RouterLink>
+        <button class="about-btn ctv-btn">Tell Me More</button>
       </div>
     </div>
 
@@ -61,7 +49,7 @@ onBeforeMount(async () => {
 
     <ContactPane />
 
-    <div class="text-center">
+    <div class="text-center mt-16">
       <p class="uppercase mb-10 text-xl font-medium">Follow me on Instagram</p>
       <a
         href="https://instagram.com/ctvphotovideo"
@@ -75,6 +63,8 @@ onBeforeMount(async () => {
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 .about-btn {
   @apply ml-auto mt-20 mr-32;
 }

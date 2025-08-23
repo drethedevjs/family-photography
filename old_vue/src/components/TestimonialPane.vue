@@ -13,18 +13,22 @@ const props = defineProps<{
       <h3>Kind Words</h3>
       <TestimonialBlock>
         <template #image>
-          <img :src="imageHelper.getImageSrc(props.imageData, '4')" class="rounded-md" />
+          <img
+            :src="imageHelper.getImageSrc(props.imageData, '4')"
+            class="rounded-md"
+          />
         </template>
 
         <template #reviewer>Yamel Patterson-Munoz</template>
         <!-- <template #location>Lexington, KY</template> -->
         <template #review>
           <p>
-            Andre is one of the best photographers that we have had. He is incredible with my kids,
-            full of patience, respectful, adaptable and very responsible. We have chosen him for two
-            years in a row and we can't wait for many years to come. Thanks Andre because you are
-            very amicable, relatable and just overall an awesome person. PS. We LOVE the pictures
-            too!
+            Andre is one of the best photographers that we have had. He is
+            incredible with my kids, full of patience, respectful, adaptable and
+            very responsible. We have chosen him for two years in a row and we
+            can't wait for many years to come. Thanks Andre because you are very
+            amicable, relatable and just overall an awesome person. PS. We LOVE
+            the pictures too!
           </p>
         </template>
       </TestimonialBlock>
@@ -32,18 +36,22 @@ const props = defineProps<{
     <div class="side">
       <TestimonialBlock>
         <template #image>
-          <img :src="imageHelper.getImageSrc(props.imageData, '2')" class="rounded-md" />
+          <img
+            :src="imageHelper.getImageSrc(props.imageData, '2')"
+            class="rounded-md"
+          />
         </template>
 
         <template #reviewer>Serriea Johnson</template>
         <!-- <template #location>Lexington, KY</template> -->
         <template #review>
           <p>
-            Andre did an amazing job on our family fall pics. Our son was not feeling the best so he
-            was not in a good mood. The pictures came out so good. Andre and his wife are dear
-            friends of ours so we are always happy to have him take our pics. I don't know if we
-            outdid our 2016 fall family photo shoot but we came really close. 😂 Thank you again for
-            taking our pictures. They are great! 👍🏾👌🏾5 stars
+            Andre did an amazing job on our family fall pics. Our son was not
+            feeling the best so he was not in a good mood. The pictures came out
+            so good. Andre and his wife are dear friends of ours so we are
+            always happy to have him take our pics. I don't know if we outdid
+            our 2016 fall family photo shoot but we came really close. 😂 Thank
+            you again for taking our pictures. They are great! 👍🏾👌🏾5 stars
           </p>
         </template>
       </TestimonialBlock>
@@ -60,6 +68,8 @@ const props = defineProps<{
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 h3 {
   @apply text-7xl mb-28;
 }

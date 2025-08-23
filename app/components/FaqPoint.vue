@@ -9,6 +9,8 @@
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 #question {
   @apply text-7xl mb-5;
 }

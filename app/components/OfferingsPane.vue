@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-import imageHelper from "@/utils/ImageHelper";
 import type { _Object } from "@aws-sdk/client-s3";
+import imageHelper from "~/utils/ImageHelper";
 
 const props = defineProps<{
   imageData: _Object[];
 }>();
 </script>
+
 <template>
   <section id="offerings" class="flex">
     <div class="w-7/12 place-items-center grid">
@@ -35,17 +36,19 @@ const props = defineProps<{
         <div class="absolute inset-0 bg-black opacity-25"></div>
 
         <div id="session-overlay" class="absolute inset-0">
-          <h2 id="session-overlay-heading" class="w-4/5">Full & Half Sessions</h2>
+          <h2 id="session-overlay-heading" class="w-4/5">
+            Full & Half Sessions
+          </h2>
           <p id="session-overlay-text">
-            Choose a session that suits your needs. One for a few pictures and one for fuller
-            families.
+            Choose a session that suits your needs. One for a few pictures and
+            one for fuller families.
           </p>
-          <RouterLink to="contact">
-            <button id="session-contact-btn" class="ctv-btn">Book a Session</button>
-          </RouterLink>
-          <RouterLink to="investment" class="ml-5">
-            <button id="session-contact-btn" class="ctv-btn">Details</button>
-          </RouterLink>
+          <NuxtLink to="contact">
+            <button class="ctv-btn session-btn">Book a Session</button>
+          </NuxtLink>
+          <NuxtLink to="investment">
+            <button class="ctv-btn session-btn ml-10">Details</button>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -53,7 +56,9 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-#session-contact-btn {
+@reference "tailwindcss";
+
+.session-btn {
   @apply mt-16 border-0 shadow-none;
 }
 

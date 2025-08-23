@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 import type { _Object } from "@aws-sdk/client-s3";
-import { onBeforeMount, ref } from "vue";
-import imageHelper from "../../src/utils/ImageHelper";
+import { ref } from "vue";
+import imageHelper from "~/utils/ImageHelper";
 
-const logoImageData = ref<_Object[]>();
-onBeforeMount(async () => {
-  logoImageData.value = await imageHelper.getImageData("logo");
-});
+const { data: logoData } = await imageHelper.getImageData("logo");
+const logoImageData = ref<_Object[]>(logoData);
 </script>
 
 <template>
@@ -48,21 +46,26 @@ onBeforeMount(async () => {
       </div>
       <div class="navbar-center hidden lg:flex">
         <div class="flex flex-col items-center">
-          <RouterLink to="/">
+          <NuxtLink to="/">
             <img
               v-if="logoImageData !== undefined"
               :src="imageHelper.getImageSrc(logoImageData, 'family')"
               width="150"
               height="150"
             />
-          </RouterLink>
+          </NuxtLink>
           <ul class="gap-10 mt-4 menu-horizontal px-1 indent-0">
-            <li><RouterLink to="/about">About</RouterLink></li>
-            <li><RouterLink to="/investment">Investment</RouterLink></li>
+            <li><NuxtLink to="/about">About</NuxtLink></li>
+            <li><NuxtLink to="/investment">Investment</NuxtLink></li>
             <li>
-              <a href="https://www.instagram.com/ctvphotovideo/" target="_blank">Portfolio</a>
+              <a
+                href="https://www.instagram.com/ctvphotovideo/"
+                target="_blank"
+              >
+                Portfolio
+              </a>
             </li>
-            <li><RouterLink to="/contact">Contact</RouterLink></li>
+            <li><NuxtLink to="/contact">Contact</NuxtLink></li>
           </ul>
         </div>
       </div>
@@ -72,6 +75,8 @@ onBeforeMount(async () => {
 </template>
 
 <style scoped>
+@reference "tailwindcss"
+
 li {
   @apply uppercase text-primary hover:text-secondary transition;
 }

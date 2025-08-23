@@ -20,17 +20,22 @@ onBeforeMount(async () => {
     <div id="investment-intro" class="flex flex-row mt-10">
       <div class="w-1/2 mx-auto flex">
         <p class="text-7xl text-right my-auto px-5">
-          Invest in me as your <span class="text-primary font-medium">family photographer</span>. I
+          Invest in me as your
+          <span class="text-primary font-medium">family photographer</span>. I
           provide an experience you will always remember!
         </p>
       </div>
       <div class="w-1/2 px-20">
-        <img v-if="imageData !== undefined" :src="imageHelper.getImageSrc(imageData, '2')" />
+        <img
+          v-if="imageData !== undefined"
+          :src="imageHelper.getImageSrc(imageData, '2')"
+        />
         <p class="mt-10 mx-10 text-lg">
-          Lifestyle portraits are exactly how they sound: It's your lifestyle! It captures beautiful
-          moments, funny faces, amazing smiles, and more. Lifestyle happens everywhere; the park, a
-          playground, a hiking trail, or even an ice cream parlour. Invite me anywhere and I'll come
-          capture your moments for you.
+          Lifestyle portraits are exactly how they sound: It's your lifestyle!
+          It captures beautiful moments, funny faces, amazing smiles, and more.
+          Lifestyle happens everywhere; the park, a playground, a hiking trail,
+          or even an ice cream parlour. Invite me anywhere and I'll come capture
+          your moments for you.
         </p>
       </div>
     </div>
@@ -46,12 +51,15 @@ onBeforeMount(async () => {
         <div class="absolute inset-0 px-20 pt-20 flex flex-col justify-start">
           <PriceBlurb textClass="text-white drop-shadow-2xl" :price="425">
             <template #heading="{ textClass }">
-              <h2 :class="textClass" class="mt-10 normal-case mb-5">Full Session</h2>
+              <h2 :class="textClass" class="mt-10 normal-case mb-5">
+                Full Session
+              </h2>
             </template>
             <template #blurb="{ textClass }">
               <p :class="textClass" class="text-xl mb-5 font-semibold">
-                This is a 60 minute session at any location that is great for those who have one or
-                more of the following: large family, multiple outfits, and/or a lot of poses.
+                This is a 60 minute session at any location that is great for
+                those who have one or more of the following: large family,
+                multiple outfits, and/or a lot of poses.
               </p>
             </template>
           </PriceBlurb>
@@ -66,12 +74,14 @@ onBeforeMount(async () => {
         />
         <PriceBlurb textClass="text-secondary drop-shadow-2xl" :price="350">
           <template #heading="{ textClass }">
-            <h2 :class="textClass" class="mt-10 normal-case mb-5">Half Session</h2>
+            <h2 :class="textClass" class="mt-10 normal-case mb-5">
+              Half Session
+            </h2>
           </template>
           <template #blurb="{ textClass }">
             <p :class="textClass" class="text-xl mb-5">
-              This 30 minute session is for families who want to get a few quick pictures for a
-              special occasion or just because.
+              This 30 minute session is for families who want to get a few quick
+              pictures for a special occasion or just because.
             </p>
           </template>
         </PriceBlurb>
@@ -85,14 +95,18 @@ onBeforeMount(async () => {
       </div>
       <div class="w-1/2 flex items-center">
         <p class="text-xl">
-          I've listed out a quick outline of my process and gathered all the frequently asked
-          questions and shared some answers that can help you decide whether I'm a good fit for you.
+          I've listed out a quick outline of my process and gathered all the
+          frequently asked questions and shared some answers that can help you
+          decide whether I'm a good fit for you.
         </p>
       </div>
     </div>
     <div id="faq" class="flex">
       <div class="w-4/12">
-        <img v-if="imageData !== undefined" :src="imageHelper.getImageSrc(imageData, '1')" />
+        <img
+          v-if="imageData !== undefined"
+          :src="imageHelper.getImageSrc(imageData, '1')"
+        />
       </div>
       <div class="w-8/12 px-20">
         <table class="table">
@@ -103,9 +117,10 @@ onBeforeMount(async () => {
                 <FaqPoint>
                   <template #question>Where can I do a photo shoot?</template>
                   <template #answer>
-                    Anywhere! Remember, when you book us, we work for you. We can go to a park in
-                    the city. We can go to your house. We can go to a special location like a
-                    stadium or a coffee house. I'm mobile so let me know where you want to go.
+                    Anywhere! Remember, when you book us, we work for you. We
+                    can go to a park in the city. We can go to your house. We
+                    can go to a special location like a stadium or a coffee
+                    house. I'm mobile so let me know where you want to go.
                   </template>
                 </FaqPoint>
               </td>
@@ -116,9 +131,9 @@ onBeforeMount(async () => {
                 <FaqPoint>
                   <template #question>What is your turnaround time?</template>
                   <template #answer>
-                    For traditional photo shoots such as families, one on ones, graduations,
-                    maternity, etc., those pictures will be ready within 15 days of the scheduled
-                    shoot.
+                    For traditional photo shoots such as families, one on ones,
+                    graduations, maternity, etc., those pictures will be ready
+                    within 15 days of the scheduled shoot.
                   </template>
                 </FaqPoint>
               </td>
@@ -129,9 +144,10 @@ onBeforeMount(async () => {
                 <FaqPoint>
                   <template #question>Where can I take pictures?</template>
                   <template #answer>
-                    There are no restrictions to where you can take your pictures. Just know that I
-                    specialize in natural light photograph which means I prefer the outdoors but I
-                    am competent to do indoor photography.
+                    There are no restrictions to where you can take your
+                    pictures. Just know that I specialize in natural light
+                    photograph which means I prefer the outdoors but I am
+                    competent to do indoor photography.
                   </template>
                 </FaqPoint>
               </td>

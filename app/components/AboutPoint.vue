@@ -10,6 +10,8 @@
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 h2 {
   @apply text-5xl mb-5;
 }

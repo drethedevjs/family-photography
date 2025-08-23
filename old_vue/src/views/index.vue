@@ -33,12 +33,14 @@ onBeforeMount(async () => {
         <h3 class="text-primary">Andre Thomas</h3>
 
         <p class="about-txt">
-          I'm a family photographer in Augusta, GA who loves to create vibrant family portraits for
-          families all over. Because of this, my desire for you is to get you to “have your moment”.
-          That “moment” I'm referring to is when you finally receive those beautiful portraits that
-          you have been anxiously waiting for. This moment doesn't just come once. Rather, it gets
-          to be relived throughout generations when your children and grandchildren can look at
-          those photographs and remember some heart-warming past times.
+          I'm a family photographer in Augusta, GA who loves to create vibrant
+          family portraits for families all over. Because of this, my desire for
+          you is to get you to “have your moment”. That “moment” I'm referring
+          to is when you finally receive those beautiful portraits that you have
+          been anxiously waiting for. This moment doesn't just come once.
+          Rather, it gets to be relived throughout generations when your
+          children and grandchildren can look at those photographs and remember
+          some heart-warming past times.
         </p>
 
         <RouterLink to="/about">
@@ -47,9 +49,15 @@ onBeforeMount(async () => {
       </div>
     </div>
 
-    <OfferingsPane v-if="homeImageData !== undefined" :imageData="homeImageData" />
+    <OfferingsPane
+      v-if="homeImageData !== undefined"
+      :imageData="homeImageData"
+    />
 
-    <TestimonialPane v-if="homeImageData !== undefined" :imageData="homeImageData" />
+    <TestimonialPane
+      v-if="homeImageData !== undefined"
+      :imageData="homeImageData"
+    />
 
     <ContactPane />
 
@@ -67,6 +75,8 @@ onBeforeMount(async () => {
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 .about-btn {
   @apply ml-auto mt-20 mr-32;
 }

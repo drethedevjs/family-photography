@@ -3,15 +3,13 @@ import ContactPane from "@/components/ContactPane.vue";
 import FaqPoint from "@/components/FaqPoint.vue";
 import PriceBlurb from "@/components/PriceBlurb.vue";
 import imageHelper from "@/utils/ImageHelper";
-import type { _Object } from "@aws-sdk/client-s3";
-import { onBeforeMount, ref } from "vue";
+import { ref } from "vue";
 
-const imageData = ref<_Object[]>();
-const stockData = ref<_Object[]>();
-onBeforeMount(async () => {
-  imageData.value = await imageHelper.getImageData("tomfam");
-  stockData.value = await imageHelper.getImageData("investment");
-});
+const { data: tomfamData } = await imageHelper.getImageData("tomfam");
+const { data: investmentData } = await imageHelper.getImageData("investment");
+
+const imageData = ref(tomfamData);
+const stockData = ref(investmentData);
 </script>
 
 <template>
@@ -19,7 +17,7 @@ onBeforeMount(async () => {
     <h1 class="hidden">Investment</h1>
     <div id="investment-intro" class="flex flex-row mt-10">
       <div class="w-1/2 mx-auto flex">
-        <p class="text-7xl text-right my-auto px-5">
+        <p class="!text-7xl text-right my-auto px-5">
           Invest in me as your
           <span class="text-primary font-medium">family photographer</span>. I
           provide an experience you will always remember!
@@ -49,7 +47,7 @@ onBeforeMount(async () => {
         />
         <div class="ctv-img-overlay"></div>
         <div class="absolute inset-0 px-20 pt-20 flex flex-col justify-start">
-          <PriceBlurb textClass="text-white drop-shadow-2xl" :price="425">
+          <PriceBlurb textClass="!text-white drop-shadow-2xl" :price="425">
             <template #heading="{ textClass }">
               <h2 :class="textClass" class="mt-10 normal-case mb-5">
                 Full Session
@@ -89,7 +87,7 @@ onBeforeMount(async () => {
     </div>
     <div id="faq-intro" class="px-10 py-20 flex">
       <div class="w-1/2">
-        <p class="text-6xl">
+        <p class="!text-4xl">
           You probably have a few questions before taking a decision to book me.
         </p>
       </div>
@@ -161,6 +159,8 @@ onBeforeMount(async () => {
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 h2 {
   @apply text-5xl max-w-[500px];
 }

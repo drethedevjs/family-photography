@@ -24,16 +24,16 @@ const showSlides = (n: number) => {
 
   if (n < 1) slideIndex = slides.length;
 
-  currentSlide.classList.remove("slide-in");
-  currentSlide.classList.add("slide-out");
+  currentSlide?.classList.remove("slide-in");
+  currentSlide?.classList.add("slide-out");
 
   setTimeout(() => {
-    currentSlide.classList.remove("current-slide");
+    currentSlide?.classList.remove("current-slide");
 
     currentSlide = slides[slideIndex - 1];
     currentSlideNum.value = slideIndex;
-    currentSlide.classList.remove("slide-out");
-    currentSlide.classList.add("slide-in", "current-slide");
+    currentSlide?.classList.remove("slide-out");
+    currentSlide?.classList.add("slide-in", "current-slide");
   }, 1000);
 };
 </script>
@@ -55,12 +55,16 @@ const showSlides = (n: number) => {
   <!-- The Navigation Arrows -->
   <div class="slideshow-nav-container">
     <a class="prev" @click="changeSlides(-1)">&#10094;</a>
-    <p class="slide-nav-faction">{{ currentSlideNum }} / {{ heroSlideImages?.length }}</p>
+    <p class="slide-nav-faction">
+      {{ currentSlideNum }} / {{ heroSlideImages?.length }}
+    </p>
     <a class="next" @click="changeSlides(1)">&#10095;</a>
   </div>
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 .slide-nav-faction {
   @apply text-primary font-thin tracking-widest text-2xl;
 }

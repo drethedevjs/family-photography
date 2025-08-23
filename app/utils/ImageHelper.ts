@@ -1,35 +1,25 @@
 import type { _Object } from "@aws-sdk/client-s3";
-import { ListObjectsV2Command, S3Client } from "@aws-sdk/client-s3";
-import type ImageHelper from "../interfaces/IImageHelper";
 
-const imageHelper: ImageHelper = {
+const imageHelper = {
   async getImageData(prefix: string) {
-    const s3 = new S3Client({
-      endpoint: import.meta.env.VITE_CLOUDFLARE_R2_ENDPOINT,
-      region: "auto",
-      credentials: {
-        accessKeyId: import.meta.env.VITE_CLOUDFLARE_ACCESS_KEY ?? "",
-        secretAccessKey: import.meta.env.VITE_CLOUDFLARE_SECRET_KEY ?? ""
+    return await useFetch("/api/image", {
+      query: { prefix },
+      method: "GET",
+      onResponse({ request, response, options }) {
+        return response._data;
+      },
+      onResponseError({ request, response, options }) {
+        console.error("Error getting image(s): ", response._data);
       }
     });
-
-    const command = new ListObjectsV2Command({
-      Bucket: "ctv-photo",
-      Prefix: prefix
-    });
-
-    try {
-      const response = await s3.send(command);
-      return response.Contents ?? [];
-    } catch (err) {
-      console.error(err);
-    }
   },
   getImageSrc(imageData: _Object[], tag: string) {
+    const config = useRuntimeConfig();
     const key = imageData.length
       ? imageData.find(x => x.Key?.includes(tag))?.Key
       : "";
-    return `${import.meta.env._CDN_PREFIX}/${key}`;
+
+    return `${config.public.cdnPrefix}/${key}`;
   }
 };
 

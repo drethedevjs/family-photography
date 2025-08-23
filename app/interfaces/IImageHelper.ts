@@ -16,7 +16,7 @@ export default interface ImageHelper {
    * @example
    * const images = await imageHelper.getImageData('photos/2023');
    */
-  getImageData(prefix: string): Promise<_Object[] | undefined>;
+  getImageData(prefix: string): (prefix: string) => Promise<void>;
 
   /**
    * Generates a CDN URL for an image based on the image data and tag

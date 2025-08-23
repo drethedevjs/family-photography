@@ -51,6 +51,7 @@ const logoImageData = ref(logoData);
               :src="imageHelper.getImageSrc(logoImageData, 'family')"
               width="150"
               height="150"
+              alt="Capture the Vision logo."
             />
           </NuxtLink>
           <ul class="gap-10 mt-4 menu-horizontal px-1 indent-0">

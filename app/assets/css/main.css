@@ -44,7 +44,7 @@
   }
 
   p {
-    @apply leading-10 text-3xl font-thin tracking-wider dark:text-white;
+    @apply leading-10 text-3xl font-thin tracking-wider dark:text-white text-secondary;
   }
 
   main {

@@ -12,11 +12,17 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  image: {
+    cloudflare: {
+      baseURL: process.env.NUXT_PUBLIC_CDN_PREFIX
+    }
+  },
   runtimeConfig: {
     // Private keys are only available on the server
     cloudFlareR2Endpoint: process.env.NUXT_CLOUDFLARE_R2_ENDPOINT,
     cloudFlareAccessKey: process.env.NUXT_CLOUDFLARE_ACCESS_KEY,
     cloudFlareSecretKey: process.env.NUXT_CLOUDFLARE_SECRET_KEY,
+    baseUrlMailer: process.env.NUXT_BASE_MAILER_URL,
 
     // Public keys that are exposed to the client
     public: {

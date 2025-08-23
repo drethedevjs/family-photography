@@ -13,7 +13,7 @@ const props = defineProps<{
       <h2>Kind Words</h2>
       <TestimonialBlock>
         <template #image>
-          <img
+          <NuxtImg
             :src="imageHelper.getImageSrc(props.imageData, '4')"
             class="rounded-md"
             alt="A family of four are bunched together. The son is sitting on dad's shoulders and a little girl lays on moms chest."
@@ -37,7 +37,7 @@ const props = defineProps<{
     <div class="side">
       <TestimonialBlock>
         <template #image>
-          <img
+          <NuxtImg
             :src="imageHelper.getImageSrc(props.imageData, '2')"
             class="rounded-md"
             alt="A mom and dad hold their new born while smiling at the camera."

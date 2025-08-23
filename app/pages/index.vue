@@ -24,8 +24,9 @@ useSeoMeta({
     <h1 class="hidden">Augusta, GA Family Photography</h1>
     <div class="flex">
       <div class="w-2/5">
-        <img
+        <NuxtImg
           v-if="andreImageData !== undefined"
+          provider="cloudflare"
           :src="imageHelper.getImageSrc(andreImageData, 'andre-1')"
           class="object-cover h-full w-full"
           alt="Andre smiling holding two cameras."

@@ -21,6 +21,7 @@ useSeoMeta({
 <template>
   <HeroSlideShow />
   <main id="homeApp">
+    <h1 class="hidden">Augusta, GA Family Photography</h1>
     <div class="flex">
       <div class="w-2/5">
         <img

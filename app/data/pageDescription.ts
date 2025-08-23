@@ -3,31 +3,31 @@ const pageDescriptions = [
     id: 1,
     pageName: "home",
     description:
-      "Augusta GA's trusted family photographer creating timeless portraits that capture your family's authentic moments. Natural light photography for families in Augusta, Evans, and Aiken."
+      "Augusta GA family photographer capturing authentic moments with natural light. Serving Augusta, Evans & Aiken families."
   },
   {
     id: 2,
     pageName: "about",
     description:
-      "Meet Andre Thomas, an experienced family photographer in Augusta, GA who specializes in creating comfortable, natural family portrait sessions that result in cherished memories."
+      "Meet Andre Thomas, Augusta GA family photographer specializing in comfortable, natural portrait sessions that create cherished memories."
   },
   {
     id: 3,
     pageName: "portfolio",
     description:
-      "Browse our gallery of natural family portraits taken across Augusta GA. From outdoor family sessions to lifestyle photography, see how we capture genuine family moments."
+      "Browse natural family portraits across Augusta GA. See how we capture genuine moments through outdoor sessions and lifestyle photography."
   },
   {
     id: 4,
     pageName: "investment",
     description:
-      "Discover our straightforward family photography packages in Augusta GA. Flexible options for large and small families to help preserve your family memories."
+      "Discover straightforward family photography packages in Augusta GA. Flexible options for all family sizes to preserve your memories."
   },
   {
     id: 5,
     pageName: "contact",
     description:
-      "Ready to book your family photo session in Augusta GA? Contact Andre Thomas Photography to schedule your session and start creating beautiful family memories today."
+      "Ready to book your Augusta GA family session? Contact Andre Thomas Photography to schedule and create beautiful family memories."
   }
 ];
 

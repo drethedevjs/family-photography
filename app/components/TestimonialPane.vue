@@ -10,7 +10,7 @@ const props = defineProps<{
 <template>
   <div class="mx-auto p-20 flex border-b-2">
     <div class="side">
-      <h3>Kind Words</h3>
+      <h2>Kind Words</h2>
       <TestimonialBlock>
         <template #image>
           <img
@@ -72,7 +72,7 @@ const props = defineProps<{
 <style scoped>
 @reference "tailwindcss";
 
-h3 {
+h2 {
   @apply text-7xl mb-28;
 }
 

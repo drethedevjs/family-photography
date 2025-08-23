@@ -2,7 +2,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/ui"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/ui", "@nuxtjs/sitemap"],
   devtools: { enabled: true },
   compatibilityDate: "2025-07-15",
   typescript: {
@@ -21,6 +21,15 @@ export default defineNuxtConfig({
     // Public keys that are exposed to the client
     public: {
       cdnPrefix: process.env.NUXT_PUBLIC_CDN_PREFIX
+    }
+  },
+  app: {
+    head: {
+      title: "Augusta, GA Family Photography | Capture the Vision",
+      htmlAttrs: {
+        lang: "en"
+      },
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
     }
   },
   ui: {

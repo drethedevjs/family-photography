@@ -1,10 +1,16 @@
 <script setup lang="ts">
+import pageDescription from "@/data/pageDescription";
 import imageHelper from "~/utils/ImageHelper";
 
 const { data: andreData } = await imageHelper.getImageData("andre");
 const { data: homeData } = await imageHelper.getImageData("home");
 const andreImageData = ref(andreData.value);
 const homeImageData = ref(homeData.value);
+
+const { description } = pageDescription.find(pd => pd.pageName === "home")!;
+useHead({
+  meta: [{ name: "description", content: description }]
+});
 </script>
 
 <template>

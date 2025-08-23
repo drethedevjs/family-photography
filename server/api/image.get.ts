@@ -13,7 +13,6 @@ export default defineEventHandler(async event => {
   });
 
   const query = getQuery(event);
-  console.log("event params", query.prefix);
 
   const command = new ListObjectsV2Command({
     Bucket: "ctv-photo",

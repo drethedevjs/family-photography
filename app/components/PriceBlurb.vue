@@ -8,9 +8,9 @@ defineProps({
   <slot name="heading" :textClass="textClass"></slot>
   <slot name="blurb" :textClass="textClass"></slot>
   <div class="flex items-center">
-    <RouterLink to="/contact">
-      <a class="ctv-btn mr-5">Book Me</a>
-    </RouterLink>
+    <NuxtLink to="contact">
+      <button class="ctv-btn mr-5">Book Me</button>
+    </NuxtLink>
     <p class="uppercase font-medium text-2xl" :class="textClass">
       Starting at ${{ price }}
     </p>

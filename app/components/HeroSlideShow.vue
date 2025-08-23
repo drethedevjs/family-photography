@@ -1,15 +1,12 @@
 <script lang="ts" setup>
 import imageHelper from "@/utils/ImageHelper";
-import type { _Object } from "@aws-sdk/client-s3";
-import { onBeforeMount, ref } from "vue";
+import { ref } from "vue";
 
 let slideIndex = 1;
 const currentSlideNum = ref(1);
-const heroSlideImages = ref<_Object[]>();
 
-onBeforeMount(async () => {
-  heroSlideImages.value = await imageHelper.getImageData("home:slide");
-});
+const { data: homeData } = await imageHelper.getImageData("home:slide");
+const heroSlideImages = ref(homeData);
 
 // Next/previous controls
 const changeSlides = (n: number) => {
@@ -36,6 +33,8 @@ const showSlides = (n: number) => {
     currentSlide?.classList.add("slide-in", "current-slide");
   }, 1000);
 };
+
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -46,7 +45,7 @@ const showSlides = (n: number) => {
       class="slide-container"
       :class="{ 'current-slide': currentSlideNum === idx + 1 }"
     >
-      <img :src="'https://cdn.ctvphotovideo.com/' + image.Key" class="w-full" />
+      <img :src="`${$config.public.cdnPrefix}/${image.Key}`" class="w-full" />
     </div>
   </div>
 
@@ -66,7 +65,7 @@ const showSlides = (n: number) => {
 @reference "tailwindcss";
 
 .slide-nav-faction {
-  @apply text-primary font-thin tracking-widest text-2xl;
+  @apply font-thin tracking-widest text-2xl;
 }
 
 .slideshow-nav-container {
@@ -94,7 +93,7 @@ img {
 /* Next & previous buttons */
 .prev,
 .next {
-  @apply cursor-pointer w-auto px-4 text-primary font-bold select-none hover:scale-150 transition-transform self-center h-full;
+  @apply cursor-pointer w-auto px-4 font-bold select-none hover:scale-150 transition-transform self-center h-full;
 }
 
 /* Fading animation */

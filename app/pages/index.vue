@@ -8,7 +8,7 @@ const homeImageData = ref(homeData.value);
 </script>
 
 <template>
-  <!-- <HeroSlideShow /> -->
+  <HeroSlideShow />
   <main id="homeApp">
     <div class="flex">
       <div class="w-2/5">

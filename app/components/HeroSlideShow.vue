@@ -43,7 +43,9 @@ const showSlides = (n: number) => {
       class="slide-container"
       :class="{ 'current-slide': currentSlideNum === idx + 1 }"
     >
-      <img
+      <NuxtImg
+        provider="cloudflare"
+        format="avif"
         :src="`${$config.public.cdnPrefix}/${image.Key}`"
         alt="A family enjoying one another's company at a local park."
         class="w-full"

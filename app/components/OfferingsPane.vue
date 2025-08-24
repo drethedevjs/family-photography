@@ -12,6 +12,8 @@ const props = defineProps<{
     <div class="w-7/12 place-items-center grid">
       <div class="w-3/4 my-32 mx-auto overflow-hidden relative">
         <NuxtImg
+          provider="cloudflare"
+          format="avif"
           :src="imageHelper.getImageSrc(props.imageData, '3')"
           class="object-cover h-full w-full"
           alt="A mom and dad walking while swinging their son between them."
@@ -30,6 +32,8 @@ const props = defineProps<{
     <div class="w-5/12 bg-green-100 overflow-hidden">
       <div class="relative w-full h-full object-cover">
         <NuxtImg
+          provider="cloudflare"
+          format="avif"
           :src="imageHelper.getImageSrc(props.imageData, '1')"
           class="w-full h-full object-cover"
           alt="A mom and dad holding one another by the hips while their son and daughter in front of them."

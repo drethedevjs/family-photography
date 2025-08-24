@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   },
   image: {
     cloudflare: {
-      baseURL: process.env.NUXT_PUBLIC_CDN_PREFIX
+      baseURL: "https://ctvphotovideo.com"
     }
   },
   runtimeConfig: {

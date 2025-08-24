@@ -27,6 +27,7 @@ useSeoMeta({
         <NuxtImg
           v-if="andreImageData !== undefined"
           provider="cloudflare"
+          format="avif"
           :src="imageHelper.getImageSrc(andreImageData, 'andre-1')"
           class="object-cover h-full w-full"
           alt="Andre smiling holding two cameras."

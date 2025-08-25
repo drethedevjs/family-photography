@@ -15,11 +15,13 @@ const props = defineProps<{
           provider="cloudflare"
           format="avif"
           :src="imageHelper.getImageSrc(props.imageData, '3')"
-          class="object-cover h-full w-full"
+          class="object-cover h-full w-full rounded-lg"
           alt="A mom and dad walking while swinging their son between them."
+          placeholder
+          quality="80"
         />
 
-        <div class="absolute inset-0 bg-black opacity-25"></div>
+        <div class="absolute inset-0 bg-black opacity-25 rounded-lg"></div>
 
         <div id="lifestyle-overlay" class="absolute inset-0 flex flex-col p-7">
           <h2 id="lifestyle-overlay-heading">Lifestyle Photography</h2>
@@ -37,6 +39,8 @@ const props = defineProps<{
           :src="imageHelper.getImageSrc(props.imageData, '1')"
           class="w-full h-full object-cover"
           alt="A mom and dad holding one another by the hips while their son and daughter in front of them."
+          placeholder
+          quality="80"
         />
 
         <div class="absolute inset-0 bg-black opacity-25"></div>

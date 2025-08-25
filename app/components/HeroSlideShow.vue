@@ -49,6 +49,7 @@ const showSlides = (n: number) => {
         :src="`${$config.public.cdnPrefix}/${image.Key}`"
         alt="A family enjoying one another's company at a local park."
         class="w-full"
+        placeholder
       />
     </div>
   </div>

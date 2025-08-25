@@ -46,11 +46,13 @@ const logoImageData = ref(logoData);
       <div class="navbar-center hidden lg:flex">
         <div class="flex flex-col items-center">
           <NuxtLink to="/">
-            <img
+            <NuxtImg
               v-if="logoImageData !== undefined"
               :src="imageHelper.getImageSrc(logoImageData, 'family')"
+              format="avif"
               width="150"
               height="150"
+              placeholder
               alt="Capture the Vision logo."
             />
           </NuxtLink>

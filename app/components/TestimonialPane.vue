@@ -19,6 +19,8 @@ const props = defineProps<{
             :src="imageHelper.getImageSrc(props.imageData, '4')"
             class="rounded-md"
             alt="A family of four are bunched together. The son is sitting on dad's shoulders and a little girl lays on moms chest."
+            placeholder
+            quality="80"
           />
         </template>
 
@@ -45,6 +47,8 @@ const props = defineProps<{
             :src="imageHelper.getImageSrc(props.imageData, '2')"
             class="rounded-md"
             alt="A mom and dad hold their new born while smiling at the camera."
+            placeholder
+            quality="80"
           />
         </template>
 

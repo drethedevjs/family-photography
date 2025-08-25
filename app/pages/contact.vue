@@ -12,10 +12,14 @@ const andreImg = ref(andreImgData);
     <h1 class="hidden">Contact</h1>
     <div class="flex">
       <div class="w-1/2">
-        <img
+        <NuxtImg
           v-if="andreImg !== undefined"
           :src="imageHelper.getImageSrc(andreImg, 'andre-2')"
           class="w-full h-full object-cover"
+          format="avif"
+          quality="80"
+          provider="cloudflare"
+          placeholder
         />
       </div>
       <div class="w-1/2 px-20 pt-32">

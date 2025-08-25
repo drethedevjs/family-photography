@@ -24,10 +24,14 @@ const stockData = ref(investmentData);
         </p>
       </div>
       <div class="w-1/2 px-20">
-        <img
+        <NuxtImg
           v-if="imageData !== undefined"
           :src="imageHelper.getImageSrc(imageData, '2')"
           class="rounded-lg"
+          format="avif"
+          quality="80"
+          provider="cloudflare"
+          placeholder
         />
         <p class="mt-10 mx-10 text-xl">
           Lifestyle portraits are exactly how they sound: It's your lifestyle!
@@ -41,10 +45,14 @@ const stockData = ref(investmentData);
     <div id="offerings" class="flex mt-20 relative">
       <div class="w-7/12 h-[1000px] relative">
         <!-- Reynolds family -->
-        <img
+        <NuxtImg
           v-if="stockData !== undefined"
           :src="imageHelper.getImageSrc(stockData, '1')"
           class="w-full h-full object-cover"
+          format="avif"
+          quality="80"
+          provider="cloudflare"
+          placeholder
         />
         <div class="ctv-img-overlay"></div>
         <div class="absolute inset-0 px-20 pt-20 flex flex-col justify-start">
@@ -66,10 +74,14 @@ const stockData = ref(investmentData);
       </div>
       <div class="w-5/12 px-20">
         <!-- McQuerry couple -->
-        <img
+        <NuxtImg
           v-if="stockData !== undefined"
           :src="imageHelper.getImageSrc(stockData, '2')"
           class="rounded-lg"
+          format="avif"
+          quality="80"
+          provider="cloudflare"
+          placeholder
         />
         <PriceBlurb textClass="text-secondary drop-shadow-2xl" :price="350">
           <template #heading="{ textClass }">
@@ -102,9 +114,14 @@ const stockData = ref(investmentData);
     </div>
     <div id="faq" class="flex">
       <div class="w-4/12">
-        <img
+        <NuxtImg
           v-if="imageData !== undefined"
           :src="imageHelper.getImageSrc(imageData, '1')"
+          format="avif"
+          quality="80"
+          provider="cloudflare"
+          placeholder
+          alt="Andre and his family standing on a wooden bridge."
         />
       </div>
       <div class="w-8/12 px-20">

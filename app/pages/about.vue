@@ -13,10 +13,14 @@ const imageData = ref(tomfamData);
     <h1 class="hidden">About</h1>
     <div id="about-intro">
       <div class="overflow-hidden lg:h-[900px] h-[680px] relative text-center">
-        <img
+        <NuxtImg
           v-if="imageData !== undefined"
           class="object-cover w-full h-full"
           :src="imageHelper.getImageSrc(imageData, '4')"
+          format="avif"
+          quality="80"
+          provider="cloudflare"
+          placeholder
         />
         <div id="color-overlay"></div>
         <div id="intro-overlay">
@@ -69,10 +73,14 @@ const imageData = ref(tomfamData);
         </AboutPoint>
       </div>
       <div class="w-1/2 px-10 py-20">
-        <img
+        <NuxtImg
           v-if="imageData !== undefined"
           class="rounded-lg"
           :src="imageHelper.getImageSrc(imageData, '3')"
+          format="avif"
+          quality="80"
+          provider="cloudflare"
+          placeholder
         />
       </div>
     </div>

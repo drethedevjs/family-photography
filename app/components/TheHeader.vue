@@ -31,15 +31,13 @@ const logoImageData = ref(logoData);
             tabindex="0"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li><a>Item 1</a></li>
+            <li><NuxtLink to="/">Home</NuxtLink></li>
+            <li><NuxtLink to="about">About</NuxtLink></li>
+            <li><NuxtLink to="investment">Investment</NuxtLink></li>
             <li>
-              <a>Parent</a>
-              <ul class="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
+              <a target="_blank" href="https://ctvphotovideo.com">Portfolio</a>
             </li>
-            <li><a>Item 3</a></li>
+            <li><NuxtLink to="contact">Contact</NuxtLink></li>
           </ul>
         </div>
       </div>
@@ -77,9 +75,9 @@ const logoImageData = ref(logoData);
 </template>
 
 <style scoped>
-@reference "tailwindcss"
+@reference "tailwindcss";
 
 li {
-  @apply uppercase text-primary hover:text-secondary transition;
+  @apply uppercase text-orange-700 hover:text-slate-700 transition;
 }
 </style>

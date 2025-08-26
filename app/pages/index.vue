@@ -16,7 +16,6 @@ useHead({
 });
 
 if (import.meta.server) {
-  console.log("Does this run on the server?");
   useSeoMeta({
     ogUrl: "https://ctvphotovideo.com",
     ogType: "website",

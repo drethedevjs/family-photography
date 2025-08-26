@@ -7,15 +7,29 @@ const { data: homeData } = await imageHelper.getImageData("home");
 const andreImageData = ref(andreData.value);
 const homeImageData = ref(homeData.value);
 
-const { description } = pageDescription.find(pd => pd.pageName === "home")!;
+const { description, ogTitle } = pageDescription.find(
+  pd => pd.pageName === "home"
+)!;
+
 useHead({
   meta: [{ name: "description", content: description }]
 });
 
-useSeoMeta({
-  ogUrl: "https://ctvphotovideo.com",
-  ogType: "website"
-});
+if (import.meta.server) {
+  console.log("Does this run on the server?");
+  useSeoMeta({
+    ogUrl: "https://ctvphotovideo.com",
+    ogType: "website",
+    ogTitle: ogTitle,
+    ogDescription: description,
+    ogImage:
+      "https://cdn.ctvphotovideo.com/investment:augusta-ga-family-photographer-investment-1.jpg",
+    ogLocale: "en_US",
+    ogSiteName: "Capture the Vision Family Photography",
+    twitterCard: "summary",
+    robots: "index, follow"
+  });
+}
 </script>
 
 <template>

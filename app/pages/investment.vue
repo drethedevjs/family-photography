@@ -4,12 +4,39 @@ import FaqPoint from "@/components/FaqPoint.vue";
 import PriceBlurb from "@/components/PriceBlurb.vue";
 import imageHelper from "@/utils/ImageHelper";
 import { ref } from "vue";
+import pageDescription from "~/data/pageDescription";
 
 const { data: tomfamData } = await imageHelper.getImageData("tomfam");
 const { data: investmentData } = await imageHelper.getImageData("investment");
 
 const imageData = ref(tomfamData);
 const stockData = ref(investmentData);
+
+const router = useRouter();
+const pageName = router.currentRoute.value.fullPath.replace("/", "");
+const { description, ogTitle } = pageDescription.find(
+  pd => pd.pageName === pageName
+)!;
+
+useHead({
+  title: `${pageName.toUpperCase()} | Capture the Vision`,
+  meta: [{ name: "description", content: description }]
+});
+
+if (import.meta.server) {
+  useSeoMeta({
+    ogUrl: "https://ctvphotovideo.com",
+    ogType: "website",
+    ogTitle: ogTitle,
+    ogDescription: description,
+    ogImage:
+      "https://cdn.ctvphotovideo.com/investment:augusta-ga-family-photographer-investment-1.jpg",
+    ogLocale: "en_US",
+    ogSiteName: "Capture the Vision Family Photography",
+    twitterCard: "summary",
+    robots: "index, follow"
+  });
+}
 </script>
 
 <template>

@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
 
 @plugin "daisyui";
 
@@ -50,4 +54,19 @@
   main {
     @apply mt-10 min-h-screen;
   }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply drop-shadow-2xl text-primary bg-white/50 hover:bg-white/100 rounded-full p-8 hover:ring-primary hover:ring-2;
+}
+.swiper-button-next {
+  @apply mr-10;
+}
+.swiper-button-prev {
+  @apply ml-10;
+}
+
+.swiper-pagination-bullet {
+  @apply size-10 bg-primary ring-1 ring-white;
 }

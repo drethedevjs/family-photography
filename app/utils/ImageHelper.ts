@@ -20,6 +20,10 @@ const imageHelper = {
       : "";
 
     return `${config.public.cdnPrefix}/${key}`;
+  },
+  createSrcLink(imageData: _Object) {
+    const config = useRuntimeConfig();
+    return `${config.public.cdnPrefix}/${imageData.Key}`;
   }
 };
 

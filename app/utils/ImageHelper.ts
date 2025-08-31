@@ -19,6 +19,14 @@ const imageHelper = {
       ? imageData.find(x => x.Key?.includes(tag))?.Key
       : "";
 
+    return key;
+  },
+  getLogoSrc(imageData: _Object[], tag: string) {
+    const config = useRuntimeConfig();
+    const key = imageData.length
+      ? imageData.find(x => x.Key?.includes(tag))?.Key
+      : "";
+
     return `${config.public.cdnPrefix}/${key}`;
   },
   createSrcLink(imageData: _Object) {

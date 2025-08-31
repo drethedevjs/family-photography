@@ -9,7 +9,7 @@ const heroSlideImages = ref(homeData);
 </script>
 
 <template>
-  <div className="mt-10">
+  <div className="md:mt-10">
     <Swiper
       :slides-per-view="1"
       :space-between="30"
@@ -21,7 +21,7 @@ const heroSlideImages = ref(homeData);
       :modules="[Navigation, Pagination]"
     >
       <SwiperSlide :key="image.Key" v-for:="(image, idx) in heroSlideImages">
-        <div class="h-[600px] flex items-center">
+        <div class="md:h-[600px] flex items-center">
           <NuxtImg
             :src="imageHelper.createSrcLink(image)"
             :alt="`A family enjoying their time at the park - ${idx + 1}`"

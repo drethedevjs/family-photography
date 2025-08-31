@@ -9,7 +9,7 @@ const props = defineProps<{
 
 <template>
   <section id="offerings" class="flex">
-    <div class="w-7/12 place-items-center grid">
+    <div class="w-7/12 hidden place-items-center md:grid">
       <div class="w-3/4 my-32 mx-auto overflow-hidden relative">
         <NuxtImg
           provider="cloudflare"
@@ -31,7 +31,7 @@ const props = defineProps<{
         </div>
       </div>
     </div>
-    <div class="w-5/12 bg-green-100 overflow-hidden">
+    <div class="md:w-5/12 bg-green-100 overflow-hidden">
       <div class="relative w-full h-full object-cover">
         <NuxtImg
           provider="cloudflare"
@@ -46,19 +46,26 @@ const props = defineProps<{
         <div class="absolute inset-0 bg-black opacity-25"></div>
 
         <div id="session-overlay" class="absolute inset-0">
-          <h2 id="session-overlay-heading" class="w-4/5">
+          <h2
+            id="session-overlay-heading"
+            class="md:w-4/5 text-center lg:text-left"
+          >
             Full & Half Sessions
           </h2>
           <p id="session-overlay-text">
             Choose a session that suits your needs. One for a few pictures and
             one for fuller families.
           </p>
-          <NuxtLink to="contact">
-            <button class="ctv-btn session-btn">Book a Session</button>
-          </NuxtLink>
-          <NuxtLink to="investment">
-            <button class="ctv-btn session-btn ml-10">Details</button>
-          </NuxtLink>
+          <div
+            class="flex bottom-0 absolute lg:static place-self-center md:place-self-auto"
+          >
+            <NuxtLink to="contact">
+              <button class="ctv-btn session-btn">Book a Session</button>
+            </NuxtLink>
+            <NuxtLink to="investment">
+              <button class="ctv-btn session-btn lg:ml-10 ml-5">Details</button>
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </div>
@@ -69,12 +76,12 @@ const props = defineProps<{
 @reference "tailwindcss";
 
 .session-btn {
-  @apply mt-16 border-0 shadow-none;
+  @apply lg:mt-10 mb-5 border-0 shadow-none;
 }
 
 #lifestyle-overlay,
 #session-overlay {
-  @apply pl-16 pt-20;
+  @apply lg:pl-16 lg:pt-20 pt-8;
 }
 
 #lifestyle-overlay-heading,
@@ -84,7 +91,7 @@ const props = defineProps<{
 
 #lifestyle-overlay-text,
 #session-overlay-text {
-  @apply text-xl drop-shadow-lg;
+  @apply text-xl drop-shadow-lg text-center lg:text-left;
 }
 
 #lifestyle-overlay-heading,

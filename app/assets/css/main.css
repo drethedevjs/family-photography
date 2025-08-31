@@ -28,7 +28,7 @@
   }
 
   .ctv-btn {
-    @apply font-light btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase px-14 py-8 tracking-wider;
+    @apply font-light btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase md:px-14 md:py-8 px-10 py-4 tracking-wider;
   }
 
   .ctv-img-overlay {
@@ -48,7 +48,7 @@
   }
 
   p {
-    @apply leading-10 text-3xl font-thin tracking-wider dark:text-white text-secondary;
+    @apply lg:leading-10 lg:text-3xl text-xl font-thin tracking-wider dark:text-white text-secondary;
   }
 
   main {
@@ -58,7 +58,7 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  @apply drop-shadow-2xl text-primary bg-white/50 hover:bg-white/100 rounded-full p-8 hover:ring-primary hover:ring-2;
+  @apply md:flex hidden drop-shadow-2xl text-primary bg-white/50 hover:bg-white/100 rounded-full p-8 hover:ring-primary hover:ring-2;
 }
 .swiper-button-next {
   @apply mr-10;
@@ -68,7 +68,7 @@
 }
 
 .swiper-pagination-bullet {
-  @apply size-5 bg-primary ring-1 ring-white;
+  @apply md:size-5 bg-primary ring-1 ring-white;
 }
 
 .ctv-container {

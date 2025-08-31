@@ -35,20 +35,22 @@ if (import.meta.server) {
   <HeroSlideShow />
   <main id="homeApp">
     <h1 class="hidden">Augusta, GA Family Photography</h1>
-    <div class="flex">
-      <div class="w-2/5">
+    <div class="flex md:flex-row flex-col">
+      <div class="lg:w-2/5">
         <NuxtImg
           v-if="andreImageData !== undefined"
           provider="cloudflare"
           format="avif"
           :src="imageHelper.getImageSrc(andreImageData, 'andre-1')"
-          class="object-cover h-full w-full"
+          class="object-cover lg:h-full lg:w-full size-40 place-self-center rounded-md shadow-md"
           alt="Andre smiling holding two cameras."
           placeholder
           quality="80"
         />
       </div>
-      <div class="w-3/5 flex flex-col place-content-center text-center mb-10">
+      <div
+        class="lg:w-3/5 flex flex-col place-content-center text-center mb-10"
+      >
         <h2>Family Photographer</h2>
         <h3 class="text-primary">Andre Thomas</h3>
 
@@ -76,6 +78,7 @@ if (import.meta.server) {
 
     <TestimonialPane
       v-if="homeImageData !== undefined"
+      class="hidden lg:flex"
       :imageData="homeImageData"
     />
 
@@ -98,18 +101,18 @@ if (import.meta.server) {
 @reference "tailwindcss";
 
 .about-btn {
-  @apply ml-auto mt-20 mr-32;
+  @apply lg:ml-auto lg:mt-20 mt-8 lg:mr-32;
 }
 
 h2 {
-  @apply mt-10 text-4xl tracking-widest font-light;
+  @apply mt-10 lg:text-4xl text-2xl tracking-widest font-light;
 }
 
 h3 {
-  @apply mt-5 text-7xl font-semibold;
+  @apply mt-5 lg:text-7xl text-5xl font-semibold;
 }
 
 .about-txt {
-  @apply mt-5 text-3xl w-3/4 mx-auto leading-10;
+  @apply mt-5 w-3/4 mx-auto;
 }
 </style>

@@ -11,7 +11,12 @@ const logoImageData = ref(logoData);
     <nav class="navbar bg-base-100">
       <div class="navbar-start">
         <div class="dropdown">
-          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <div
+            tabindex="0"
+            role="button"
+            class="btn btn-ghost lg:hidden justify-between flex"
+          >
+            <!-- Hamburger menu -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -41,17 +46,17 @@ const logoImageData = ref(logoData);
           </ul>
         </div>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <div class="flex flex-col items-center">
+      <div class="navbar-center">
+        <div class="flex flex-col items-center hidden lg:flex">
           <NuxtLink to="/">
             <NuxtImg
               v-if="logoImageData !== undefined"
-              :src="imageHelper.getImageSrc(logoImageData, 'family')"
+              :src="imageHelper.getLogoSrc(logoImageData, 'family')"
               format="avif"
               width="150"
               height="150"
               placeholder
-              alt="Capture the Vision logo."
+              alt="Capture the Vision logo"
             />
           </NuxtLink>
           <ul class="gap-10 mt-4 menu-horizontal px-1 indent-0">
@@ -60,6 +65,19 @@ const logoImageData = ref(logoData);
             <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
             <li><NuxtLink to="/contact">Contact</NuxtLink></li>
           </ul>
+        </div>
+        <div class="flex lg:hidden">
+          <NuxtLink to="/">
+            <NuxtImg
+              v-if="logoImageData !== undefined"
+              :src="imageHelper.getLogoSrc(logoImageData, 'simple')"
+              format="avif"
+              width="50"
+              height="50"
+              placeholder
+              alt="Capture the Vision logo"
+            />
+          </NuxtLink>
         </div>
       </div>
       <div class="navbar-end"></div>

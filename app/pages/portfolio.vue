@@ -36,7 +36,7 @@ const capitalizeFirst = (str: string): string => {
         class="rounded-md drop-shadow-sm"
       />
       <div class="portfolio-card-container ring-primary">
-        <p>{{ capitalizeFirst(image.galleryName) }}'s Family</p>
+        <p>{{ capitalizeFirst(image.galleryName) }} Family</p>
         <NuxtLink :to="'gallery/' + image.galleryName">
           <span class="hover:text-primary text-base">View</span>
         </NuxtLink>

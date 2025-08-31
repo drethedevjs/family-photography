@@ -68,5 +68,9 @@
 }
 
 .swiper-pagination-bullet {
-  @apply size-10 bg-primary ring-1 ring-white;
+  @apply size-5 bg-primary ring-1 ring-white;
+}
+
+.ctv-container {
+  @apply container mx-20;
 }

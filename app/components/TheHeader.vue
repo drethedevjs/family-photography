@@ -57,14 +57,7 @@ const logoImageData = ref(logoData);
           <ul class="gap-10 mt-4 menu-horizontal px-1 indent-0">
             <li><NuxtLink to="/about">About</NuxtLink></li>
             <li><NuxtLink to="/investment">Investment</NuxtLink></li>
-            <li>
-              <a
-                href="https://www.instagram.com/ctvphotovideo/"
-                target="_blank"
-              >
-                Portfolio
-              </a>
-            </li>
+            <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
             <li><NuxtLink to="/contact">Contact</NuxtLink></li>
           </ul>
         </div>

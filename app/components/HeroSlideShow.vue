@@ -21,11 +21,13 @@ const heroSlideImages = ref(homeData);
       :modules="[Navigation, Pagination]"
     >
       <SwiperSlide :key="image.Key" v-for:="(image, idx) in heroSlideImages">
-        <NuxtImg
-          :src="imageHelper.createSrcLink(image)"
-          :alt="`A family enjoying their time at the park - ${idx + 1}`"
-          className="w-full"
-        />
+        <div class="h-[600px] flex items-center">
+          <NuxtImg
+            :src="imageHelper.createSrcLink(image)"
+            :alt="`A family enjoying their time at the park - ${idx + 1}`"
+            className="w-full"
+          />
+        </div>
       </SwiperSlide>
     </Swiper>
   </div>

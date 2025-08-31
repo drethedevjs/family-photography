@@ -63,7 +63,9 @@ if (import.meta.server) {
           some heart-warming past times.
         </p>
 
-        <button class="about-btn ctv-btn">Tell Me More</button>
+        <NuxtLink to="about" class="about-btn">
+          <button class="ctv-btn">Tell Me More</button>
+        </NuxtLink>
       </div>
     </div>
 

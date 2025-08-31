@@ -5,7 +5,6 @@ const { data: imageData } = await imageHelper.getImageData("portfolio");
 const extractGalleryName = (imageKey: string) => {
   const secondColonIdx = imageKey.indexOf(":", "portfolio".length + 1);
   const galleryName = imageKey.slice("portfolio".length + 1, secondColonIdx);
-  console.log("galleryName: ", galleryName);
   return galleryName;
 };
 
@@ -24,7 +23,7 @@ const capitalizeFirst = (str: string): string => {
 <template>
   <h1 class="hidden">Portfolio</h1>
   <div
-    class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ctv-container mt-10"
+    class="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ctv-container mt-10"
   >
     <div v-for="image in portfolioFeats">
       <NuxtImg

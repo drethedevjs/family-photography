@@ -13,6 +13,43 @@ const imageHelper = {
       }
     });
   },
+  async getCloudinaryImageData(
+    folderName: string | null = null,
+    tag: string | null = null
+  ) {
+    return await useFetch("/api/cloudinaryImage", {
+      query: { folderName, tag },
+      method: "GET",
+      onResponse({ request, response, options }) {
+        return response._data;
+      },
+      onResponseError({ request, response, options }) {
+        console.error("Error getting image(s): ", response._data);
+      }
+    });
+  },
+  async getCloudinaryImageDataByTag(tag: string) {
+    return await useFetch("/api/cloudinaryImage", {
+      query: { tag },
+      method: "GET",
+      onResponse({ request, response, options }) {
+        return response._data;
+      },
+      onResponseError({ request, response, options }) {
+        console.error("Error getting image(s): ", response._data);
+      }
+    });
+  },
+  getCloudinaryImageSrc(imageData: any, tag: string) {
+    console.log("THIS IS WHATS PASSED IN", imageData);
+    console.log("THE TAG", tag);
+    const fileName = imageData.length
+      ? imageData.find((x: any) => x.fileName?.includes(tag)).fileName
+      : "";
+
+    console.log("THIS IS THE FILE NAME", fileName);
+    return fileName;
+  },
   getImageSrc(imageData: _Object[], tag: string) {
     const config = useRuntimeConfig();
     const key = imageData.length

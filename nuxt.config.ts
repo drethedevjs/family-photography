@@ -15,6 +15,10 @@ export default defineNuxtConfig({
   image: {
     cloudflare: {
       baseURL: "https://cdn.ctvphotovideo.com"
+    },
+    cloudinary: {
+      baseURL:
+        "http://res.cloudinary.com/ctvphotovideo/image/upload/v1756577507"
     }
   },
   runtimeConfig: {

@@ -2,10 +2,10 @@
 import pageDescription from "@/data/pageDescription";
 import imageHelper from "~/utils/ImageHelper";
 
-const { data: andreData } = await imageHelper.getImageData("andre");
-const { data: homeData } = await imageHelper.getImageData("home");
-const andreImageData = ref(andreData.value);
-const homeImageData = ref(homeData.value);
+const { data: andreImageData } = await imageHelper.getCloudinaryImageData(
+  "andre"
+);
+const { data: homeImageData } = await imageHelper.getImageData("home");
 
 const { description, ogTitle } = pageDescription.find(
   pd => pd.pageName === "home"
@@ -39,9 +39,9 @@ if (import.meta.server) {
       <div class="lg:w-2/5">
         <NuxtImg
           v-if="andreImageData !== undefined"
-          provider="cloudflare"
+          provider="cloudinary"
           format="avif"
-          :src="imageHelper.getImageSrc(andreImageData, 'andre-1')"
+          :src="imageHelper.getCloudinaryImageSrc(andreImageData, 'home')"
           class="object-cover lg:h-full lg:w-full size-40 place-self-center rounded-md shadow-md"
           alt="Andre smiling holding two cameras."
           placeholder

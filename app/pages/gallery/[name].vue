@@ -6,10 +6,13 @@ import imageHelper from "~/utils/ImageHelper";
 const route = useRoute();
 const { name: familyName } = route.params;
 
-const { data: imageData } = await imageHelper.getImageData(
-  `gallery:${familyName}`
+if (!familyName) {
+  location.href = "/portfolio";
+}
+
+const { data: galleryImgs } = await imageHelper.getCloudinaryImageData(
+  familyName?.toString()!
 );
-const galleryImgs = ref(imageData);
 </script>
 <template>
   <NuxtLink to="/portfolio">
@@ -28,14 +31,14 @@ const galleryImgs = ref(imageData);
       :modules="[Navigation, Pagination]"
     >
       <SwiperSlide
-        :key="image.Key"
+        :key="idx"
         v-for="(image, idx) in galleryImgs"
         class="!w-auto !h-full flex items-center justify-center"
       >
         <div class="h-[600px] relative flex items-center justify-center">
           <NuxtImg
-            provider="cloudflare"
-            :src="image.Key"
+            provider="cloudinary"
+            :src="image.fileName"
             :alt="`A family enjoying their time at the park - ${idx + 1}`"
             format="avif"
             placeholder

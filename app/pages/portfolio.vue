@@ -1,23 +1,13 @@
 <script lang="ts" setup>
 import imageHelper from "~/utils/ImageHelper";
-const { data: imageData } = await imageHelper.getImageData("portfolio");
 
-const extractGalleryName = (imageKey: string) => {
-  const secondColonIdx = imageKey.indexOf(":", "portfolio".length + 1);
-  const galleryName = imageKey.slice("portfolio".length + 1, secondColonIdx);
-  return galleryName;
-};
+const { data: imageData } = await imageHelper.getCloudinaryImageData(
+  null,
+  "portfolio"
+);
 
-// Transform data to include gallery names
-const portfolioFeats = computed(() => {
-  return imageData.value!.map(image => ({
-    ...image,
-    galleryName: extractGalleryName(image.Key!)
-  }));
-});
-
-const capitalizeFirst = (str: string): string => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+const capitalizeFirst = (str: string | undefined): string => {
+  return str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
 };
 </script>
 <template>
@@ -25,10 +15,10 @@ const capitalizeFirst = (str: string): string => {
   <div
     class="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ctv-container mt-10"
   >
-    <div v-for="image in portfolioFeats">
+    <div v-for="image in imageData">
       <NuxtImg
-        provider="cloudflare"
-        :src="image.Key"
+        provider="cloudinary"
+        :src="image.fileName"
         format="avif"
         alt="Family enjoying their time at the park."
         placeholder
@@ -36,8 +26,8 @@ const capitalizeFirst = (str: string): string => {
         class="rounded-md drop-shadow-sm"
       />
       <div class="portfolio-card-container ring-primary">
-        <p>{{ capitalizeFirst(image.galleryName) }} Family</p>
-        <NuxtLink :to="'gallery/' + image.galleryName">
+        <p>{{ capitalizeFirst(image.metadata.galleryName) }} Family</p>
+        <NuxtLink :to="'gallery/' + image.metadata.galleryName">
           <span class="hover:text-primary text-base">View</span>
         </NuxtLink>
       </div>

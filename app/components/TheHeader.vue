@@ -14,7 +14,7 @@ const logoImageData = ref(logoData);
           <div
             tabindex="0"
             role="button"
-            class="btn btn-ghost lg:hidden justify-between flex"
+            class="btn btn-ghost hide-on-desktop justify-between"
           >
             <!-- Hamburger menu -->
             <svg
@@ -37,17 +37,15 @@ const logoImageData = ref(logoData);
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li><NuxtLink to="/">Home</NuxtLink></li>
-            <li><NuxtLink to="about">About</NuxtLink></li>
-            <li><NuxtLink to="investment">Investment</NuxtLink></li>
-            <li>
-              <a target="_blank" href="https://ctvphotovideo.com">Portfolio</a>
-            </li>
-            <li><NuxtLink to="contact">Contact</NuxtLink></li>
+            <li><NuxtLink to="/about">About</NuxtLink></li>
+            <li><NuxtLink to="/investment">Investment</NuxtLink></li>
+            <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
+            <li><NuxtLink to="/contact">Contact</NuxtLink></li>
           </ul>
         </div>
       </div>
       <div class="navbar-center">
-        <div class="flex flex-col items-center hidden lg:flex">
+        <div class="flex-col items-center hide-on-mobile">
           <NuxtLink to="/">
             <NuxtImg
               v-if="logoImageData !== undefined"

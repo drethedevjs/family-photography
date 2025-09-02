@@ -1,12 +1,9 @@
 <script lang="ts" setup>
 import ContactForm from "@/components/ContactForm.vue";
 import imageHelper from "@/utils/ImageHelper";
-import { ref } from "vue";
 import pageDescription from "~/data/pageDescription";
 
-const { data: andreImgData } = await imageHelper.getImageData("andre");
-
-const andreImg = ref(andreImgData);
+const { data: andreImg } = await imageHelper.getImageData("andre");
 
 const router = useRouter();
 const pageName = router.currentRoute.value.fullPath.replace("/", "");
@@ -41,8 +38,8 @@ if (import.meta.server) {
 <template>
   <main>
     <h1 class="hidden">Contact</h1>
-    <div class="flex">
-      <div class="w-1/2">
+    <div class="flex lg:flex-row flex-col">
+      <div class="lg:w-1/2">
         <NuxtImg
           v-if="andreImg !== undefined"
           :src="imageHelper.getImageSrc(andreImg, 'andre-2')"
@@ -53,11 +50,14 @@ if (import.meta.server) {
           placeholder
         />
       </div>
-      <div class="w-1/2 px-20 pt-32">
-        <h1 class="hidden">Contact Me</h1>
-        <h2 class="text-6xl pb-20 text-orange-700">Get In Touch</h2>
+      <div class="lg:w-1/2 lg:px-20 lg:pt-32 pt-10 px-5">
+        <h2
+          class="text-6xl lg:pb-20 pb-10 text-center lg:text-left text-orange-700"
+        >
+          Get In Touch
+        </h2>
 
-        <p class="mb-10">
+        <p class="lg:mb-10 mb-5">
           If you have made it to this page then it must be that you're
           interested in getting your family portraits done so I must express my
           sincerest gratitude.
@@ -67,19 +67,22 @@ if (import.meta.server) {
           to connect with you as soon as possible. Talk soon!
         </p>
         <div
-          class="grid grid-cols-2 place-items-start text-secondary pt-16 uppercase"
+          class="grid lg:grid-cols-2 grid-cols-1 place-items-start text-secondary lg:pt-16 pt-8 uppercase"
         >
-          <p class="text-xl font-semibold">
+          <p class="text-xl font-semibold mb-3">
             tel:
-            <a href="tel:5137650432" class="tracking-wider hover:text-primary"
-              >706-426-3022</a
+            <a
+              href="tel:5137650432"
+              class="tracking-wider hover:underline text-primary"
             >
+              706-426-3022
+            </a>
           </p>
           <p class="text-xl font-semibold">
             email:
             <a
               href="mailto:andre@ctvphotovideo.com"
-              class="tracking-wider hover:text-primary"
+              class="tracking-wider hover:underline text-primary"
             >
               andre@ctvphotovideo.com
             </a>

@@ -52,7 +52,7 @@ if (import.meta.server) {
       </div>
       <div class="lg:w-1/2 lg:px-20 lg:pt-32 pt-10 px-5">
         <h2
-          class="text-6xl lg:pb-20 pb-10 text-center lg:text-left text-orange-700"
+          class="text-6xl lg:pb-20 pb-10 text-center lg:text-left text-primary"
         >
           Get In Touch
         </h2>

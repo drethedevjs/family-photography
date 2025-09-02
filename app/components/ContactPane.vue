@@ -1,7 +1,9 @@
 <template>
-  <div class="flex flex-col place-items-center py-16 mx-auto 2xl:w-1/2 w-4/5">
+  <section
+    class="flex flex-col place-items-center py-16 mx-auto 2xl:w-1/2 w-4/5"
+  >
     <h3 class="font-light tracking-widest">Let's Get Together</h3>
-    <h2 class="text-orange-700">Contact Me</h2>
+    <h2 class="text-primary">Contact Me</h2>
     <p class="text-base lg:mb-16 mb-5 font-medium tracking-widest">
       Document your family history
     </p>
@@ -19,7 +21,7 @@
     <NuxtLink to="/contact">
       <button class="ctv-btn">Contact</button>
     </NuxtLink>
-  </div>
+  </section>
 </template>
 
 <style scoped>

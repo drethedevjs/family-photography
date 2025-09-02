@@ -33,68 +33,64 @@ if (import.meta.server) {
 
 <template>
   <HeroSlideShow />
-  <main id="homeApp">
-    <h1 class="hidden">Augusta, GA Family Photography</h1>
-    <div class="flex md:flex-row flex-col">
-      <div class="lg:w-2/5">
-        <NuxtImg
-          v-if="andreImageData !== undefined"
-          provider="cloudinary"
-          format="avif"
-          :src="imageHelper.getCloudinaryImageSrc(andreImageData, 'home')"
+  <h1 class="hidden">Augusta, GA Family Photography</h1>
+  <div class="flex md:flex-row flex-col">
+    <div class="lg:w-2/5">
+      <NuxtImg
+        v-if="andreImageData !== undefined"
+        provider="cloudinary"
+        format="avif"
+        :src="imageHelper.getCloudinaryImageSrc(andreImageData, 'home')"
         class="object-cover h-full w-full hide-on-mobile"
-          alt="Andre smiling holding two cameras."
-          placeholder
-          quality="80"
-        />
-      </div>
-      <div
-        class="lg:w-3/5 flex flex-col place-content-center text-center mb-10"
-      >
-        <h2>Family Photographer</h2>
-        <h3 class="text-primary">Andre Thomas</h3>
-
-        <p class="about-txt">
-          I'm a family photographer in Augusta, GA who loves to create vibrant
-          family portraits for families all over. Because of this, my desire for
-          you is to get you to “have your moment”. That “moment” I'm referring
-          to is when you finally receive those beautiful portraits that you have
-          been anxiously waiting for. This moment doesn't just come once.
-          Rather, it gets to be relived throughout generations when your
-          children and grandchildren can look at those photographs and remember
-          some heart-warming past times.
-        </p>
-
-        <NuxtLink to="about" class="about-btn">
-          <button class="ctv-btn">Tell Me More</button>
-        </NuxtLink>
-      </div>
+        alt="Andre smiling holding two cameras."
+        placeholder
+        quality="80"
+      />
     </div>
+    <div class="lg:w-3/5 flex flex-col place-content-center text-center mb-10">
+      <h2>Family Photographer</h2>
+      <h3 class="text-primary">Andre Thomas</h3>
 
-    <OfferingsPane
-      v-if="homeImageData !== undefined"
-      :imageData="homeImageData"
-    />
+      <p class="about-txt">
+        I'm a family photographer in Augusta, GA who loves to create vibrant
+        family portraits for families all over. Because of this, my desire for
+        you is to get you to “have your moment”. That “moment” I'm referring to
+        is when you finally receive those beautiful portraits that you have been
+        anxiously waiting for. This moment doesn't just come once. Rather, it
+        gets to be relived throughout generations when your children and
+        grandchildren can look at those photographs and remember some
+        heart-warming past times.
+      </p>
 
-    <TestimonialPane
-      v-if="homeImageData !== undefined"
-      class="hidden lg:flex"
-      :imageData="homeImageData"
-    />
-
-    <ContactPane />
-
-    <div class="text-center mt-16">
-      <p class="uppercase mb-10 text-xl font-medium">Follow me on Instagram</p>
-      <a
-        href="https://instagram.com/ctvphotovideo"
-        target="_blank"
-        class="hover:text-primary text-5xl"
-      >
-        @ctvphotovideo
-      </a>
+      <NuxtLink to="about" class="about-btn">
+        <button class="ctv-btn">Tell Me More</button>
+      </NuxtLink>
     </div>
-  </main>
+  </div>
+
+  <OfferingsPane
+    v-if="homeImageData !== undefined"
+    :imageData="homeImageData"
+  />
+
+  <TestimonialPane
+    v-if="homeImageData !== undefined"
+    class="hidden lg:flex"
+    :imageData="homeImageData"
+  />
+
+  <ContactPane />
+
+  <div class="text-center mt-16">
+    <p class="uppercase mb-10 text-xl font-medium">Follow me on Instagram</p>
+    <a
+      href="https://instagram.com/ctvphotovideo"
+      target="_blank"
+      class="hover:text-primary text-5xl"
+    >
+      @ctvphotovideo
+    </a>
+  </div>
 </template>
 
 <style scoped>

@@ -6,13 +6,6 @@
 
 @plugin "daisyui";
 
-/* #homeApp {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-} */
-
 @theme static {
   --color-primary: #b8462f;
   --color-secondary: #5a5a5a;
@@ -52,7 +45,7 @@
   }
 
   main {
-    @apply mt-10 min-h-screen;
+    @apply lg:mt-10 min-h-screen;
   }
 }
 

@@ -9,7 +9,7 @@ const heroSlideImages = ref(homeData);
 </script>
 
 <template>
-  <div className="md:mt-10">
+  <div className="lg:mt-10">
     <Swiper
       :slides-per-view="1"
       :space-between="30"

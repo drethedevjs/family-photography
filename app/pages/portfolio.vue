@@ -13,7 +13,7 @@ const capitalizeFirst = (str: string | undefined): string => {
 <template>
   <h1 class="hidden">Portfolio</h1>
   <div
-    class="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ctv-container mt-10"
+    class="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ctv-container lg:mt-10 mt-5"
   >
     <div v-for="image in imageData">
       <NuxtImg

@@ -74,3 +74,11 @@
 .ctv-container {
   @apply container mx-20;
 }
+
+.hide-on-mobile {
+  @apply hidden lg:flex;
+}
+
+.hide-on-desktop {
+  @apply lg:hidden flex;
+}

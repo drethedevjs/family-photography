@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import ContactPane from "@/components/ContactPane.vue";
 import FaqPoint from "@/components/FaqPoint.vue";
-import PriceBlurb from "@/components/PriceBlurb.vue";
 import imageHelper from "@/utils/ImageHelper";
-import { ref } from "vue";
+import InvestmentOfferings from "~/components/InvestmentOfferings.vue";
 import pageDescription from "~/data/pageDescription";
 
-const { data: tomfamData } = await imageHelper.getImageData("tomfam");
-const { data: investmentData } = await imageHelper.getImageData("investment");
-
-const imageData = ref(tomfamData);
-const stockData = ref(investmentData);
+const { data: imageData } = await imageHelper.getImageData("tomfam");
+const { data: stockData } = await imageHelper.getImageData("investment");
 
 const router = useRouter();
 const pageName = router.currentRoute.value.fullPath.replace("/", "");
@@ -42,19 +37,21 @@ if (import.meta.server) {
 <template>
   <main>
     <h1 class="hidden">Investment</h1>
-    <div id="investment-intro" class="flex flex-row mt-10">
-      <div class="w-1/2 mx-auto flex">
-        <p class="text-7xl text-right my-auto px-5 leading-20">
+    <div id="investment-intro" class="flex lg:flex-row flex-col lg:mt-10">
+      <div class="lg:w-1/2 mx-auto flex">
+        <p
+          class="lg:text-7xl text-2xl lg:text-right text-center lg:mb-0 mb-5 my-auto px-5 lg:leading-20"
+        >
           Invest in me as your
           <span class="text-primary font-medium">family photographer</span>. I
           provide an experience you will always remember!
         </p>
       </div>
-      <div class="w-1/2 px-20">
+      <div class="lg:w-1/2 lg:px-20">
         <NuxtImg
           v-if="imageData !== undefined"
           :src="imageHelper.getImageSrc(imageData, '2')"
-          class="rounded-lg"
+          class="lg:rounded-lg"
           format="avif"
           quality="80"
           provider="cloudflare"
@@ -69,70 +66,20 @@ if (import.meta.server) {
         </p>
       </div>
     </div>
-    <div id="offerings" class="flex mt-20 relative">
-      <div class="w-7/12 h-[1000px] relative">
-        <!-- Reynolds family -->
-        <NuxtImg
-          v-if="stockData !== undefined"
-          :src="imageHelper.getImageSrc(stockData, '1')"
-          class="w-full h-full object-cover"
-          format="avif"
-          quality="80"
-          provider="cloudflare"
-          placeholder
-        />
-        <div class="ctv-img-overlay"></div>
-        <div class="absolute inset-0 px-20 pt-20 flex flex-col justify-start">
-          <PriceBlurb textClass="text-white drop-shadow-2xl" :price="425">
-            <template #heading="{ textClass }">
-              <h2 :class="textClass" class="mt-10 normal-case mb-5">
-                Full Session
-              </h2>
-            </template>
-            <template #blurb="{ textClass }">
-              <p :class="textClass" class="text-xl mb-5 font-semibold">
-                This is a 60 minute session at any location that is great for
-                those who have one or more of the following: large family,
-                multiple outfits, and/or a lot of poses.
-              </p>
-            </template>
-          </PriceBlurb>
-        </div>
-      </div>
-      <div class="w-5/12 px-20">
-        <!-- McQuerry couple -->
-        <NuxtImg
-          v-if="stockData !== undefined"
-          :src="imageHelper.getImageSrc(stockData, '2')"
-          class="rounded-lg"
-          format="avif"
-          quality="80"
-          provider="cloudflare"
-          placeholder
-        />
-        <PriceBlurb textClass="text-secondary drop-shadow-2xl" :price="350">
-          <template #heading="{ textClass }">
-            <h2 :class="textClass" class="mt-10 normal-case mb-5">
-              Half Session
-            </h2>
-          </template>
-          <template #blurb="{ textClass }">
-            <p :class="textClass" class="text-xl mb-5">
-              This 30 minute session is for families who want to get a few quick
-              pictures for a special occasion or just because.
-            </p>
-          </template>
-        </PriceBlurb>
-      </div>
-    </div>
-    <div id="faq-intro" class="px-10 py-20 flex">
-      <div class="w-1/2">
-        <p class="text-4xl">
+    <InvestmentOfferings :stockData="stockData" />
+
+    <hr class="hide-on-desktop border-2 border-secondary my-5" />
+
+    <div id="faq-intro" class="px-10 lg:py-20 flex lg:flex-row flex-col">
+      <div class="lg:w-1/2 bg-primary lg:bg-transparent rounded-md lg:p-0 p-3">
+        <p
+          class="lg:text-4xl text-2xl text-center lg:text-left text-white lg:text-secondary"
+        >
           You probably have a few questions before taking a decision to book me.
         </p>
       </div>
-      <div class="w-1/2 flex items-center">
-        <p class="text-xl">
+      <div class="lg:w-1/2 flex items-center">
+        <p class="text-xl mt-4 lg:mt-0">
           I've listed out a quick outline of my process and gathered all the
           frequently asked questions and shared some answers that can help you
           decide whether I'm a good fit for you.
@@ -140,7 +87,7 @@ if (import.meta.server) {
       </div>
     </div>
     <div id="faq" class="flex">
-      <div class="w-4/12">
+      <div class="lg:w-4/12 hide-on-mobile">
         <NuxtImg
           v-if="imageData !== undefined"
           :src="imageHelper.getImageSrc(imageData, '1')"
@@ -149,13 +96,14 @@ if (import.meta.server) {
           provider="cloudflare"
           placeholder
           alt="Andre and his family standing on a wooden bridge."
+          class="object-cover"
         />
       </div>
-      <div class="w-8/12 px-20">
+      <div class="lg:w-8/12 w-full lg:px-20">
         <table class="table">
           <tbody>
             <tr>
-              <td class="text-8xl">01</td>
+              <td class="text-8xl hide-on-mobile">01</td>
               <td>
                 <FaqPoint>
                   <template #question>Where can I do a photo shoot?</template>
@@ -169,7 +117,7 @@ if (import.meta.server) {
               </td>
             </tr>
             <tr>
-              <td class="text-8xl">02</td>
+              <td class="text-8xl hide-on-mobile">02</td>
               <td>
                 <FaqPoint>
                   <template #question>What is your turnaround time?</template>
@@ -182,7 +130,7 @@ if (import.meta.server) {
               </td>
             </tr>
             <tr>
-              <td class="text-8xl">03</td>
+              <td class="text-8xl hide-on-mobile">03</td>
               <td>
                 <FaqPoint>
                   <template #question>Where can I take pictures?</template>
@@ -206,7 +154,7 @@ if (import.meta.server) {
 <style scoped>
 @reference "tailwindcss";
 
-h2 {
-  @apply text-5xl max-w-[500px];
-}
+/* #investment-intro {
+@apply
+} */
 </style>

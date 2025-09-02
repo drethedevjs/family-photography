@@ -12,10 +12,10 @@
 @reference "tailwindcss";
 
 #question {
-  @apply text-7xl mb-5 leading-20 text-orange-700;
+  @apply lg:text-7xl text-4xl lg:mb-5 mb-3 lg:leading-20 leading-11 text-orange-700;
 }
 
 #answer {
-  @apply text-3xl;
+  @apply lg:text-3xl text-xl;
 }
 </style>

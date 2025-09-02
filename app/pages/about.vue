@@ -62,8 +62,8 @@ if (import.meta.server) {
         </div>
       </div>
     </div>
-    <div id="about-body" class="flex p-20">
-      <div class="w-1/2 text-center grid grid-cols-1">
+    <div id="about-body">
+      <div class="lg:w-1/2 text-center grid grid-cols-1">
         <AboutPoint>
           <template #heading>Why Me?</template>
           <template #blurb>
@@ -97,7 +97,7 @@ if (import.meta.server) {
           </template>
         </AboutPoint>
       </div>
-      <div class="w-1/2 px-10 py-20">
+      <div class="w-1/2 px-10 py-20 hidden lg:flex">
         <NuxtImg
           v-if="imageData !== undefined"
           class="rounded-lg"
@@ -115,19 +115,22 @@ if (import.meta.server) {
 <style scoped>
 @reference "tailwindcss";
 
+#about-body {
+  @apply flex lg:p-20 p-8;
+}
 #intro-overlay {
-  @apply absolute inset-0 flex flex-col w-3/5 mx-auto text-white justify-center font-light drop-shadow-lg;
+  @apply absolute inset-0 flex flex-col lg:w-3/5 w-4/5 mx-auto text-white justify-center font-light drop-shadow-lg;
 }
 
 #color-overlay {
-  @apply absolute inset-0 bg-red-400 opacity-25;
+  @apply absolute inset-0 lg:bg-red-400 bg-red-600 opacity-25;
 }
 
 h1 {
-  @apply text-5xl mb-5;
+  @apply lg:text-5xl text-3xl mb-5;
 }
 
 p {
-  @apply text-white mb-16;
+  @apply text-white mb-16 md:font-thin font-semibold text-shadow-2xs;
 }
 </style>

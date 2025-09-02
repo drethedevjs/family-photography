@@ -42,7 +42,7 @@ if (import.meta.server) {
           provider="cloudinary"
           format="avif"
           :src="imageHelper.getCloudinaryImageSrc(andreImageData, 'home')"
-          class="object-cover lg:h-full lg:w-full size-40 place-self-center rounded-md shadow-md"
+        class="object-cover h-full w-full hide-on-mobile"
           alt="Andre smiling holding two cameras."
           placeholder
           quality="80"

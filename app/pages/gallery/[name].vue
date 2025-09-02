@@ -78,7 +78,11 @@ const { data: galleryImgs } = await imageHelper.getCloudinaryImageData(
     </Swiper>
 
     <NuxtLink to="/portfolio">
-      <button class="ctv-btn ml-5 mt-5">Back to Portfolio</button>
+      <button
+        class="ctv-btn ml-5 mt-5 lg:static fixed bottom-5 z-10 drop-shadow-xl"
+      >
+        Back to Portfolio
+      </button>
     </NuxtLink>
   </div>
 </template>

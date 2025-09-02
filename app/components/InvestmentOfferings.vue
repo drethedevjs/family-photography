@@ -39,7 +39,7 @@ const props = defineProps<{
               </p>
             </template>
           </PriceBlurb>
-          <hr class="border-1 border-primary my-5" />
+          <hr class="border-1 border-primary my-5 w-3/5" />
           <PriceBlurb textClass="drop-shadow-2xl" :price="350">
             <template #heading="{ textClass }">
               <h2 :class="textClass" class="normal-case mb-5">Half Session</h2>

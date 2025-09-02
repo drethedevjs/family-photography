@@ -51,7 +51,7 @@ if (import.meta.server) {
         <NuxtImg
           v-if="imageData !== undefined"
           :src="imageHelper.getImageSrc(imageData, '2')"
-          class="lg:rounded-lg"
+          class="md:rounded-lg place-self-center drop-shadow-xl"
           format="avif"
           quality="80"
           provider="cloudflare"
@@ -86,7 +86,7 @@ if (import.meta.server) {
         </p>
       </div>
     </div>
-    <div id="faq" class="flex">
+    <section id="faq" class="flex">
       <div class="lg:w-4/12 hide-on-mobile">
         <NuxtImg
           v-if="imageData !== undefined"
@@ -99,7 +99,7 @@ if (import.meta.server) {
           class="object-cover"
         />
       </div>
-      <div class="lg:w-8/12 w-full lg:px-20">
+      <div class="lg:w-8/12 w-full lg:px-0 md:px-20 px-3">
         <table class="table">
           <tbody>
             <tr>
@@ -146,15 +146,7 @@ if (import.meta.server) {
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
     <ContactPane />
   </main>
 </template>
-
-<style scoped>
-@reference "tailwindcss";
-
-/* #investment-intro {
-@apply
-} */
-</style>

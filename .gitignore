@@ -45,3 +45,4 @@ coverage
 *.tsbuildinfo
 
 .env
+bulk-rename.js

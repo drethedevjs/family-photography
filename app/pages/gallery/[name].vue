@@ -47,7 +47,6 @@ const { data: galleryImgs } = await imageHelper.getCloudinaryImageData(
     <!-- Desktop slider -->
     <Swiper
       :slidesPerView="'auto'"
-      :centeredSlides="true"
       :spaceBetween="30"
       :pagination="{
         clickable: true

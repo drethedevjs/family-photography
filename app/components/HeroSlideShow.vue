@@ -2,10 +2,11 @@
 import imageHelper from "@/utils/ImageHelper";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { ref } from "vue";
 
-const { data: homeData } = await imageHelper.getImageData("home:slide");
-const heroSlideImages = ref(homeData);
+// const { data: homeData } = await imageHelper.getImageData("home:slide");
+const { data: heroSlideImages } = await imageHelper.getCloudinaryImageDataByTag(
+  "slide-show"
+);
 </script>
 
 <template>
@@ -20,12 +21,16 @@ const heroSlideImages = ref(homeData);
       navigation
       :modules="[Navigation, Pagination]"
     >
-      <SwiperSlide :key="image.Key" v-for:="(image, idx) in heroSlideImages">
+      <SwiperSlide :key="idx" v-for:="(image, idx) in heroSlideImages">
         <div class="md:h-[600px] flex items-center">
           <NuxtImg
-            :src="imageHelper.createSrcLink(image)"
+            provider="cloudinary"
+            placeholder
+            quality="80"
+            :src="image.fileName"
             :alt="`A family enjoying their time at the park - ${idx + 1}`"
             className="w-full"
+            format="avif"
           />
         </div>
       </SwiperSlide>

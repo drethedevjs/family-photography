@@ -6,13 +6,13 @@ import imageHelper from "~/utils/ImageHelper";
 const route = useRoute();
 const { name: familyName } = route.params;
 
-if (!familyName) {
-  location.href = "/portfolio";
-}
+if (!familyName) location.href = "/portfolio";
 
 const { data: galleryImgs } = await imageHelper.getCloudinaryImageData(
   familyName?.toString()!
 );
+
+if (!galleryImgs.value?.length) await navigateTo("/portfolio");
 </script>
 <template>
   <div class="lg:mt-10 mt-5">

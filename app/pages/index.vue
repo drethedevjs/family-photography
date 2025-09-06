@@ -25,7 +25,7 @@ if (import.meta.server) {
       "https://cdn.ctvphotovideo.com/investment:augusta-ga-family-photographer-investment-1.jpg",
     ogLocale: "en_US",
     ogSiteName: "Capture the Vision Family Photography",
-    twitterCard: "summary",
+    twitterCard: "summary_large_image",
     robots: "index, follow"
   });
 }

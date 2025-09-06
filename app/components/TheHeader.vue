@@ -8,7 +8,7 @@ const logoImageData = ref(logoData);
 
 <template>
   <header>
-    <nav class="navbar bg-base-100">
+    <nav class="navbar bg-base-100 dark:bg-primary pb-5">
       <div class="navbar-start">
         <div class="dropdown">
           <div
@@ -87,6 +87,6 @@ const logoImageData = ref(logoData);
 @reference "tailwindcss";
 
 li {
-  @apply uppercase text-orange-700 hover:text-slate-700 transition;
+  @apply uppercase text-orange-700 dark:text-white hover:text-slate-700 transition;
 }
 </style>

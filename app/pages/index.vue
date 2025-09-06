@@ -33,7 +33,7 @@ if (import.meta.server) {
 
 <template>
   <HeroSlideShow />
-  <h1 class="hidden">Augusta, GA Family Photography</h1>
+  <h1 class="hidden">Augusta, GA Family Photographer</h1>
   <div class="flex md:flex-row flex-col">
     <div class="lg:w-2/5">
       <NuxtImg
@@ -52,14 +52,13 @@ if (import.meta.server) {
       <h3 class="text-primary">Andre Thomas</h3>
 
       <p class="about-txt">
-        I'm a family photographer in Augusta, GA who loves to create vibrant
-        family portraits for families all over. Because of this, my desire for
-        you is to get you to “have your moment”. That “moment” I'm referring to
-        is when you finally receive those beautiful portraits that you have been
-        anxiously waiting for. This moment doesn't just come once. Rather, it
-        gets to be relived throughout generations when your children and
-        grandchildren can look at those photographs and remember some
-        heart-warming past times.
+        I'm a family photographer who loves to create vibrant family portraits
+        for families in Augusta, Evans, North Augusta, and Aiken. My desire for
+        you is to get you to have your moment. That “moment” is when you finally
+        receive those beautiful portraits that you have been anxiously waiting
+        for. It doesn't just come once. It gets relived throughout generations
+        when your children and grandchildren can look at those photographs and
+        remember some heart-warming past times.
       </p>
 
       <NuxtLink to="about" class="about-btn">

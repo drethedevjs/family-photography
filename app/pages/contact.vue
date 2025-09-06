@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import ContactForm from "@/components/ContactForm.vue";
 import imageHelper from "@/utils/ImageHelper";
 import pageDescription from "~/data/pageDescription";
 
@@ -37,7 +36,7 @@ if (import.meta.server) {
 </script>
 <template>
   <h1 class="hidden">Contact</h1>
-  <div class="flex lg:flex-row flex-col">
+  <div class="flex lg:flex-row flex-col min-h-screen">
     <div class="lg:w-1/2">
       <NuxtImg
         v-if="andreImg !== undefined"
@@ -50,7 +49,9 @@ if (import.meta.server) {
       />
     </div>
     <div class="lg:w-1/2 lg:px-20 lg:pt-32 pt-10 px-5">
-      <h2 class="text-6xl lg:pb-20 pb-10 text-center lg:text-left text-primary">
+      <h2
+        class="lg:text-6xl text-5xl lg:pb-20 pb-5 text-center lg:text-left text-primary"
+      >
         Get In Touch
       </h2>
 
@@ -91,7 +92,7 @@ if (import.meta.server) {
         <span class="text-primary font-semibold">email address</span> above to
         reach me. I look forward to hearing from you!
       </p>
-      <ContactForm v-if="false" />
+      <!-- <ContactForm v-if="false" /> -->
     </div>
   </div>
 </template>

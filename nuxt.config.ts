@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
   gtag: {
-    id: "G-4B2FRT69SY"
+    id: process.env.NUXT_PUBLIC_GTAG_ID
   },
   image: {
     cloudflare: {

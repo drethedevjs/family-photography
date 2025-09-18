@@ -2,7 +2,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/ui", "@nuxtjs/sitemap"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@nuxtjs/sitemap",
+    "nuxt-gtag"
+  ],
   devtools: { enabled: true },
   compatibilityDate: "2025-07-15",
   typescript: {
@@ -11,6 +17,9 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()]
+  },
+  gtag: {
+    id: "G-4B2FRT69SY"
   },
   image: {
     cloudflare: {

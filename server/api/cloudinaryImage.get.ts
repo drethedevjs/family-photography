@@ -17,14 +17,12 @@ export default defineEventHandler(async event => {
   try {
     let result: CloudinarySearchResult;
     if (tag) {
-      console.info(`(Cloundinary) - Getting images with tag: ${tag}`);
       result = await cloudinary.search
         .expression(tag)
         .fields("tags")
         .max_results(30)
         .execute();
     } else {
-      console.info(`(Cloundinary) - Getting images from folder: ${folderName}`);
       result = await cloudinary.search
         .expression(`folder:${folderName}/*`)
         .sort_by("filename", "asc")

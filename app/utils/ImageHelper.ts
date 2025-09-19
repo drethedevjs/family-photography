@@ -1,8 +1,9 @@
 import type { _Object } from "@aws-sdk/client-s3";
+import type CtvImageData from "~/interfaces/ICtvImageData";
 
 const imageHelper = {
   async getImageData(prefix: string) {
-    return await useFetch("/api/image", {
+    return await useFetch<_Object[]>("/api/image", {
       query: { prefix },
       method: "GET",
       onResponse({ request, response, options }) {
@@ -17,7 +18,7 @@ const imageHelper = {
     folderName: string | null = null,
     tag: string | null = null
   ) {
-    return await useFetch("/api/cloudinaryImage", {
+    return await useFetch<CtvImageData[]>("/api/cloudinaryImage", {
       query: { folderName, tag },
       method: "GET",
       onResponse({ request, response, options }) {
@@ -29,7 +30,7 @@ const imageHelper = {
     });
   },
   async getCloudinaryImageDataByTag(tag: string) {
-    return await useFetch("/api/cloudinaryImage", {
+    return await useFetch<CtvImageData[]>("/api/cloudinaryImage", {
       query: { tag },
       method: "GET",
       onResponse({ request, response, options }) {

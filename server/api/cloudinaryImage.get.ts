@@ -17,12 +17,14 @@ export default defineEventHandler(async event => {
   try {
     let result: CloudinarySearchResult;
     if (tag) {
+      console.info(`(Cloundinary) - Getting images with tag: ${tag}`);
       result = await cloudinary.search
         .expression(tag)
         .fields("tags")
         .max_results(30)
         .execute();
     } else {
+      console.info(`(Cloundinary) - Getting images from folder: ${folderName}`);
       result = await cloudinary.search
         .expression(`folder:${folderName}/*`)
         .sort_by("filename", "asc")
@@ -42,10 +44,11 @@ export default defineEventHandler(async event => {
       fileName: resource.display_name ?? resource.filename ?? resource.public_id
     }));
   } catch (oops: any) {
-    console.error("Check this error: ", oops.error.message);
+    const err = oops.error?.message ?? oops;
+    console.error("Check this error: ", err);
     throw createError({
       statusCode: oops.error.http_code,
-      statusMessage: `Failed to fetch images: ${oops.error.message}`
+      statusMessage: `Failed to fetch images: ${err}`
     });
   }
 });

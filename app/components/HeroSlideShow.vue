@@ -3,7 +3,6 @@ import imageHelper from "@/utils/ImageHelper";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-// const { data: homeData } = await imageHelper.getImageData("home:slide");
 const { data: heroSlideImages } = await imageHelper.getCloudinaryImageDataByTag(
   "slide-show"
 );

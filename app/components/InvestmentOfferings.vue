@@ -3,7 +3,7 @@ import type { _Object } from "@aws-sdk/client-s3";
 import imageHelper from "~/utils/ImageHelper";
 
 const props = defineProps<{
-  stockData: _Object[];
+  stockData: _Object[] | undefined;
 }>();
 </script>
 

@@ -72,6 +72,7 @@ if (import.meta.server) {
           <a
             href="tel:5137650432"
             class="tracking-wider hover:underline text-primary"
+            @click="callMeTracker"
           >
             706-426-3022
           </a>
@@ -81,6 +82,7 @@ if (import.meta.server) {
           <a
             href="mailto:andre@ctvphotovideo.com"
             class="tracking-wider hover:underline text-primary"
+            @click="emailMeTracker"
           >
             andre@ctvphotovideo.com
           </a>

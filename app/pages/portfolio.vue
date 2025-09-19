@@ -25,7 +25,10 @@ const capitalizeFirst = (str: string | undefined): string => {
         quality="80"
         class="rounded-md drop-shadow-sm"
       />
-      <NuxtLink :to="'gallery/' + image.metadata.galleryName">
+      <NuxtLink
+        :to="'gallery/' + image.metadata.galleryName"
+        @click="galleryTracker(image.metadata.galleryName)"
+      >
         <div class="portfolio-card-container ring-primary">
           <p class="dark:text-primary">
             {{ capitalizeFirst(image.metadata.galleryName) }} Family

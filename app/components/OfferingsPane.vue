@@ -59,10 +59,10 @@ const props = defineProps<{
           <div
             class="flex bottom-0 absolute lg:static place-self-center md:place-self-auto"
           >
-            <NuxtLink to="contact">
+            <NuxtLink to="contact" @click="bookASessionTracker">
               <button class="ctv-btn session-btn">Book a Session</button>
             </NuxtLink>
-            <NuxtLink to="investment">
+            <NuxtLink to="investment" @click="offeringDetailsTracker">
               <button class="ctv-btn session-btn lg:ml-10 ml-5">Details</button>
             </NuxtLink>
           </div>

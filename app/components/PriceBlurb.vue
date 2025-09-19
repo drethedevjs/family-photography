@@ -8,7 +8,7 @@ defineProps({
   <slot name="heading" :textClass="textClass"></slot>
   <slot name="blurb" :textClass="textClass"></slot>
   <div class="flex items-center">
-    <NuxtLink to="contact">
+    <NuxtLink to="contact" @click="bookMeTracker(price?.toString())">
       <button class="ctv-btn mr-5">Book Me</button>
     </NuxtLink>
     <p class="uppercase font-medium text-2xl" :class="textClass">

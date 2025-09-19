@@ -18,7 +18,7 @@
       themselves!
     </p>
 
-    <NuxtLink to="/contact">
+    <NuxtLink to="/contact" @click="contactPaneTracker">
       <button class="ctv-btn">Contact</button>
     </NuxtLink>
   </section>

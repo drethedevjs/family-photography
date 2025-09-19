@@ -2,7 +2,6 @@ import EventCategory from "./EventCategories";
 
 const ctvEventTracker = (eventName: string, parameters: any = {}) => {
   if (import.meta.client) {
-    console.info(`${eventName} tracked!`);
     useTrackEvent(eventName, parameters);
   }
 };

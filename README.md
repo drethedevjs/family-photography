@@ -6,7 +6,9 @@ This is a family photography website built using Vue 3, TypeScript, and Tailwind
 
 ## 🚀 Tech Stack
 
-Vue 3 (Composition API + TypeScript)
+Nuxt 4
+
+TypeScript
 
 Vite (Fast build tool)
 
@@ -20,7 +22,6 @@ Vercel (Deployment)
 
 ## 🎨 Features
 
-- 🚨 NOT YET OPTIMIZED FOR MOBILE 🚨
 - ✅ Beautiful, responsive UI with Tailwind CSS
 - ✅ Photo gallery to showcase portfolio
 - ✅ Contact form for inquiries

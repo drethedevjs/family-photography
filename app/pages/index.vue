@@ -5,6 +5,8 @@ import imageHelper from "~/utils/ImageHelper";
 const { data: andreImageData } =
   await imageHelper.getCloudinaryImageData("andre");
 const { data: homeImageData } = await imageHelper.getImageData("home");
+const { data: offeringsImageData } =
+  await imageHelper.getCloudinaryImageDataByTag("offering");
 
 const { description, ogTitle } = pageDescription.find(
   pd => pd.pageName === "home"
@@ -68,7 +70,7 @@ if (import.meta.server) {
 
   <OfferingsPane
     v-if="homeImageData !== undefined"
-    :imageData="homeImageData"
+    :imageData="offeringsImageData"
   />
 
   <TestimonialPane

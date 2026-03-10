@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { _Object } from "@aws-sdk/client-s3";
+import type CtvImageData from "~/interfaces/ICtvImageData";
 import imageHelper from "~/utils/ImageHelper";
 
 const props = defineProps<{
-  imageData: _Object[];
+  imageData: CtvImageData[] | undefined;
 }>();
 </script>
 
@@ -12,11 +12,13 @@ const props = defineProps<{
     <div class="w-7/12 hidden place-items-center md:grid">
       <div class="w-3/4 my-32 mx-auto overflow-hidden relative">
         <NuxtImg
-          provider="cloudflare"
+          provider="cloudinary"
           format="avif"
-          :src="imageHelper.getImageSrc(props.imageData, '3')"
+          :src="
+            imageHelper.getCloudinaryImageSrc(props.imageData, 'weismueller')
+          "
           class="object-cover h-full w-full rounded-lg"
-          alt="A mom and dad walking while swinging their son between them."
+          alt="A mom and dad talking while walking away from the camera and their small kids lead them."
           placeholder
           quality="80"
         />
@@ -34,11 +36,13 @@ const props = defineProps<{
     <div class="md:w-5/12 bg-green-100 overflow-hidden">
       <div class="relative w-full h-full object-cover">
         <NuxtImg
-          provider="cloudflare"
+          provider="cloudinary"
           format="avif"
-          :src="imageHelper.getImageSrc(props.imageData, '1')"
+          :src="
+            imageHelper.getCloudinaryImageSrc(props.imageData, 'nithyanandam')
+          "
           class="w-full h-full object-cover"
-          alt="A mom and dad holding one another by the hips while their son and daughter in front of them."
+          alt="A dad holding baby girl in the air while mom hugs him from behind."
           placeholder
           quality="80"
         />

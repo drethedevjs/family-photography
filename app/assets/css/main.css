@@ -37,7 +37,7 @@
 
   h2,
   p {
-    @apply text-secondary;
+    @apply text-secondary dark:text-white;
   }
 
   p {

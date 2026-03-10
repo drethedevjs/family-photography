@@ -2,9 +2,8 @@
 import pageDescription from "@/data/pageDescription";
 import imageHelper from "~/utils/ImageHelper";
 
-const { data: andreImageData } = await imageHelper.getCloudinaryImageData(
-  "andre"
-);
+const { data: andreImageData } =
+  await imageHelper.getCloudinaryImageData("andre");
 const { data: homeImageData } = await imageHelper.getImageData("home");
 
 const { description, ogTitle } = pageDescription.find(
@@ -108,6 +107,6 @@ h3 {
 }
 
 .about-txt {
-  @apply mt-5 w-3/4 mx-auto;
+  @apply mt-5 w-3/4 mx-auto 2xl:text-5xl 2xl:leading-16;
 }
 </style>

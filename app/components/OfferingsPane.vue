@@ -91,7 +91,7 @@ const props = defineProps<{
 
 #lifestyle-overlay-text,
 #session-overlay-text {
-  @apply text-xl drop-shadow-lg text-center lg:text-left;
+  @apply text-5xl drop-shadow-lg text-center lg:text-left leading-16;
 }
 
 #lifestyle-overlay-heading,

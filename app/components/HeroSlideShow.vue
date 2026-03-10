@@ -20,7 +20,7 @@ const { data: heroSlideImages } =
       :modules="[Navigation, Pagination]"
     >
       <SwiperSlide v-for="(image, idx) in heroSlideImages" :key="idx">
-        <div class="w-full overflow-hidden h-[calc(100vh-218px)]">
+        <div class="w-full sm:h-[calc(100vh-218px)]">
           <NuxtImg
             provider="cloudinary"
             placeholder

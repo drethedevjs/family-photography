@@ -6,10 +6,10 @@
     <p class="text-primary">
       Powered by
       <a
-        href="https://csra-web-services.vercel.app/"
+        href="https://honeystack.solutions"
         target="_blank"
         class="text-secondary font-medium hover:text-primary"
-        >CSRA Web Services</a
+        >Honeystack</a
       >
     </p>
   </footer>

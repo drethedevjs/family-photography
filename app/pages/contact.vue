@@ -57,8 +57,8 @@ if (import.meta.server) {
 
       <p class="lg:mb-10 mb-5">
         If you have made it to this page then it must be that you're interested
-        in getting your family portraits done so I must express my sincerest
-        gratitude.
+        in scheduling your family portraits so I mush congratulate you on taking
+        the next step in documenting your family's fondest moments.
       </p>
       <p>
         Go ahead and click on one of the contact links below and I'll be sure to

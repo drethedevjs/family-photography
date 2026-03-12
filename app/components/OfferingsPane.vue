@@ -57,8 +57,8 @@ const props = defineProps<{
             Full & Half Sessions
           </h2>
           <p id="session-overlay-text">
-            Choose a session that suits your needs. One for a few pictures and
-            one for fuller families.
+            Choose a session that suits your needs. A shorter session. Maybe
+            longer.
           </p>
           <div
             class="flex bottom-0 absolute lg:static place-self-center md:place-self-auto"

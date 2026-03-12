@@ -80,11 +80,11 @@ if (import.meta.server) {
           <template #heading>My "Why"</template>
           <template #blurb>
             I always make it a point to keep photographing the times my wife and
-            I have together. We are four years into marriage and have a child on
-            the way. I like to document our lives together so that when my
-            children (and, eventually, grandchildren) arrive, I can invite them
-            into our experience with our pictures. So my “why” is simple: to
-            make sure all families have keepsakes for generations to come.
+            I have together. We are 11 years into marriage and have beautiful
+            kids. I like to document our lives together so that when my children
+            (and, eventually, grandchildren) arrive, I can invite them into our
+            experience with our pictures. So my “why” is simple: to make sure
+            all families have keepsakes for generations to come.
           </template>
         </AboutPoint>
         <AboutPoint>

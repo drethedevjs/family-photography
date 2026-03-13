@@ -34,7 +34,7 @@ const logoImageData = ref(logoData);
           </div>
           <ul
             tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-family-heading"
           >
             <li><NuxtLink to="/">Home</NuxtLink></li>
             <li><NuxtLink to="/about">About</NuxtLink></li>
@@ -45,48 +45,26 @@ const logoImageData = ref(logoData);
         </div>
       </div>
       <div class="navbar-center">
-        <div class="flex-col items-center hide-on-mobile">
-          <NuxtLink to="/">
-            <NuxtImg
-              v-if="logoImageData !== undefined"
-              :src="imageHelper.getLogoSrc(logoImageData, 'family')"
-              format="avif"
-              width="150"
-              height="150"
-              placeholder
-              alt="Capture the Vision logo"
-            />
-          </NuxtLink>
-          <ul class="gap-10 mt-4 menu-horizontal px-1 indent-0">
+        <div class="items-center hide-on-mobile">
+          <ul
+            class="gap-10 mt-4 menu-horizontal px-1 indent-0 font-family-heading"
+          >
             <li><NuxtLink to="/about">About</NuxtLink></li>
             <li><NuxtLink to="/investment">Investment</NuxtLink></li>
+            <li id="home-logo" class="font-family-brand text-4xl! text-center">
+              <NuxtLink to="/">Honey & Flare </NuxtLink>
+            </li>
             <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
             <li><NuxtLink to="/contact">Contact</NuxtLink></li>
           </ul>
         </div>
         <div class="flex lg:hidden">
-          <NuxtLink to="/">
-            <NuxtImg
-              v-if="logoImageData !== undefined"
-              :src="imageHelper.getLogoSrc(logoImageData, 'simple')"
-              format="avif"
-              width="50"
-              height="50"
-              placeholder
-              alt="Capture the Vision logo"
-            />
-          </NuxtLink>
+          <p id="home-logo" class="font-family-brand text-4xl text-center">
+            <NuxtLink to="/">Honey & Flare</NuxtLink>
+          </p>
         </div>
       </div>
       <div class="navbar-end"></div>
     </nav>
   </header>
 </template>
-
-<style scoped>
-@reference "tailwindcss";
-
-li {
-  @apply uppercase text-orange-700 dark:text-white hover:text-slate-700 transition;
-}
-</style>

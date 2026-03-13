@@ -1,7 +1,7 @@
 <template>
   <footer>
     <p class="text-primary">
-      Copyright © {{ new Date().getFullYear() }} Capture the Vision, LLC
+      Copyright © {{ new Date().getFullYear() }} Honey & Flare Photography
     </p>
     <p class="text-primary">
       Powered by

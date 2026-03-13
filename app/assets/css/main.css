@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap");
+
 @import "tailwindcss";
 @import "swiper/css";
 @import "swiper/css/navigation";
@@ -7,12 +9,25 @@
 @plugin "daisyui";
 
 @theme static {
-  --color-primary: #b8462f;
-  --color-secondary: #5a5a5a;
+  /* Colors */
+  --color-primary: #b8462f; /* Rich Terracotta - keeping your current primary */
+  --color-secondary: #5a5a5a; /* Charcoal - keeping your current secondary */
+  --color-honey: #d4a574; /* Honey Gold */
+  --color-amber: #e8b75d; /* Warm Amber */
+  --color-sage: #8b9d83; /* Sage Green */
+  --color-cream: #f5f1e8; /* Warm Cream */
+  --color-charcoal: #3a3a3a; /* Deep Charcoal */
+  --color-blush: #e8c5b5; /* Soft Blush */
+
+  /* Fonts */
+  --font-family-brand: "Cormorant Garamond", serif;
+  --font-family-heading: "Montserrat", sans-serif;
+  --font-family-body: "Lato", sans-serif;
 }
 
 :root {
   --ui-color-primary-500: #b8462f;
+  --ui-color-secondary-500: #5a5a5a;
 }
 
 @layer components {
@@ -21,18 +36,39 @@
   }
 
   .ctv-btn {
-    @apply font-light btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase md:px-14 md:py-8 px-10 py-4 tracking-wider;
+    @apply btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase md:px-14 md:py-8 px-10 py-4 tracking-wider;
   }
 
   .ctv-img-overlay {
     @apply absolute inset-0 bg-black opacity-25;
+  }
+
+  /* New Honeyflare utility classes */
+  .honey-accent {
+    @apply text-honey;
+  }
+
+  .honey-bg {
+    @apply bg-honey;
+  }
+
+  .amber-glow {
+    @apply text-amber;
+  }
+
+  .sage-text {
+    @apply text-sage;
+  }
+
+  .cream-bg {
+    @apply bg-cream;
   }
 }
 
 @layer base {
   h2,
   h3 {
-    @apply uppercase;
+    @apply font-family-brand uppercase;
   }
 
   h2,
@@ -41,7 +77,7 @@
   }
 
   p {
-    @apply lg:leading-10 lg:text-3xl text-xl font-thin tracking-wider dark:text-white text-secondary;
+    @apply lg:leading-10 lg:text-3xl text-xl tracking-wider dark:text-white text-secondary font-family-body;
   }
 
   main {
@@ -74,4 +110,12 @@
 
 .hide-on-desktop {
   @apply lg:hidden flex;
+}
+
+li {
+  @apply text-orange-700 dark:text-white hover:text-slate-700 dark:hover:text-blush transition place-self-center text-xl;
+}
+
+#home-logo {
+  @apply dark:hover:text-white;
 }

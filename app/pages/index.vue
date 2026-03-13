@@ -88,7 +88,7 @@ if (import.meta.server) {
       target="_blank"
       class="hover:text-primary text-5xl"
     >
-      @ctvphotovideo
+      @honeyandflare
     </a>
   </div>
 </template>

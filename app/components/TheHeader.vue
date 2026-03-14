@@ -34,6 +34,7 @@ const logoImageData = ref(logoData);
           </div>
           <ul
             tabindex="0"
+            id="mobile-header"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-family-heading"
           >
             <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -47,11 +48,15 @@ const logoImageData = ref(logoData);
       <div class="navbar-center">
         <div class="items-center hide-on-mobile">
           <ul
+            id="main-header"
             class="gap-10 mt-4 menu-horizontal px-1 indent-0 font-family-heading"
           >
             <li><NuxtLink to="/about">About</NuxtLink></li>
             <li><NuxtLink to="/investment">Investment</NuxtLink></li>
-            <li id="home-logo" class="font-family-brand text-4xl! text-center">
+            <li
+              id="home-logo"
+              class="font-family-brand text-4xl! text-center mx-16"
+            >
               <NuxtLink to="/">Honey & Flare </NuxtLink>
             </li>
             <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
@@ -59,8 +64,11 @@ const logoImageData = ref(logoData);
           </ul>
         </div>
         <div class="flex lg:hidden">
-          <p id="home-logo" class="font-family-brand text-4xl text-center">
-            <NuxtLink to="/">Honey & Flare</NuxtLink>
+          <p
+            id="home-logo-mobile"
+            class="font-family-brand text-4xl text-center"
+          >
+            <NuxtLink to="/" class="!text-primary">Honey & Flare</NuxtLink>
           </p>
         </div>
       </div>

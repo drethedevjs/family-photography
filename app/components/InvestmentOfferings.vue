@@ -28,7 +28,7 @@ const props = defineProps<{
           <PriceBlurb textClass="drop-shadow-2xl" :price="425">
             <template #heading="{ textClass }">
               <h2 :class="textClass" class="mt-10 normal-case mb-5">
-                Full Session
+                Full Flare
               </h2>
             </template>
             <template #blurb="{ textClass }">
@@ -67,16 +67,16 @@ const props = defineProps<{
           provider="cloudflare"
           placeholder
         />
-        <div class="ctv-img-overlay"></div>
+        <div class="nf-img-overlay"></div>
         <div class="absolute inset-0 px-20 pt-20 flex flex-col justify-start">
           <PriceBlurb textClass="text-white drop-shadow-2xl" :price="425">
             <template #heading="{ textClass }">
               <h2 :class="textClass" class="mt-10 normal-case mb-5">
-                Full Session
+                Full Flare
               </h2>
             </template>
             <template #blurb="{ textClass }">
-              <p :class="textClass" class="text-xl mb-5 font-semibold">
+              <p :class="textClass" class="text-2xl mb-5">
                 This is a 60 minute session at any location that is great for
                 those who have one or more of the following: large family,
                 multiple outfits, and/or a lot of poses.

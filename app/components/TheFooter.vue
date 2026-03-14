@@ -1,7 +1,8 @@
 <template>
   <footer>
     <p class="text-primary">
-      Copyright © {{ new Date().getFullYear() }} Honey & Flare Photography
+      Copyright © {{ new Date().getFullYear() }} Honey & Flare Family
+      Photography
     </p>
     <p class="text-primary">
       Powered by

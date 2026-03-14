@@ -19,7 +19,7 @@
     </p>
 
     <NuxtLink to="/contact" @click="contactPaneTracker">
-      <button class="ctv-btn">Contact</button>
+      <button class="nf-btn">Contact</button>
     </NuxtLink>
   </section>
 </template>

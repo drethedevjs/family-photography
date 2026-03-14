@@ -158,7 +158,7 @@ const submitForm = handleSubmit(
         <button
           type="submit"
           :disabled="isSubmitting"
-          class="ctv-btn mt-5 ml-auto"
+          class="nf-btn mt-5 ml-auto"
         >
           Send
         </button>

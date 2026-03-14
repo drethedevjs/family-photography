@@ -78,7 +78,7 @@ if (!galleryImgs.value?.length) await navigateTo("/portfolio");
 
     <NuxtLink to="/portfolio">
       <button
-        class="ctv-btn ml-5 mt-5 lg:static fixed bottom-5 z-10 drop-shadow-xl"
+        class="nf-btn ml-5 mt-5 lg:static fixed bottom-5 z-10 drop-shadow-xl"
       >
         Back to Portfolio
       </button>

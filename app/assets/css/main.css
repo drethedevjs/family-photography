@@ -31,16 +31,20 @@
 }
 
 @layer components {
-  .ctv-border {
+  .nf-border {
     @apply border-4 border-primary;
   }
 
-  .ctv-btn {
+  .nf-btn {
     @apply btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase md:px-14 md:py-8 px-10 py-4 tracking-wider;
   }
 
-  .ctv-img-overlay {
-    @apply absolute inset-0 bg-black opacity-25;
+  .nf-btn-sm {
+    @apply btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase md:px-5 md:py-4 px-5 py-2 tracking-wider;
+  }
+
+  .nf-img-overlay {
+    @apply absolute inset-0 bg-black opacity-35;
   }
 
   /* New Honeyflare utility classes */
@@ -66,9 +70,10 @@
 }
 
 @layer base {
+  h1,
   h2,
   h3 {
-    @apply font-family-brand uppercase;
+    @apply font-family-heading;
   }
 
   h2,
@@ -77,7 +82,7 @@
   }
 
   p {
-    @apply lg:leading-10 lg:text-3xl text-xl tracking-wider dark:text-white text-secondary font-family-body;
+    @apply lg:leading-10 lg:text-3xl tracking-wider dark:text-white text-secondary font-family-body;
   }
 
   main {
@@ -100,7 +105,8 @@
   @apply md:size-5 bg-primary ring-1 ring-white;
 }
 
-.ctv-container {
+.ctv-container,
+.hf-container {
   @apply container lg:px-20 mx-auto px-2;
 }
 
@@ -112,10 +118,24 @@
   @apply lg:hidden flex;
 }
 
-li {
+#main-header > li {
   @apply text-orange-700 dark:text-white hover:text-slate-700 dark:hover:text-blush transition place-self-center text-xl;
 }
 
-#home-logo {
-  @apply dark:hover:text-white;
+#home-logo,
+#home-logo-mobile {
+  @apply dark:hover:text-white hover:text-primary;
+}
+
+#packages .package-header {
+  @apply text-3xl text-primary mb-3;
+}
+#packages .package-text {
+  @apply text-xl leading-normal my-3;
+}
+#packages .package-list {
+  @apply text-xl list-disc list-inside indent-5 text-charcoal;
+}
+#packages .package-price {
+  @apply text-3xl text-honey mb-0;
 }

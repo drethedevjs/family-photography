@@ -13,6 +13,6 @@
 @reference "tailwindcss";
 
 h2 {
-  @apply text-5xl mb-5;
+  @apply lg:text-5xl lg:mb-5 text-3xl mb-3;
 }
 </style>

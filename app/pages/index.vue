@@ -63,7 +63,7 @@ if (import.meta.server) {
       </p>
 
       <NuxtLink to="about" class="about-btn" @click="tellMeMoreTracker">
-        <button class="ctv-btn">Tell Me More</button>
+        <button class="nf-btn">Tell Me More</button>
       </NuxtLink>
     </div>
   </div>

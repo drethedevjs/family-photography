@@ -100,7 +100,7 @@ if (import.meta.server) {
       <div class="w-1/2 px-10 py-20 hidden lg:flex">
         <NuxtImg
           v-if="imageData !== undefined"
-          class="rounded-lg"
+          class="rounded-lg object-cover"
           :src="imageHelper.getImageSrc(imageData, '3')"
           format="avif"
           quality="80"

@@ -72,7 +72,7 @@ if (import.meta.server) {
   <div id="faq-intro" class="px-10 lg:py-20 flex lg:flex-row flex-col">
     <div class="lg:w-1/2 bg-primary lg:bg-transparent rounded-md lg:p-0 p-3">
       <p
-        class="lg:text-4xl text-2xl text-center lg:text-left text-white lg:text-secondary"
+        class="lg:text-4xl text-2xl text-center lg:text-left text-cream lg:text-secondary dark:lg:text-cream"
       >
         You probably have a few questions before taking a decision to book me.
       </p>

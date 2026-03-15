@@ -130,12 +130,19 @@
 #packages .package-header {
   @apply text-3xl text-primary mb-3;
 }
+
 #packages .package-text {
   @apply text-xl leading-normal my-3;
 }
+
 #packages .package-list {
-  @apply text-xl list-disc list-inside indent-5 text-charcoal;
+  @apply text-xl list-disc list-outside ml-5 text-charcoal dark:text-cream;
 }
+
 #packages .package-price {
   @apply text-3xl text-honey mb-0;
+}
+
+#packages .package-card {
+  @apply h-full border-primary border-2 p-10 rounded-2xl;
 }

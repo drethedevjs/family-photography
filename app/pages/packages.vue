@@ -46,10 +46,10 @@ if (import.meta.server) {
       id="packages"
       class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center"
     >
-      <div class="border-primary border-2 p-10 rounded-2xl">
+      <div class="package-card">
         <h2 class="package-header">Honey Half</h2>
         <p class="package-price text-3xl font-brand text-honey mb-4">$350</p>
-        <p class="text-base">30 minutes</p>
+        <p class="text-base">30 minutes sunset or sunrise</p>
         <p class="package-text">
           Perfect for families who want beautiful portraits without a long time
           commitment. We'll capture authentic moments during the most beautiful
@@ -57,17 +57,19 @@ if (import.meta.server) {
         </p>
         <ul class="package-list">
           <li>30 minutes of golden hour photography</li>
-          <li>One outdoor location of your choice</li>
+          <li>1 outdoor location of your choice</li>
+          <li>5 family members included</li>
+          <li>$15 each additional family member</li>
           <li>20 professionally edited high-resolution images</li>
           <li>Online gallery for viewing and sharing</li>
           <li>Print release for personal use</li>
-          <li>Wardrobe and location guidance</li>
+          <li>Additional images are available for purchase</li>
         </ul>
       </div>
-      <div class="border-primary border-2 p-10 rounded-2xl">
+      <div class="package-card">
         <h2 class="package-header">Full Flare</h2>
         <p class="package-price">$425</p>
-        <p class="text-base">60 minutes</p>
+        <p class="text-base">60 minutes sunset or sunrise</p>
         <p class="package-text">
           Our most popular session. More time means we can relax, explore
           multiple spots, and really capture your family's unique dynamic and
@@ -76,11 +78,12 @@ if (import.meta.server) {
         <ul class="package-list">
           <li>60 minutes of golden hour photography</li>
           <li>1-2 outdoor locations for variety</li>
+          <li>5 family members included</li>
+          <li>$15 each additional family member</li>
           <li>40 professionally edited high-resolution images</li>
           <li>Online gallery for viewing and sharing</li>
           <li>Print release for personal use</li>
-          <li>Wardrobe and location guidance</li>
-          <li>Complimentary styled 5x7 print set (5 images)</li>
+          <li>Additional images are available for purchase</li>
         </ul>
       </div>
     </div>

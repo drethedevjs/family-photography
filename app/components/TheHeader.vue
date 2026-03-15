@@ -68,7 +68,9 @@ const logoImageData = ref(logoData);
             id="home-logo-mobile"
             class="font-family-brand text-4xl text-center"
           >
-            <NuxtLink to="/" class="!text-primary">Honey & Flare</NuxtLink>
+            <NuxtLink to="/" class="text-primary dark:text-cream">
+              Honey & Flare</NuxtLink
+            >
           </p>
         </div>
       </div>

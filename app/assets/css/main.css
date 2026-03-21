@@ -82,7 +82,7 @@
   }
 
   p {
-    @apply lg:leading-10 lg:text-3xl tracking-wider dark:text-white text-secondary font-family-body;
+    @apply lg:leading-9 lg:text-2xl tracking-wider dark:text-white text-secondary font-family-body;
   }
 
   main {
@@ -119,7 +119,7 @@
 }
 
 #main-header > li {
-  @apply text-orange-700 dark:text-white hover:text-slate-700 dark:hover:text-blush transition place-self-center text-xl;
+  @apply text-primary dark:text-white hover:text-slate-700 dark:hover:text-blush transition place-self-center text-lg;
 }
 
 #home-logo,

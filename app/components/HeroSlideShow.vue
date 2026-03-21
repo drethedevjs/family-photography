@@ -5,6 +5,21 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 
 const { data: heroSlideImages } =
   await imageHelper.getCloudinaryImageDataByTag("slide-show");
+
+const headerHeight = ref(0);
+
+onMounted(() => {
+  const headerEl = document.getElementsByTagName("nav");
+  if (headerEl[0]) {
+    headerHeight.value = headerEl[0].offsetHeight;
+  }
+});
+
+const slideHeightClass = computed(() => {
+  return headerHeight.value
+    ? `h-auto lg:h-[calc(100vh-${headerHeight.value}px)]`
+    : "h-auto lg:h-screen";
+});
 </script>
 
 <template>
@@ -20,14 +35,14 @@ const { data: heroSlideImages } =
       :modules="[Navigation, Pagination]"
     >
       <SwiperSlide v-for="(image, idx) in heroSlideImages" :key="idx">
-        <div class="w-full sm:h-[calc(100vh-218px)]">
+        <div class="w-full overflow-hidden" :class="slideHeightClass">
           <NuxtImg
             provider="cloudinary"
             placeholder
             quality="80"
             :src="image.fileName"
             :alt="`A family enjoying their time at the park - ${idx + 1}`"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-contain lg:object-cover"
             format="avif"
           />
         </div>

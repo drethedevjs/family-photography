@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import imageHelper from "~/utils/ImageHelper";
-
-const { data: logoData } = await imageHelper.getImageData("logo");
-const logoImageData = ref(logoData);
+const colorMode = useColorMode();
+const logoSrc = computed(() =>
+  colorMode.value === "dark"
+    ? "/images/logo/hf-logo-wht.png"
+    : "/images/logo/hf-logo-orange.png"
+);
 </script>
 
 <template>
@@ -53,11 +54,16 @@ const logoImageData = ref(logoData);
           >
             <li><NuxtLink to="/about">About</NuxtLink></li>
             <li><NuxtLink to="/investment">Investment</NuxtLink></li>
-            <li
-              id="home-logo"
-              class="font-family-brand text-4xl! text-center mx-16"
-            >
-              <NuxtLink to="/">Honey & Flare </NuxtLink>
+            <li id="home-logo" class="text-center mx-16">
+              <NuxtLink to="/">
+                <NuxtImg
+                  :src="logoSrc"
+                  width="150px"
+                  format="avif"
+                  quality="80"
+                  placeholder
+                ></NuxtImg>
+              </NuxtLink>
             </li>
             <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
             <li><NuxtLink to="/contact">Contact</NuxtLink></li>

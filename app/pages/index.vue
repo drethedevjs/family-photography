@@ -53,13 +53,15 @@ if (import.meta.server) {
       <h3 class="text-primary">Andre Thomas</h3>
 
       <p class="about-txt">
-        I'm a family photographer who loves to create vibrant family portraits
-        for families in Augusta, Evans, North Augusta, and Aiken. My desire for
-        you is to get you to have your moment. That “moment” is when you finally
-        receive those beautiful portraits that you have been anxiously waiting
-        for. It doesn't just come once. It gets relived throughout generations
-        when your children and grandchildren can look at those photographs and
-        remember some heart-warming past times.
+        Some photographers capture smiles. I capture evidence. Evidence that
+        your family laughed like this. That your kids were this small. That
+        golden afternoon light fell exactly this way on exactly this day.
+      </p>
+      <p class="about-txt">
+        I photograph families from Augusta to Aiken during golden hour because
+        that's when everything — the light, the mood, the realness — lines up.
+        The result isn't just a portrait. It's the first page of an archive your
+        grandchildren will open someday and feel like they know you.
       </p>
 
       <NuxtLink to="about" class="about-btn" @click="tellMeMoreTracker">
@@ -109,6 +111,6 @@ h3 {
 }
 
 .about-txt {
-  @apply mt-5 w-3/4 mx-auto 2xl:text-5xl 2xl:leading-16;
+  @apply mt-5 w-3/4 mx-auto 2xl:text-3xl;
 }
 </style>

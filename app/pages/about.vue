@@ -51,10 +51,12 @@ if (import.meta.server) {
         <div id="intro-overlay">
           <h1>Augusta, GA Family Photographer</h1>
           <p>
-            Hi! Thank you for visiting. I have been creating family portraits
-            for quite some time now and I must say that I have loved every
-            second of it. The best part? Providing people with something that
-            they will treasure for years.
+            I've spent years photographing families across the Augusta area —
+            and the moment that never gets old is the one when a parent sees
+            their gallery for the first time. Not because the images are
+            beautiful (though they are). Because they suddenly see it: proof
+            that this season of life actually happened. Proof that it was warm,
+            and real, and worth preserving.
           </p>
           <small class="tracking-widest uppercase animate-pulse"
             >scroll to continue</small
@@ -65,35 +67,36 @@ if (import.meta.server) {
     <div id="about-body">
       <div class="lg:w-1/2 text-center grid grid-cols-1">
         <AboutPoint>
-          <template #heading>Why Me?</template>
+          <template #heading>What You Can Expect</template>
           <template #blurb>
-            I have come to find that my success doesn't only come from great
-            photographs, but also with my personal touch. My aim is to make sure
-            that all families are comfortable in front of the camera. I have
-            repeat clients because they enjoy their pictures and they enjoy me.
-            Being on the opposite end of the lens isn't easy for anyone so I
-            make it a point to make sure they are very comfortable and, more
-            importantly, that they have enjoy themselves!
+            Being in front of a camera is awkward for almost everyone. I know
+            this because I've been on that side too. So before we ever talk
+            about light or location, I focus on making your family feel like
+            themselves. Loose. Comfortable. Occasionally laughing at something
+            ridiculous. That's when the best images happen — not when everyone's
+            holding their breath waiting for the shutter click. My clients come
+            back not just because they love their photos. They come back because
+            they actually had a good time.
           </template>
         </AboutPoint>
         <AboutPoint>
           <template #heading>My "Why"</template>
           <template #blurb>
-            I always make it a point to keep photographing the times my wife and
-            I have together. We are 11 years into marriage and have beautiful
-            kids. I like to document our lives together so that when my children
-            (and, eventually, grandchildren) arrive, I can invite them into our
-            experience with our pictures. So my “why” is simple: to make sure
-            all families have keepsakes for generations to come.
+            My wife and I are eleven years into marriage with beautiful kids. I
+            photograph our life together so that when our grandchildren arrive —
+            children I may never meet — they can open an album and feel like
+            they know exactly who we were. That's the real reason I do this for
+            other families. Because someday, your kids will show your grandkids
+            these photos. And everyone in the room will feel something. That's
+            the heirloom. That's the point.
           </template>
         </AboutPoint>
         <AboutPoint>
           <template #heading>Let's Meet</template>
           <template #blurb>
-            So go ahead and book now so that you can have your very own family
-            photographer in Augusta, GA, Aiken, SC or in the surrounding
-            counties/cities. Let's meet to take some great portraits so that you
-            can have your moment.
+            Augusta. Evans. Aiken. North Augusta. Wherever golden hour finds
+            your family — I'll be there. Sessions start at $350. Spots fill fast
+            in spring and fall.
           </template>
         </AboutPoint>
       </div>

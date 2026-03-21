@@ -4,18 +4,16 @@
   >
     <h3 class="font-light tracking-widest">Let's Get Together</h3>
     <h2 class="text-primary">Contact Me</h2>
-    <p class="text-base lg:mb-16 mb-5 font-medium tracking-widest">
-      Document your family history
+    <p class="text-2xl lg:mb-16 mb-5 font-medium tracking-widest">
+      Natural light. Timeless warmth.
     </p>
 
-    <p class="text-center lg:mb-24 mb-10">
-      I have come to find that my success doesn't only come from great
-      photographs, but also with my personal touch. My aim is to make sure that
-      all families are comfortable in front of the camera. I have repeat clients
-      because they enjoy their pictures and they enjoy me. Being on the opposite
-      end of the lens isn't easy for anyone so I make it a point to make sure
-      they are very comfortable and, more importantly, that they have enjoy
-      themselves!
+    <p class="text-center mb-10">
+      Great photographs start with comfort. If your kids are stiff and you're
+      nervous, I can feel it through the lens — and so can the camera. Before
+      the session even starts, my job is to make sure you feel like yourself.
+      That's why families come back: not just because they love their images,
+      but because they actually enjoyed the experience of making them.
     </p>
 
     <NuxtLink to="/contact" @click="contactPaneTracker">

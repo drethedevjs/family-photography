@@ -9,6 +9,7 @@ const pageName = router.currentRoute.value.fullPath.replace("/", "");
 const { description, ogTitle } = pageDescription.find(
   pd => pd.pageName === pageName
 )!;
+
 useHead({
   title: `${pageName.toUpperCase()} | Capture the Vision`,
   meta: [{ name: "description", content: description }]
@@ -34,6 +35,7 @@ if (import.meta.server) {
   });
 }
 </script>
+
 <template>
   <h1 class="hidden">Contact</h1>
   <div class="flex lg:flex-row flex-col min-h-screen">
@@ -50,22 +52,22 @@ if (import.meta.server) {
     </div>
     <div class="lg:w-1/2 lg:px-20 lg:pt-32 pt-10 px-5">
       <h2
-        class="lg:text-6xl text-5xl lg:pb-20 pb-5 text-center lg:text-left text-primary"
+        class="lg:text-6xl text-5xl lg:pb-10 pb-5 text-center lg:text-left text-primary"
       >
         Get In Touch
       </h2>
 
       <p class="lg:mb-10 mb-5">
-        If you have made it to this page then it must be that you're interested
-        in scheduling your family portraits so I mush congratulate you on taking
-        the next step in documenting your family's fondest moments.
+        You made it here. That means your family's story is about to get
+        documented — and that's worth celebrating.
       </p>
       <p>
-        Go ahead and click on one of the contact links below and I'll be sure to
-        connect with you as soon as possible. Talk soon!
+        Fill out the form below and I'll be in touch within 24 hours. We'll talk
+        about your family, the light, and what kind of moment we're going to
+        make together.
       </p>
       <div
-        class="grid lg:grid-cols-2 grid-cols-1 place-items-start text-secondary lg:pt-16 pt-8 uppercase"
+        class="grid lg:grid-cols-2 grid-cols-1 place-items-start text-secondary lg:pt-16 pt-8 uppercase mb-10"
       >
         <p class="text-xl font-semibold mb-3">
           tel:
@@ -88,13 +90,8 @@ if (import.meta.server) {
           </a>
         </p>
       </div>
-      <p class="mt-16 hidden">
-        The contact form is currently out of commission. Please use the
-        <span class="text-primary font-semibold">phone number</span> or
-        <span class="text-primary font-semibold">email address</span> above to
-        reach me. I look forward to hearing from you!
-      </p>
       <!-- <ContactForm v-if="false" /> -->
+      <SproutForm />
     </div>
   </div>
 </template>

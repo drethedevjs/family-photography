@@ -71,9 +71,9 @@ if (import.meta.server) {
         <p class="package-price">$425</p>
         <p class="text-base">60 minutes sunset or sunrise</p>
         <p class="package-text">
-          Our most popular session. More time means we can relax, explore
-          multiple spots, and really capture your family's unique dynamic and
-          story.
+          Extra time and flexibility for families with young kids, multiple
+          locations in mind, or anyone who wants room to breathe during their
+          session.
         </p>
         <ul class="package-list">
           <li>60 minutes of golden hour photography</li>

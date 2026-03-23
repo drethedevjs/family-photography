@@ -13,7 +13,7 @@ const capitalizeFirst = (str: string | undefined): string => {
 <template>
   <h1 class="hidden">Portfolio</h1>
   <div
-    class="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ctv-container lg:mt-10 mt-5"
+    class="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 hf-container lg:mt-10 mt-5"
   >
     <div v-for="image in imageData">
       <NuxtImg
@@ -30,7 +30,7 @@ const capitalizeFirst = (str: string | undefined): string => {
         @click="galleryTracker(image.metadata.galleryName)"
       >
         <div class="portfolio-card-container ring-primary">
-          <p class="dark:text-primary">
+          <p class="dark:text-primary font-family-heading text-2xl">
             {{ capitalizeFirst(image.metadata.galleryName) }} Family
           </p>
           <span class="hover:text-primary dark:text-secondary text-base">

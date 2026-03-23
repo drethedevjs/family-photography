@@ -34,7 +34,7 @@ if (import.meta.server) {
 </script>
 <template>
   <div class="hf-container">
-    <h1 class="text-4xl text-center mb-10 mt-5">Investment</h1>
+    <h1 class="text-4xl text-center mb-10 mt-5">Packages</h1>
     <p class="mb-10 text-xl">
       Your family will only be this age once. Let's capture the warmth, the
       laughter, and the honey-sweet chaos of your family life right now—moments

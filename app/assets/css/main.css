@@ -107,9 +107,8 @@
   @apply md:size-5! bg-primary! ring-1 ring-white;
 }
 
-.ctv-container,
 .hf-container {
-  @apply container lg:px-20 mx-auto px-2;
+  @apply container lg:px-20 mx-auto px-5;
 }
 
 .hide-on-mobile {

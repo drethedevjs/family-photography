@@ -28,6 +28,8 @@
 :root {
   --ui-color-primary-500: #b8462f;
   --ui-color-secondary-500: #5a5a5a;
+  --swiper-theme-color: #b8462f;
+  --swiper-navigation-size: 50px;
 }
 
 @layer components {
@@ -92,17 +94,17 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  @apply md:flex hidden drop-shadow-2xl text-primary bg-white/50 hover:bg-white/100 rounded-full p-8 hover:ring-primary hover:ring-2;
+  @apply md:flex hidden text-primary bg-white/50 hover:bg-white/100 rounded-full p-3 hover:ring-primary hover:ring-2;
 }
 .swiper-button-next {
   @apply mr-10;
 }
 .swiper-button-prev {
-  @apply ml-10;
+  @apply ml-10!;
 }
 
 .swiper-pagination-bullet {
-  @apply md:size-5 bg-primary ring-1 ring-white;
+  @apply md:size-5! bg-primary! ring-1 ring-white;
 }
 
 .ctv-container,

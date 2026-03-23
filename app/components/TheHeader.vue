@@ -16,11 +16,17 @@ const logoSrc = computed(() =>
     ? "/images/logo/hf-logo-wht.png"
     : "/images/logo/hf-logo-orange.png"
 );
+
+const logoSrcMobile = computed(() =>
+  isDark.value
+    ? "/images/logo/mobile-logo-wht.png"
+    : "/images/logo/mobile-logo-orange.png"
+);
 </script>
 
 <template>
   <header>
-    <nav class="navbar bg-base-100 dark:bg-primary pb-5">
+    <nav class="navbar bg-base-100 dark:bg-primary lg:pb-5">
       <div class="navbar-start">
         <div class="dropdown">
           <div
@@ -65,7 +71,7 @@ const logoSrc = computed(() =>
           >
             <li><NuxtLink to="/about">About</NuxtLink></li>
             <li><NuxtLink to="/investment">Investment</NuxtLink></li>
-            <li id="home-logo" class="text-center mx-16">
+            <li class="text-center mx-16">
               <NuxtLink to="/">
                 <NuxtImg
                   :src="logoSrc"
@@ -81,14 +87,15 @@ const logoSrc = computed(() =>
           </ul>
         </div>
         <div class="flex lg:hidden">
-          <p
-            id="home-logo-mobile"
-            class="font-family-brand text-4xl text-center"
-          >
-            <NuxtLink to="/" class="text-primary dark:text-cream">
-              Honey & Flare</NuxtLink
-            >
-          </p>
+          <NuxtLink to="/" class="text-primary dark:text-cream">
+            <NuxtImg
+              :src="logoSrcMobile"
+              width="200px"
+              format="avif"
+              quality="80"
+              placeholder
+            ></NuxtImg>
+          </NuxtLink>
         </div>
       </div>
       <div class="navbar-end"></div>

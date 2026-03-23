@@ -124,11 +124,6 @@
   @apply text-primary dark:text-white hover:text-slate-700 dark:hover:text-blush transition place-self-center text-lg;
 }
 
-#home-logo,
-#home-logo-mobile {
-  @apply dark:hover:text-white hover:text-primary;
-}
-
 #packages .package-header {
   @apply text-3xl text-primary mb-3;
 }

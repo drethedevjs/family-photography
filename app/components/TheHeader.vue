@@ -1,7 +1,18 @@
 <script lang="ts" setup>
-const colorMode = useColorMode();
+const isDark = ref(false);
+
+onMounted(() => {
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  isDark.value = mq.matches;
+
+  // React to OS changes
+  mq.addEventListener("change", e => {
+    isDark.value = e.matches;
+  });
+});
+
 const logoSrc = computed(() =>
-  colorMode.value === "dark"
+  isDark.value
     ? "/images/logo/hf-logo-wht.png"
     : "/images/logo/hf-logo-orange.png"
 );

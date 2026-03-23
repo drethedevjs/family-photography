@@ -4,7 +4,7 @@ import { ref } from "vue";
 import pageDescription from "~/data/pageDescription";
 import AboutPoint from "../components/AboutPoint.vue";
 
-const { data: tomfamData } = await imageHelper.getImageData("tomfam");
+const { data: tomfamData } = await imageHelper.getCloudinaryImageData("tomfam");
 const imageData = ref(tomfamData);
 
 const router = useRouter();
@@ -41,10 +41,10 @@ if (import.meta.server) {
         <NuxtImg
           v-if="imageData !== undefined"
           class="object-cover w-full h-full"
-          :src="imageHelper.getImageSrc(imageData, '4')"
+          :src="imageHelper.getCloudinaryImageSrc(imageData, '4')"
           format="avif"
           quality="80"
-          provider="cloudflare"
+          provider="cloudinary"
           placeholder
         />
         <div id="color-overlay"></div>
@@ -104,10 +104,10 @@ if (import.meta.server) {
         <NuxtImg
           v-if="imageData !== undefined"
           class="rounded-lg object-cover"
-          :src="imageHelper.getImageSrc(imageData, '3')"
+          :src="imageHelper.getCloudinaryImageSrc(imageData, '3')"
           format="avif"
           quality="80"
-          provider="cloudflare"
+          provider="cloudinary"
           placeholder
         />
       </div>

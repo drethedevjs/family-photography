@@ -9,16 +9,16 @@ const { data: heroSlideImages } =
 const headerHeight = ref(0);
 
 onMounted(() => {
-  const headerEl = document.getElementsByTagName("nav");
-  if (headerEl[0]) {
-    headerHeight.value = headerEl[0].offsetHeight;
-  }
-});
+  const headerEl = document.querySelector("nav");
+  if (!headerEl) return;
 
-const slideHeightClass = computed(() => {
-  return headerHeight.value
-    ? `h-auto lg:h-[calc(100vh-${headerHeight.value}px)]`
-    : "h-auto lg:h-screen";
+  const observer = new ResizeObserver(([entry]) => {
+    headerHeight.value = entry!.contentRect.height;
+  });
+
+  observer.observe(headerEl);
+
+  onUnmounted(() => observer.disconnect());
 });
 </script>
 
@@ -35,7 +35,10 @@ const slideHeightClass = computed(() => {
       :modules="[Navigation, Pagination]"
     >
       <SwiperSlide v-for="(image, idx) in heroSlideImages" :key="idx">
-        <div class="w-full overflow-hidden" :class="slideHeightClass">
+        <div
+          class="w-full overflow-hidden h-auto lg:!h-[var(--slide-h)]"
+          :style="{ '--slide-h': `calc(100lvh - ${headerHeight}px)` }"
+        >
           <NuxtImg
             provider="cloudinary"
             placeholder

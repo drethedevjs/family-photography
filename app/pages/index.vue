@@ -26,7 +26,7 @@ if (import.meta.server) {
     ogImage:
       "https://res.cloudinary.com/ctvphotovideo/image/upload/v1774316989/augusta-ga-family-photographer-investment-full-flare.jpg",
     ogLocale: "en_US",
-    ogSiteName: "Capture the Vision Family Photography",
+    ogSiteName: "Honey & Flare Family Photography",
     twitterCard: "summary_large_image",
     robots: "index, follow"
   });

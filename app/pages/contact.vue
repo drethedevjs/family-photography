@@ -11,7 +11,7 @@ const { description, ogTitle } = pageDescription.find(
 )!;
 
 useHead({
-  title: `${pageName.toUpperCase()} | Capture the Vision`,
+  title: `${pageName.toUpperCase()} | Honey & Flare`,
   meta: [{ name: "description", content: description }]
 });
 
@@ -29,7 +29,7 @@ if (import.meta.server) {
     ogImage:
       "https://res.cloudinary.com/ctvphotovideo/image/upload/v1774316989/augusta-ga-family-photographer-investment-full-flare.jpg",
     ogLocale: "en_US",
-    ogSiteName: "Capture the Vision Family Photography",
+    ogSiteName: "Honey & Flare Family Photography",
     twitterCard: "summary",
     robots: "index, follow"
   });

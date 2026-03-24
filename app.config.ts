@@ -1,7 +1,7 @@
 import { defineAppConfig } from "nuxt/app";
 
 export default defineAppConfig({
-  // title: "Capture the Vision Family Photography",
+  // title: "Honey & Flare Family Photography",
   ui: {
     colors: {
       primary: { 500: "#B8462F" }, // Your custom primary color for light theme

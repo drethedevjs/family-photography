@@ -8,7 +8,7 @@ const { description, ogTitle } = pageDescription.find(
 )!;
 
 useHead({
-  title: `${pageName.toUpperCase()} | Capture the Vision`,
+  title: `${pageName.toUpperCase()} | Honey & Flare`,
   meta: [{ name: "description", content: description }]
 });
 

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import imageHelper from "@/utils/ImageHelper";
-import type { _Object } from "@aws-sdk/client-s3";
+import type CtvImageData from "~/interfaces/ICtvImageData";
 import TestimonialBlock from "./TestimonialBlock.vue";
 
 const props = defineProps<{
-  imageData: _Object[];
+  imageData: CtvImageData[] | undefined;
 }>();
 </script>
 <template>
@@ -14,9 +14,9 @@ const props = defineProps<{
       <TestimonialBlock>
         <template #image>
           <NuxtImg
-            provider="cloudflare"
+            provider="cloudinary"
             format="avif"
-            :src="imageHelper.getImageSrc(props.imageData, '4')"
+            :src="imageHelper.getCloudinaryImageSrc(props.imageData, '4')"
             class="rounded-md"
             alt="A family of four are bunched together. The son is sitting on dad's shoulders and a little girl lays on moms chest."
             placeholder
@@ -42,9 +42,9 @@ const props = defineProps<{
       <TestimonialBlock>
         <template #image>
           <NuxtImg
-            provider="cloudflare"
+            provider="cloudinary"
             format="avif"
-            :src="imageHelper.getImageSrc(props.imageData, '2')"
+            :src="imageHelper.getCloudinaryImageSrc(props.imageData, '2')"
             class="rounded-md"
             alt="A mom and dad hold their new born while smiling at the camera."
             placeholder

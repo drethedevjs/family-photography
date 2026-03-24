@@ -4,7 +4,8 @@ import imageHelper from "~/utils/ImageHelper";
 
 const { data: andreImageData } =
   await imageHelper.getCloudinaryImageData("andre");
-const { data: homeImageData } = await imageHelper.getImageData("home");
+const { data: homeImageData } =
+  await imageHelper.getCloudinaryImageData("home");
 const { data: offeringsImageData } =
   await imageHelper.getCloudinaryImageDataByTag("offering");
 

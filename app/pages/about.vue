@@ -65,7 +65,7 @@ if (import.meta.server) {
       </div>
     </div>
     <div id="about-body">
-      <div class="lg:w-1/2 text-center grid grid-cols-1">
+      <div class="max-w-2xl text-center grid grid-cols-1">
         <AboutPoint>
           <template #heading>What You Can Expect</template>
           <template #blurb>
@@ -100,7 +100,7 @@ if (import.meta.server) {
           </template>
         </AboutPoint>
       </div>
-      <div class="w-1/2 px-10 py-20 hidden lg:flex">
+      <div class="max-w-2xl px-10 py-20 hidden lg:flex">
         <NuxtImg
           v-if="imageData !== undefined"
           class="rounded-lg object-cover"
@@ -119,7 +119,7 @@ if (import.meta.server) {
 @reference "tailwindcss";
 
 #about-body {
-  @apply flex lg:p-20 p-8;
+  @apply flex place-content-center lg:p-20 p-8;
 }
 #intro-overlay {
   @apply absolute inset-0 flex flex-col lg:w-3/5 w-4/5 mx-auto text-white justify-center font-light drop-shadow-lg;

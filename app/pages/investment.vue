@@ -4,8 +4,11 @@ import imageHelper from "@/utils/ImageHelper";
 import InvestmentOfferings from "~/components/InvestmentOfferings.vue";
 import pageDescription from "~/data/pageDescription";
 
-const { data: imageData } = await imageHelper.getImageData("tomfam");
-const { data: stockData } = await imageHelper.getImageData("investment");
+const { data: imageData } = await imageHelper.getCloudinaryImageData("tomfam");
+const { data: stockData } =
+  await imageHelper.getCloudinaryImageData("investment");
+
+console.log("stock", stockData);
 
 const router = useRouter();
 const pageName = router.currentRoute.value.fullPath.replace("/", "");
@@ -20,12 +23,12 @@ useHead({
 
 if (import.meta.server) {
   useSeoMeta({
-    ogUrl: "https://ctvphotovideo.com",
+    ogUrl: "https://honeyandflare.photo",
     ogType: "website",
     ogTitle: ogTitle,
     ogDescription: description,
     ogImage:
-      "https://cdn.ctvphotovideo.com/investment:augusta-ga-family-photographer-investment-1.jpg",
+      "https://res.cloudinary.com/ctvphotovideo/image/upload/v1774316989/augusta-ga-family-photographer-investment-full-flare.jpg",
     ogLocale: "en_US",
     ogSiteName: "Capture the Vision Family Photography",
     twitterCard: "summary",
@@ -49,11 +52,11 @@ if (import.meta.server) {
     <div class="lg:w-1/2 lg:px-20">
       <NuxtImg
         v-if="imageData !== undefined"
-        :src="imageHelper.getImageSrc(imageData, '2')"
+        :src="imageHelper.getCloudinaryImageSrc(imageData, '2')"
         class="md:rounded-lg place-self-center drop-shadow-xl"
         format="avif"
         quality="80"
-        provider="cloudflare"
+        provider="cloudinary"
         placeholder
       />
       <p class="mt-10 mx-10 text-xl">
@@ -89,10 +92,10 @@ if (import.meta.server) {
     <div class="lg:w-4/12 hide-on-mobile">
       <NuxtImg
         v-if="imageData !== undefined"
-        :src="imageHelper.getImageSrc(imageData, '1')"
+        :src="imageHelper.getCloudinaryImageSrc(imageData, '1')"
         format="avif"
         quality="80"
-        provider="cloudflare"
+        provider="cloudinary"
         placeholder
         alt="Andre and his family standing on a wooden bridge."
         class="object-cover"

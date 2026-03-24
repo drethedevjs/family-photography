@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { _Object } from "@aws-sdk/client-s3";
+import type HfImageData from "~/interfaces/IHfImageData";
 import imageHelper from "~/utils/ImageHelper";
 
 const props = defineProps<{
-  stockData: _Object[] | undefined;
+  stockData: HfImageData[] | undefined;
 }>();
 </script>
 
@@ -17,11 +17,11 @@ const props = defineProps<{
         <!-- Reynolds family -->
         <NuxtImg
           v-if="stockData !== undefined"
-          :src="imageHelper.getImageSrc(stockData, '1')"
+          :src="imageHelper.getCloudinaryImageSrc(stockData, 'full-flare')"
           class="w-full h-full object-cover"
           format="avif"
           quality="80"
-          provider="cloudflare"
+          provider="cloudinary"
           placeholder
         />
         <div class="mx-8">
@@ -60,11 +60,11 @@ const props = defineProps<{
         <!-- Reynolds family -->
         <NuxtImg
           v-if="stockData !== undefined"
-          :src="imageHelper.getImageSrc(stockData, '1')"
+          :src="imageHelper.getCloudinaryImageSrc(stockData, 'full-flare')"
           class="w-full h-full object-cover"
           format="avif"
           quality="80"
-          provider="cloudflare"
+          provider="cloudinary"
           placeholder
         />
         <div class="nf-img-overlay"></div>
@@ -89,11 +89,11 @@ const props = defineProps<{
         <!-- McQuerry couple -->
         <NuxtImg
           v-if="stockData !== undefined"
-          :src="imageHelper.getImageSrc(stockData, '2')"
+          :src="imageHelper.getCloudinaryImageSrc(stockData, 'half-honey')"
           class="rounded-lg"
           format="avif"
           quality="80"
-          provider="cloudflare"
+          provider="cloudinary"
           placeholder
         />
         <PriceBlurb textClass="drop-shadow-2xl" :price="350">

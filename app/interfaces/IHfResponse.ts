@@ -1,4 +1,4 @@
-export default interface CtvResponse {
+export default interface HfResponse {
   isSuccess: boolean;
   message: string;
 }

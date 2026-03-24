@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import imageHelper from "@/utils/ImageHelper";
-import type CtvImageData from "~/interfaces/ICtvImageData";
+import type HfImageData from "~/interfaces/IHfImageData";
 import TestimonialBlock from "./TestimonialBlock.vue";
 
 const props = defineProps<{
-  imageData: CtvImageData[] | undefined;
+  imageData: HfImageData[] | undefined;
 }>();
 </script>
 <template>
@@ -67,7 +67,7 @@ const props = defineProps<{
       </TestimonialBlock>
 
       <a
-        href="https://www.facebook.com/ctvphotovideo/reviews"
+        href="https://www.facebook.com/honeyandflare/reviews"
         target="_blank"
         class="more-testimonials-link"
       >

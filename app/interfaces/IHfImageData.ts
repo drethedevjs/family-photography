@@ -1,4 +1,4 @@
-export default interface CtvImageData {
+export default interface HfImageData {
   metadata: Metadata;
   fileName: string;
 }

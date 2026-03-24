@@ -24,7 +24,7 @@ if (import.meta.server) {
     ogTitle: ogTitle,
     ogDescription: description,
     ogImage:
-      "https://cdn.ctvphotovideo.com/investment:augusta-ga-family-photographer-investment-1.jpg",
+      "https://res.cloudinary.com/ctvphotovideo/image/upload/v1774316989/augusta-ga-family-photographer-investment-full-flare.jpg",
     ogLocale: "en_US",
     ogSiteName: "Honey & Flare Family Photography",
     twitterCard: "summary",

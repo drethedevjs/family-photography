@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type CtvImageData from "~/interfaces/ICtvImageData";
+import type HfImageData from "~/interfaces/IHfImageData";
 import imageHelper from "~/utils/ImageHelper";
 
 const props = defineProps<{
-  imageData: CtvImageData[] | undefined;
+  imageData: HfImageData[] | undefined;
 }>();
 </script>
 

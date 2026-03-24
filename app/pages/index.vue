@@ -19,12 +19,12 @@ useHead({
 
 if (import.meta.server) {
   useSeoMeta({
-    ogUrl: "https://ctvphotovideo.com",
+    ogUrl: "https://honeyandflare.photo",
     ogType: "website",
     ogTitle: ogTitle,
     ogDescription: description,
     ogImage:
-      "https://cdn.ctvphotovideo.com/investment:augusta-ga-family-photographer-investment-1.jpg",
+      "https://res.cloudinary.com/ctvphotovideo/image/upload/v1774316989/augusta-ga-family-photographer-investment-full-flare.jpg",
     ogLocale: "en_US",
     ogSiteName: "Capture the Vision Family Photography",
     twitterCard: "summary_large_image",
@@ -87,7 +87,7 @@ if (import.meta.server) {
   <div class="text-center mt-16">
     <p class="uppercase mb-10 text-xl font-medium">Follow me on Instagram</p>
     <a
-      href="https://instagram.com/ctvphotovideo"
+      href="https://instagram.com/honeyandflare"
       target="_blank"
       class="hover:text-primary text-5xl"
     >

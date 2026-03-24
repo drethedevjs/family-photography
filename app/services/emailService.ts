@@ -1,4 +1,4 @@
-import type CtvResponse from "@/interfaces/ICtvResponse";
+import type HfResponse from "@/interfaces/IHfResponse";
 import type ISendEmailRequestBody from "@/interfaces/ISendEmailRequestBody.ts";
 import axios from "axios";
 
@@ -8,7 +8,7 @@ const BASE_URL =
     : "https://csra-web-express-server.vercel.app";
 
 const emailService = {
-  sendEmail: async (formData: ISendEmailRequestBody): Promise<CtvResponse> => {
+  sendEmail: async (formData: ISendEmailRequestBody): Promise<HfResponse> => {
     console.log("Environment", import.meta.env.MODE);
 
     try {

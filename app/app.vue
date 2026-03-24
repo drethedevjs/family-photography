@@ -4,7 +4,7 @@ useHead({
     {
       name: "og:logo",
       content:
-        "https://cdn.ctvphotovideo.com/logo:ctv-family-photography-logo.png"
+        "https://res.cloudinary.com/ctvphotovideo/image/upload/v1774311424/hf-logo-orange_bkksuz.png"
     }
   ]
 });

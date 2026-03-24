@@ -16,18 +16,18 @@ useHead({
 });
 
 useSeoMeta({
-  ogUrl: "https://ctvphotovideo.com",
+  ogUrl: "https://honeyandflare.photo",
   ogType: "website"
 });
 
 if (import.meta.server) {
   useSeoMeta({
-    ogUrl: "https://ctvphotovideo.com",
+    ogUrl: "https://honeyandflare.photo",
     ogType: "website",
     ogTitle: ogTitle,
     ogDescription: description,
     ogImage:
-      "https://cdn.ctvphotovideo.com/investment:augusta-ga-family-photographer-investment-1.jpg",
+      "https://res.cloudinary.com/ctvphotovideo/image/upload/v1774316989/augusta-ga-family-photographer-investment-full-flare.jpg",
     ogLocale: "en_US",
     ogSiteName: "Capture the Vision Family Photography",
     twitterCard: "summary",
@@ -82,11 +82,11 @@ if (import.meta.server) {
         <p class="text-xl font-semibold">
           email:
           <a
-            href="mailto:andre@ctvphotovideo.com"
+            href="mailto:andre@honeyandflare.photo"
             class="tracking-wider hover:underline text-primary"
             @click="emailMeTracker"
           >
-            andre@ctvphotovideo.com
+            andre@honeyandflare.photo
           </a>
         </p>
       </div>

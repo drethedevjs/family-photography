@@ -1,6 +1,5 @@
 // server/api/cloudinary.get.ts
-import CloudinarySearchResult from "@/interfaces/ICloudinarySearchResult";
-import { v2 as cloudinary } from "cloudinary";
+import { v2 as cloudinary, ResourceApiOptions } from "cloudinary";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -9,31 +8,23 @@ cloudinary.config({
 });
 
 export default defineEventHandler(async event => {
-  const { folderName, tag } = getQuery(event) as {
+  const { folderName, includeTag } = getQuery(event) as {
     folderName: string;
-    tag: string;
+    includeTag: boolean;
   };
 
   try {
-    let result: CloudinarySearchResult;
-    if (tag) {
-      result = await cloudinary.search
-        .expression(tag)
-        .fields("tags")
-        .max_results(30)
-        .execute();
-    } else {
-      result = await cloudinary.search
-        .expression(`folder:${folderName}/*`)
-        .sort_by("filename", "asc")
-        .max_results(30)
-        .execute();
+    const options: ResourceApiOptions = {
+      tags: includeTag
+    };
+    let result = await cloudinary.api.resources_by_asset_folder(
+      folderName,
+      options
+    );
 
-      console.log(result.resources[0]);
-    }
+    console.log("here's what you're looking for: ", result.resources[0]);
 
     return result.resources.map(resource => ({
-      // console.log
       metadata: {
         url: resource.secure_url,
         width: resource.width,
@@ -42,6 +33,7 @@ export default defineEventHandler(async event => {
         isActive: resource.status === "active",
         galleryName: resource.asset_folder
       },
+      tags: resource.tags,
       fileName: resource.display_name ?? resource.filename ?? resource.public_id
     }));
   } catch (oops: any) {

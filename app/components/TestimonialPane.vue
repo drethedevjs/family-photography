@@ -10,7 +10,7 @@ const props = defineProps<{
 <template>
   <div class="mx-auto p-20 flex border-b-2">
     <div class="side">
-      <h2>Kind Words</h2>
+      <h2 id="kind-words">Kind Words</h2>
       <TestimonialBlock>
         <template #image>
           <NuxtImg
@@ -80,7 +80,7 @@ const props = defineProps<{
 <style scoped>
 @reference "tailwindcss";
 
-h2 {
+#kind-words {
   @apply text-7xl mb-28;
 }
 

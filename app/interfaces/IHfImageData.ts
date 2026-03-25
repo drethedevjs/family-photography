@@ -1,5 +1,6 @@
 export default interface HfImageData {
   metadata: Metadata;
+  tags: string[] | null;
   fileName: string;
 }
 

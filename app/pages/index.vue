@@ -50,7 +50,7 @@ if (import.meta.server) {
       />
     </div>
     <div class="lg:w-3/5 flex flex-col place-content-center text-center mb-10">
-      <h2>Family Photographer</h2>
+      <h2 id="family-photographer">Family Photographer</h2>
       <h3 class="text-primary">Andre Thomas</h3>
 
       <p class="about-txt">
@@ -103,7 +103,7 @@ if (import.meta.server) {
   @apply lg:ml-auto lg:mt-20 mt-8 lg:mr-32;
 }
 
-h2 {
+#family-photographer {
   @apply mt-10 lg:text-4xl text-2xl tracking-widest font-light;
 }
 

@@ -90,6 +90,10 @@
   main {
     @apply min-h-screen;
   }
+
+  h2 {
+    @apply lg:text-3xl text-xl mb-5;
+  }
 }
 
 .swiper-button-prev,

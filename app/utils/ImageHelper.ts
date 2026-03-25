@@ -16,6 +16,18 @@ const imageHelper = {
       }
     });
   },
+  async getImageAndTagData(folderName: string | null = null) {
+    return await useFetch<HfImageData[]>("/api/imageAndTag", {
+      query: { folderName, includeTag: true },
+      method: "GET",
+      onResponse({ request, response, options }) {
+        return response._data;
+      },
+      onResponseError({ request, response, options }) {
+        console.error("Error getting image(s): ", response._data);
+      }
+    });
+  },
   async getCloudinaryImageDataByTag(tag: string) {
     return await useFetch<HfImageData[]>("/api/cloudinaryImage", {
       query: { tag },

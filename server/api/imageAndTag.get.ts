@@ -22,8 +22,6 @@ export default defineEventHandler(async event => {
       options
     );
 
-    console.log("here's what you're looking for: ", result.resources[0]);
-
     return result.resources.map(resource => ({
       metadata: {
         url: resource.secure_url,

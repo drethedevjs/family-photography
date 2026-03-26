@@ -28,12 +28,9 @@ export default defineEventHandler(async event => {
         .sort_by("filename", "asc")
         .max_results(30)
         .execute();
-
-      console.log(result.resources[0]);
     }
 
     return result.resources.map(resource => ({
-      // console.log
       metadata: {
         url: resource.secure_url,
         width: resource.width,

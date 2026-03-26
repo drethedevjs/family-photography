@@ -8,8 +8,6 @@ const { data: imageData } = await imageHelper.getCloudinaryImageData("tomfam");
 const { data: stockData } =
   await imageHelper.getCloudinaryImageData("investment");
 
-console.log("stock", stockData);
-
 const router = useRouter();
 const pageName = router.currentRoute.value.fullPath.replace("/", "");
 const { description, ogTitle } = pageDescription.find(

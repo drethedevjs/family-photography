@@ -55,14 +55,14 @@ if (!galleryImgs.value?.length) await navigateTo("/portfolio");
       navigation
       :loop="true"
       :modules="[Navigation, Pagination]"
-      class="hide-on-mobile"
+      class="hide-on-mobile !h-[80vh]"
     >
       <SwiperSlide
         :key="idx"
         v-for="(image, idx) in galleryImgs"
         class="!w-auto !h-full flex items-center justify-center"
       >
-        <div class="h-[600px] relative flex items-center justify-center">
+        <div class="h-full flex items-center justify-center">
           <NuxtImg
             provider="cloudinary"
             :src="image.fileName"

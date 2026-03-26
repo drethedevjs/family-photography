@@ -36,40 +36,10 @@ if (import.meta.server) {
 <template>
   <HeroSlideShow />
   <h1 class="hidden">Augusta, GA Family Photographer</h1>
-  <div class="flex md:flex-row flex-col">
-    <div class="lg:w-2/5">
-      <NuxtImg
-        v-if="andreImageData !== undefined"
-        provider="cloudinary"
-        format="avif"
-        :src="imageHelper.getCloudinaryImageSrc(andreImageData, 'home')"
-        class="object-cover h-full w-full hide-on-mobile"
-        alt="Andre smiling holding two cameras."
-        placeholder
-        quality="80"
-      />
-    </div>
-    <div class="lg:w-3/5 flex flex-col place-content-center text-center mb-10">
-      <h2 id="family-photographer">Family Photographer</h2>
-      <h3 class="text-primary">Andre Thomas</h3>
-
-      <p class="about-txt">
-        Some photographers capture smiles. I capture evidence. Evidence that
-        your family laughed like this. That your kids were this small. That
-        golden afternoon light fell exactly this way on exactly this day.
-      </p>
-      <p class="about-txt">
-        I photograph families from Augusta to Aiken during golden hour because
-        that's when everything — the light, the mood, the realness — lines up.
-        The result isn't just a portrait. It's the first page of an archive your
-        grandchildren will open someday and feel like they know you.
-      </p>
-
-      <NuxtLink to="about" class="about-btn" @click="tellMeMoreTracker">
-        <button class="nf-btn">Tell Me More</button>
-      </NuxtLink>
-    </div>
-  </div>
+  <AboutPane
+    :andre-image-data="andreImageData"
+    :tell-me-more-tracker="tellMeMoreTracker"
+  />
 
   <OfferingsPane
     v-if="homeImageData !== undefined"

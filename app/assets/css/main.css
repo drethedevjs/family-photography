@@ -41,6 +41,10 @@
     @apply btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase md:px-14 md:py-8 px-10 py-4 tracking-wider;
   }
 
+  .nf-btn-transparent {
+    @apply btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-transparent hover:text-primary hover:border-primary uppercase md:px-14 md:py-8 px-10 py-4 tracking-wider;
+  }
+
   .nf-btn-sm {
     @apply btn bg-primary ring-0 drop-shadow-none border-primary text-white hover:bg-white hover:text-primary hover:border-primary uppercase md:px-5 md:py-4 px-5 py-2 tracking-wider;
   }

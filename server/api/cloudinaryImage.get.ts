@@ -43,9 +43,8 @@ export default defineEventHandler(async event => {
     }));
   } catch (oops: any) {
     const err = oops.error?.message ?? oops;
-    console.error("Check this error: ", err);
     throw createError({
-      statusCode: oops.error.http_code,
+      statusCode: oops.error?.http_code ?? 500,
       statusMessage: `Failed to fetch images: ${err}`
     });
   }

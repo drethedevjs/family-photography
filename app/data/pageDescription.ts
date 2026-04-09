@@ -39,6 +39,14 @@ const pageDescriptions = [
     pageName: "packages",
     ogTitle: "Packages | Honey & Flare Family Photography",
     description: "Take a look at our pricing packages."
+  },
+  {
+    id: 7,
+    pageName: "what to wear family photo session",
+    ogTitle:
+      "Preparing for Your Family Session | Honey & Flare Family Photography",
+    description:
+      "Knowing how to preparing for your session can be scary. Here are some tips to help you show up confidently."
   }
 ];
 

@@ -1,3 +1,35 @@
+<script setup lang="ts">
+import pageDescriptions from "../../data/pageDescription";
+
+const router = useRouter();
+const pageName = router.currentRoute.value.fullPath
+  .replace("/blog/", "")
+  .replaceAll("-", " ");
+
+const { ogTitle, description } = pageDescriptions.find(
+  pd => pd.pageName === pageName
+)!;
+
+useHead({
+  title: `${pageName.toUpperCase()} | Honey & Flare`,
+  meta: [{ name: "description", content: "description" }]
+});
+
+if (import.meta.server) {
+  useSeoMeta({
+    ogUrl: "https://honeyandflare.photo",
+    ogType: "website",
+    ogTitle: ogTitle,
+    ogDescription: description,
+    ogImage:
+      "https://res.cloudinary.com/ctvphotovideo/image/upload/v1774471473/augusta-ga-family-photographer-fox-58_avrbm4.jpg",
+    ogLocale: "en_US",
+    ogSiteName: "Honey & Flare Family Photography",
+    twitterCard: "summary",
+    robots: "index, follow"
+  });
+}
+</script>
 <template>
   <article class="max-w-6xl mx-auto py-10">
     <h1 class="text-5xl mb-5">Preparing for Your Family Session</h1>

@@ -8,6 +8,7 @@ const imageHelper = {
     return await useFetch<HfImageData[]>("/api/cloudinaryImage", {
       query: { folderName, tag },
       method: "GET",
+      cache: "force-cache",
       onResponse({ request, response, options }) {
         return response._data;
       },
@@ -19,6 +20,7 @@ const imageHelper = {
   async getImageAndTagData(folderName: string | null = null) {
     return await useFetch<HfImageData[]>("/api/imageAndTag", {
       query: { folderName, includeTag: true },
+      cache: "force-cache",
       method: "GET",
       onResponse({ request, response, options }) {
         return response._data;
@@ -32,6 +34,7 @@ const imageHelper = {
     return await useFetch<HfImageData[]>("/api/cloudinaryImage", {
       query: { tag },
       method: "GET",
+      cache: "force-cache",
       onResponse({ request, response, options }) {
         return response._data;
       },

@@ -18,7 +18,7 @@ export default defineEventHandler(async event => {
     let result: CloudinarySearchResult;
     if (tag) {
       result = await cloudinary.search
-        .expression(tag)
+        .expression(`tags=${tag}`)
         .fields("tags")
         .max_results(30)
         .execute();

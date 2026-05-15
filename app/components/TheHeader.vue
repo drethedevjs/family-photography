@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const isDark = ref(false);
+const mobileMenuOpen = ref(false);
 
 onMounted(() => {
   const mq = window.matchMedia("(prefers-color-scheme: dark)");
@@ -22,16 +23,27 @@ const logoSrcMobile = computed(() =>
     ? "/images/logo/mobile-logo-wht.png"
     : "/images/logo/mobile-logo-orange.png"
 );
+
+function toggleMobileMenu() {
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+  if (!mobileMenuOpen.value) {
+    (document.activeElement as HTMLElement)?.blur();
+  }
+}
+
+function closeMobileMenu() {
+  mobileMenuOpen.value = false;
+  (document.activeElement as HTMLElement)?.blur();
+}
 </script>
 
 <template>
   <header>
     <nav class="navbar bg-base-100 dark:bg-primary lg:pb-5">
       <div class="navbar-start">
-        <div class="dropdown">
-          <div
-            tabindex="0"
-            role="button"
+        <div :class="['dropdown', { 'dropdown-open': mobileMenuOpen }]">
+          <button
+            @click="toggleMobileMenu"
             class="btn btn-ghost hide-on-desktop justify-between"
           >
             <!-- Hamburger menu -->
@@ -49,17 +61,16 @@ const logoSrcMobile = computed(() =>
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
-          </div>
+          </button>
           <ul
-            tabindex="0"
             id="mobile-header"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-family-heading"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow font-family-heading"
           >
-            <li><NuxtLink to="/">Home</NuxtLink></li>
-            <li><NuxtLink to="/about">About</NuxtLink></li>
-            <li><NuxtLink to="/investment">Investment</NuxtLink></li>
-            <li><NuxtLink to="/portfolio">Portfolio</NuxtLink></li>
-            <li><NuxtLink to="/contact">Contact</NuxtLink></li>
+            <li><NuxtLink to="/" @click="closeMobileMenu">Home</NuxtLink></li>
+            <li><NuxtLink to="/about" @click="closeMobileMenu">About</NuxtLink></li>
+            <li><NuxtLink to="/investment" @click="closeMobileMenu">Investment</NuxtLink></li>
+            <li><NuxtLink to="/portfolio" @click="closeMobileMenu">Portfolio</NuxtLink></li>
+            <li><NuxtLink to="/contact" @click="closeMobileMenu">Contact</NuxtLink></li>
           </ul>
         </div>
       </div>

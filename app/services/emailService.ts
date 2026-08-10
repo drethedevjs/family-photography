@@ -1,29 +1,35 @@
 import type HfResponse from "@/interfaces/IHfResponse";
-import type ISendEmailRequestBody from "@/interfaces/ISendEmailRequestBody.ts";
-import axios from "axios";
 
-const BASE_URL =
-  import.meta.env.MODE === "development"
-    ? "http://localhost:2222"
-    : "https://csra-web-express-server.vercel.app";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/maewernq";
 
 const emailService = {
-  sendEmail: async (formData: ISendEmailRequestBody): Promise<HfResponse> => {
-    console.log("Environment", import.meta.env.MODE);
-
+  sendEmail: async (formData: FormData): Promise<HfResponse> => {
     try {
-      await axios.post(`${BASE_URL}/api/email/send-ctv`, formData);
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData
+      });
 
-      return {
-        isSuccess: true,
-        message: "Email sent!"
-      };
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      console.error("messed up here");
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        const message =
+          data?.errors
+            ?.map((e: { message: string }) => e.message)
+            .join(" ") ||
+          "Something went wrong. Please try again or email me directly.";
+
+        return { isSuccess: false, message };
+      }
+
+      return { isSuccess: true, message: "Email sent!" };
+    } catch (error) {
       return {
         isSuccess: false,
-        message: error
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again or email me directly."
       };
     }
   }

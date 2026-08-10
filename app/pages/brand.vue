@@ -64,6 +64,12 @@ const secondary = partitionLogos(secondaryLogos.value);
       <p class="font-body text-lg text-charcoal/60 mt-4 max-w-xl mx-auto">
         Honey & Flare Family Photography — CSRA's natural light studio
       </p>
+      <NuxtLink
+        to="/brand-components"
+        class="inline-flex items-center gap-2 mt-6 font-heading text-xs tracking-[0.2em] uppercase text-honey/70 hover:text-honey transition-colors"
+      >
+        <span>View Component Library &rarr;</span>
+      </NuxtLink>
     </section>
 
     <div class="max-w-6xl mx-auto px-6 py-16 space-y-24">

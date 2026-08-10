@@ -44,3 +44,8 @@ coverage
 
 .env
 bulk-rename.js
+
+# User stories (local notes, not tracked)
+stories/
+
+settings.json

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const submitted = ref(false);
+
 useHead({
   title: "Flare Families | Honey & Flare Family Photography",
   meta: [
@@ -40,34 +42,47 @@ if (import.meta.server) {
       </div>
 
       <div class="max-w-2xl mx-auto mt-10 space-y-6 text-left">
-        <p class="font-body text-base md:text-lg leading-relaxed text-charcoal/80">
-          This season, I'm inviting a few CSRA families to do something a
-          little different with me.
+        <p
+          class="font-body text-base md:text-lg leading-relaxed text-charcoal/80"
+        >
+          This season, I'm inviting a few CSRA families to do something a little
+          different with me.
         </p>
-        <p class="font-body text-base md:text-lg leading-relaxed text-charcoal/80">
+        <p
+          class="font-body text-base md:text-lg leading-relaxed text-charcoal/80"
+        >
           I'm looking for families in that specific stretch of life: parents
           with kids still young enough to complain about a photo session, but
           old enough to actually listen when you ask them to walk toward the
           light one more time. I want to spend an evening in the golden hour
-          with you, in your favorite park or your own backyard, doing
-          whatever your family actually does on a Tuesday.
+          with you, in your favorite park or your own backyard, doing whatever
+          your family actually does on a Tuesday.
         </p>
-        <p class="font-body text-base md:text-lg leading-relaxed text-charcoal/80">
-          In exchange, I'm asking for permission to share the images here and
-          on my website. That's the whole trade.
+        <p
+          class="font-body text-base md:text-lg leading-relaxed text-charcoal/80"
+        >
+          In exchange, I'm asking for permission to share the images here and on
+          my website. That's the whole trade.
         </p>
-        <p class="font-body text-base md:text-lg leading-relaxed text-charcoal/80">
-          If that sounds like your people, tell me a little about your
-          family below.
+        <p
+          class="font-body text-base md:text-lg leading-relaxed text-charcoal/80"
+        >
+          If that sounds like your people, tell me a little about your family
+          below.
         </p>
       </div>
     </section>
 
     <!-- ── Application Form ─────────────────────────────────────────────── -->
-    <section class="max-w-2xl mx-auto px-6 py-16">
+    <section v-if="!submitted" class="max-w-2xl mx-auto px-6 py-16">
       <div class="nf-card">
-        <FlareFamiliesForm />
+        <FlareFamiliesForm @success="submitted = true" />
       </div>
+    </section>
+
+    <!-- ── Thank You ─────────────────────────────────────────────────────── -->
+    <section v-else class="max-w-5xl mx-auto px-6 py-16">
+      <ThankYouMessage />
     </section>
   </main>
 </template>

@@ -2,7 +2,8 @@
 import imageHelper from "@/utils/ImageHelper";
 import pageDescription from "~/data/pageDescription";
 
-const { data: andreImg } = await imageHelper.getCloudinaryImageData("andre");
+const { data: andreImg } =
+  await imageHelper.getCloudinaryImageDataByTag("contact-page");
 
 const router = useRouter();
 const pageName = router.currentRoute.value.fullPath.replace("/", "");
@@ -41,8 +42,8 @@ if (import.meta.server) {
   <div class="flex lg:flex-row flex-col min-h-screen">
     <div class="lg:w-1/2">
       <NuxtImg
-        v-if="andreImg !== undefined"
-        :src="imageHelper.getCloudinaryImageSrc(andreImg, 'andre-contact')"
+        v-if="andreImg?.[0]"
+        :src="andreImg[0].fileName"
         class="w-full h-full object-cover"
         format="avif"
         quality="80"

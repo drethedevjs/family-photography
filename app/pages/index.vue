@@ -3,7 +3,7 @@ import pageDescription from "@/data/pageDescription";
 import imageHelper from "~/utils/ImageHelper";
 
 const { data: andreImageData } =
-  await imageHelper.getCloudinaryImageData("andre");
+  await imageHelper.getCloudinaryImageDataByTag("about-pane");
 const { data: homeImageData } =
   await imageHelper.getCloudinaryImageData("home");
 const { data: offeringsImageData } =

@@ -5,7 +5,10 @@ import pageDescription from "~/data/pageDescription";
 import AboutPoint from "../components/AboutPoint.vue";
 
 const { data: tomfamData } = await imageHelper.getCloudinaryImageData("tomfam");
+const { data: andreData } =
+  await imageHelper.getCloudinaryImageDataByTag("about-page");
 const imageData = ref(tomfamData);
+const andreImageData = ref(andreData);
 
 const router = useRouter();
 const pageName = router.currentRoute.value.fullPath.replace("/", "");
@@ -102,9 +105,9 @@ if (import.meta.server) {
       </div>
       <div class="max-w-2xl px-10 py-20 hidden lg:flex">
         <NuxtImg
-          v-if="imageData !== undefined"
+          v-if="andreImageData !== undefined"
           class="rounded-lg object-cover"
-          :src="imageHelper.getCloudinaryImageSrc(imageData, '3')"
+          :src="andreImageData[0]?.fileName"
           format="avif"
           quality="80"
           provider="cloudinary"

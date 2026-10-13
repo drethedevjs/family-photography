@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import imageHelper from "~/utils/ImageHelper";
-
 const props = defineProps<{
   andreImageData: any;
   tellMeMoreTracker: () => void;
@@ -52,7 +50,7 @@ const props = defineProps<{
             v-if="andreImageData !== undefined"
             provider="cloudinary"
             format="avif"
-            :src="imageHelper.getCloudinaryImageSrc(andreImageData, 'home')"
+            :src="andreImageData[0].fileName"
             class="w-full h-72 lg:h-full object-cover object-top lg:flex hidden"
             alt="Andre smiling holding two cameras."
             placeholder

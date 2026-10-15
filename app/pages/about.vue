@@ -50,9 +50,14 @@ if (import.meta.server) {
           provider="cloudinary"
           placeholder
         />
-        <div id="color-overlay"></div>
+        <div id="color-overlay" class="bg-primary"></div>
         <div id="intro-overlay">
-          <h1>Augusta, GA Family Photographer</h1>
+          <p
+            class="nf-eyebrow text-cream! text-sm! font-semibold self-center rounded-full bg-charcoal/60 backdrop-blur-sm px-5 py-2 mb-5! border border-honey/60"
+          >
+            Behind the Camera
+          </p>
+          <h1 class="font-brand">Augusta, GA Family Photographer</h1>
           <p>
             I've spent years photographing families across the Augusta area —
             and the moment that never gets old is the one when a parent sees
@@ -129,11 +134,11 @@ if (import.meta.server) {
 }
 
 #color-overlay {
-  @apply absolute inset-0 lg:bg-red-400 bg-red-600 opacity-25;
+  @apply absolute inset-0 opacity-25;
 }
 
 h1 {
-  @apply lg:text-5xl text-3xl mb-5;
+  @apply lg:text-6xl text-4xl leading-none mb-6;
 }
 
 p {

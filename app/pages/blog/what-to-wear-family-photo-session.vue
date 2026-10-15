@@ -32,8 +32,16 @@ if (import.meta.server) {
 </script>
 <template>
   <article class="max-w-6xl mx-auto py-10">
-    <h1 class="text-5xl mb-5">Preparing for Your Family Session</h1>
-    <h2>The Ultimate Style & Prep Guide</h2>
+    <header class="mb-10">
+      <p class="nf-eyebrow mb-4">Session Prep Guide</p>
+      <h1
+        class="font-brand text-5xl lg:text-7xl text-charcoal dark:text-cream leading-none mb-4"
+      >
+        Preparing for Your Family Session
+      </h1>
+      <div class="nf-divider mb-6" />
+      <h2 class="font-brand text-3xl">The Ultimate Style & Prep Guide</h2>
+    </header>
     <p>
       Hi there! I'm so excited to get you in front of my lens. To make sure we
       capture the best possible versions of you and your family, I've put
@@ -50,15 +58,29 @@ if (import.meta.server) {
         perfect excuse to wear something you wouldn't normally reach for on a
         Tuesday.
       </p>
+      <div class="my-6 space-y-5">
+        <div>
+          <p class="nf-label dark:text-cream!">Color Palette</p>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span class="nf-badge-sage">Red</span>
+            <span class="nf-badge-sage">Purple</span>
+            <span class="nf-badge-sage">Royal blue</span>
+            <span class="nf-badge-sage">Emerald green</span>
+            <span class="nf-badge-sage">Fuschia</span>
+          </div>
+          <p class="text-xl">Bold, solid colors photograph beautifully.</p>
+        </div>
+        <div>
+          <p class="nf-label dark:text-cream!">Colors to Avoid</p>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span class="nf-badge">Beige</span>
+            <span class="nf-badge">White</span>
+            <span class="nf-badge">Light pink</span>
+          </div>
+          <p class="text-xl">Pale tones like these can wash you out.</p>
+        </div>
+      </div>
       <ul>
-        <li>
-          <strong>Color Palette:</strong> Bold, solid colors like red, purple,
-          royal blue, emerald green, or fuschia photograph beautifully.
-        </li>
-        <li>
-          <strong>Colors to Avoid:</strong> Try to steer clear of pale tones
-          like beige, white, or light pink, which can wash you out.
-        </li>
         <li>
           <strong>Patterns & Logos:</strong> Avoid heavy patterns, stripes, or
           big logos. We want the focus on your faces, not your shirt's branding!
@@ -70,8 +92,10 @@ if (import.meta.server) {
       </ul>
     </section>
 
-    <section>
-      <h3>For the Ladies</h3>
+    <section
+      class="nf-card lg:p-10 p-6 [&_p]:text-charcoal! [&_li]:text-charcoal [&_h3]:text-charcoal"
+    >
+      <h3 class="font-brand text-4xl mb-3">For the Ladies</h3>
       <p>
         Long flowing dresses, cocktail dresses, or traditional attire like saris
         and ao dai look stunning and add great movement to your photos.
@@ -92,8 +116,10 @@ if (import.meta.server) {
       </ul>
     </section>
 
-    <section>
-      <h3>For the Gentlemen</h3>
+    <section
+      class="nf-card lg:p-10 p-6 [&_p]:text-charcoal! [&_li]:text-charcoal [&_h3]:text-charcoal"
+    >
+      <h3 class="font-brand text-4xl mb-3">For the Gentlemen</h3>
       <p>
         Blazers, sports coats, fitted suits, or a crisp button-down with a vest
         are all winning looks.
@@ -132,7 +158,7 @@ if (import.meta.server) {
         awkward bulges in your photos.
       </p>
 
-      <blockquote class="my-6 border-l-4 border-gray-300 pl-4 italic">
+      <blockquote class="my-6 border-l-4 border-honey pl-4 italic">
         <strong>The "Go-Bag":</strong> Bring a tote with bobby pins, hairspray,
         a brush, lipstick, a mirror, and oil-remover wipes.
       </blockquote>
@@ -156,8 +182,8 @@ if (import.meta.server) {
       </p>
     </section>
 
-    <section class="closing-note">
-      <h2>Deep Breath...</h2>
+    <section class="nf-alert-info flex-col! items-start! lg:p-8! p-6!">
+      <h2 class="font-brand text-3xl">Deep Breath...</h2>
       <p>
         If all of this feels like a lot, just take a deep breath.
         <strong>It's going to be great.</strong>

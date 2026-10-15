@@ -12,8 +12,17 @@ const capitalizeFirst = (str: string | undefined): string => {
 </script>
 <template>
   <h1 class="hidden">Portfolio</h1>
+  <div class="hf-container text-center lg:mt-16 mt-8 lg:mb-12 mb-8">
+    <p class="nf-eyebrow mb-3">Portfolio</p>
+    <h2
+      class="font-brand text-5xl lg:text-7xl text-charcoal dark:text-cream leading-none"
+    >
+      Recent Sessions
+    </h2>
+    <div class="nf-divider mx-auto mt-6" />
+  </div>
   <div
-    class="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 hf-container lg:mt-10 mt-5"
+    class="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 hf-container"
   >
     <div v-for="image in imageData">
       <NuxtImg
@@ -26,26 +35,21 @@ const capitalizeFirst = (str: string | undefined): string => {
         class="rounded-md drop-shadow-sm"
       />
       <NuxtLink
+        class="group block"
         :to="'gallery/' + image.metadata.galleryName"
         @click="galleryTracker(image.metadata.galleryName)"
       >
-        <div class="portfolio-card-container ring-primary">
-          <p class="dark:text-primary font-family-heading text-2xl">
+        <div
+          class="flex flex-col items-center justify-center gap-1 text-center bg-white border border-charcoal/10 shadow-md py-4 rounded-xl w-5/6 mx-auto relative -mt-6 group-hover:-mt-7 group-hover:border-primary transition-all"
+        >
+          <p
+            class="font-brand font-semibold text-charcoal! text-3xl! leading-none!"
+          >
             {{ capitalizeFirst(image.metadata.galleryName) }} Family
           </p>
-          <span class="hover:text-primary dark:text-secondary text-base">
-            View
-          </span>
+          <span class="nf-eyebrow group-hover:underline">View</span>
         </div>
       </NuxtLink>
     </div>
   </div>
 </template>
-
-<style scoped>
-@reference "tailwindcss";
-
-.portfolio-card-container {
-  @apply text-center align-middle bg-white drop-shadow-sm ring-1 h-16 rounded-sm w-5/6 place-self-center relative -mt-4 hover:-mt-5 transition-all;
-}
-</style>

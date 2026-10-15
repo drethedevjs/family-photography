@@ -24,6 +24,10 @@
   --font-family-brand: "Cormorant Garamond", serif;
   --font-family-heading: "Montserrat", sans-serif;
   --font-family-body: "Lato", sans-serif;
+  /* Aliases so the font-brand / font-heading / font-body utilities exist */
+  --font-brand: var(--font-family-brand);
+  --font-heading: var(--font-family-heading);
+  --font-body: var(--font-family-body);
 }
 
 :root {

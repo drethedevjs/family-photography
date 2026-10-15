@@ -13,9 +13,24 @@ const { data: galleryImgs } = await imageHelper.getCloudinaryImageData(
 );
 
 if (!galleryImgs.value?.length) await navigateTo("/portfolio");
+
+const displayName = (() => {
+  const raw = familyName?.toString() ?? "";
+  return raw.charAt(0).toUpperCase() + raw.slice(1);
+})();
 </script>
 <template>
   <div class="lg:mt-10 mt-5">
+    <header class="text-center px-5 lg:mb-6 mb-4">
+      <p class="nf-eyebrow mb-2">The {{ displayName }} Session</p>
+      <h1
+        class="font-brand text-4xl lg:text-5xl text-charcoal dark:text-cream leading-none"
+      >
+        {{ displayName }} Family
+      </h1>
+      <div class="nf-divider mx-auto mt-4" />
+    </header>
+
     <!-- Mobile slider -->
     <Swiper
       :slidesPerView="'auto'"

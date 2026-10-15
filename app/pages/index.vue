@@ -54,15 +54,17 @@ if (import.meta.server) {
 
   <ContactPane />
 
-  <div class="text-center mt-16">
-    <p class="uppercase mb-10 text-xl font-medium">Follow me on Instagram</p>
+  <div class="text-center py-16">
+    <p class="nf-eyebrow mb-3">Follow Along</p>
     <a
       href="https://instagram.com/honeyandflare"
       target="_blank"
-      class="hover:text-primary text-5xl"
+      rel="noopener"
+      class="font-brand text-5xl lg:text-6xl text-charcoal dark:text-cream hover:text-primary transition-colors"
     >
       @honeyandflare
     </a>
+    <div class="nf-divider mx-auto mt-6" />
   </div>
 </template>
 

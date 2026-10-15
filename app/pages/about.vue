@@ -72,9 +72,19 @@ if (import.meta.server) {
         </div>
       </div>
     </div>
+    <section class="bg-cream text-center px-6 py-16 lg:py-24">
+      <div class="nf-divider mx-auto mb-8" />
+      <blockquote
+        class="font-brand text-charcoal text-3xl lg:text-5xl leading-tight max-w-3xl mx-auto"
+      >
+        Some photographers capture smiles. I capture
+        <em class="not-italic text-primary">evidence</em>.
+      </blockquote>
+      <p class="nf-eyebrow mt-6">Andre Thomas · Honey &amp; Flare</p>
+    </section>
     <div id="about-body">
-      <div class="max-w-2xl text-center grid grid-cols-1">
-        <AboutPoint>
+      <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <AboutPoint number="01">
           <template #heading>What You Can Expect</template>
           <template #blurb>
             Being in front of a camera is awkward for almost everyone. I know
@@ -87,7 +97,21 @@ if (import.meta.server) {
             they actually had a good time.
           </template>
         </AboutPoint>
-        <AboutPoint>
+        <div
+          class="hidden lg:block relative rounded-xl overflow-hidden min-h-80"
+        >
+          <NuxtImg
+            v-if="andreImageData !== undefined"
+            class="absolute inset-0 object-cover object-top w-full h-full"
+            :src="andreImageData[0]?.fileName"
+            alt="Andre smiling holding two cameras."
+            format="avif"
+            quality="80"
+            provider="cloudinary"
+            placeholder
+          />
+        </div>
+        <AboutPoint number="02">
           <template #heading>My "Why"</template>
           <template #blurb>
             My wife and I are eleven years into marriage with beautiful kids. I
@@ -99,7 +123,7 @@ if (import.meta.server) {
             the heirloom. That's the point.
           </template>
         </AboutPoint>
-        <AboutPoint>
+        <AboutPoint number="03">
           <template #heading>Let's Meet</template>
           <template #blurb>
             Augusta. Evans. Aiken. North Augusta. Wherever golden hour finds
@@ -107,17 +131,6 @@ if (import.meta.server) {
             in spring and fall.
           </template>
         </AboutPoint>
-      </div>
-      <div class="max-w-2xl px-10 py-20 hidden lg:flex">
-        <NuxtImg
-          v-if="andreImageData !== undefined"
-          class="rounded-lg object-cover"
-          :src="andreImageData[0]?.fileName"
-          format="avif"
-          quality="80"
-          provider="cloudinary"
-          placeholder
-        />
       </div>
     </div>
   </main>
@@ -129,6 +142,7 @@ if (import.meta.server) {
 #about-body {
   @apply flex place-content-center lg:p-20 p-8;
 }
+
 #intro-overlay {
   @apply absolute inset-0 flex flex-col lg:w-3/5 w-4/5 mx-auto text-white justify-center font-light drop-shadow-lg;
 }
@@ -141,7 +155,7 @@ h1 {
   @apply lg:text-6xl text-4xl leading-none mb-6;
 }
 
-p {
+#intro-overlay p {
   @apply text-white mb-16 md:font-thin font-semibold text-shadow-2xs;
 }
 </style>

@@ -39,59 +39,68 @@ if (import.meta.server) {
 
 <template>
   <h1 class="hidden">Contact</h1>
-  <div class="flex lg:flex-row flex-col min-h-screen">
-    <div class="lg:w-1/2">
-      <NuxtImg
-        v-if="andreImg?.[0]"
-        :src="andreImg[0].fileName"
-        class="w-full h-full object-cover"
-        format="avif"
-        quality="80"
-        provider="cloudinary"
-        placeholder
-      />
-    </div>
-    <div class="lg:w-1/2 lg:px-20 lg:pt-32 pt-10 px-5">
+  <section class="relative h-[420px] lg:h-[560px] overflow-hidden">
+    <NuxtImg
+      v-if="andreImg?.[0]"
+      :src="andreImg[0].fileName"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      alt="Andre smiling with his camera."
+      format="avif"
+      quality="80"
+      provider="cloudinary"
+      placeholder
+    />
+    <div class="nf-img-overlay" />
+    <div
+      class="relative h-full flex flex-col items-center justify-center text-center px-6"
+    >
+      <p
+        class="nf-eyebrow text-cream! text-sm! font-semibold rounded-full bg-charcoal/60 backdrop-blur-sm px-5 py-2 mb-5 border border-honey/60"
+      >
+        Let's Get Together
+      </p>
       <h2
-        class="lg:text-6xl text-5xl lg:pb-10 pb-5 text-center lg:text-left text-primary"
+        class="font-brand text-cream text-6xl lg:text-8xl leading-none drop-shadow-lg"
       >
         Get In Touch
       </h2>
-
-      <p class="lg:mb-10 mb-5">
-        You made it here. That means your family's story is about to get
-        documented — and that's worth celebrating.
-      </p>
-      <p>
-        Fill out the form below and I'll be in touch within 24 hours. We'll talk
-        about your family, the light, and what kind of moment we're going to
-        make together.
-      </p>
-      <div
-        class="grid lg:grid-cols-2 grid-cols-1 place-items-start text-secondary lg:pt-16 pt-8 uppercase mb-10"
-      >
-        <p class="text-xl font-semibold mb-3">
-          tel:
-          <a
-            href="tel:5137650432"
-            class="tracking-wider hover:underline text-primary"
-            @click="callMeTracker"
-          >
-            706-426-3022
-          </a>
-        </p>
-        <p class="text-xl font-semibold">
-          email:
-          <a
-            href="mailto:andre@honeyandflare.photo"
-            class="tracking-wider hover:underline text-primary"
-            @click="emailMeTracker"
-          >
-            andre@honeyandflare.photo
-          </a>
-        </p>
-      </div>
-      <SproutForm />
+      <div class="nf-divider bg-cream! mt-6" />
     </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto lg:pt-16 pt-10 lg:pb-24 pb-12 px-5">
+    <p class="lg:mb-10 mb-5">
+      You made it here. That means your family's story is about to get
+      documented — and that's worth celebrating.
+    </p>
+    <p>
+      Fill out the form below and I'll be in touch within 24 hours. We'll talk
+      about your family, the light, and what kind of moment we're going to make
+      together.
+    </p>
+
+    <div class="nf-divider lg:mt-12 mt-8 mx-auto lg:mx-0" />
+
+    <div
+      class="flex flex-wrap gap-3 justify-center lg:justify-start lg:pt-8 pt-6 lg:mb-12 mb-8"
+    >
+      <a
+        href="tel:5137650432"
+        class="nf-badge text-sm! px-5! py-3! hover:bg-primary hover:text-white transition-colors"
+        @click="callMeTracker"
+      >
+        <span class="opacity-70">Call</span>
+        706-426-3022
+      </a>
+      <a
+        href="mailto:andre@honeyandflare.photo"
+        class="nf-badge text-sm! px-5! py-3! normal-case! hover:bg-primary hover:text-white transition-colors"
+        @click="emailMeTracker"
+      >
+        <span class="opacity-70 uppercase">Email</span>
+        andre@honeyandflare.photo
+      </a>
+    </div>
+    <SproutForm />
   </div>
 </template>

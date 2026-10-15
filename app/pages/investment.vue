@@ -38,14 +38,16 @@ if (import.meta.server) {
 <template>
   <h1 class="hidden">Investment</h1>
   <div id="investment-intro" class="flex lg:flex-row flex-col lg:mt-10">
-    <div class="lg:w-1/2 mx-auto flex">
+    <div class="lg:w-1/2 mx-auto flex flex-col justify-center px-5">
+      <p class="nf-eyebrow lg:text-right text-center mb-4">Why Book Me</p>
       <p
-        class="lg:text-7xl text-2xl lg:text-right text-center lg:mb-0 mb-5 my-auto px-5 lg:leading-20"
+        class="font-brand lg:text-7xl text-4xl lg:text-right text-center lg:mb-0 mb-5 leading-none"
       >
         Invest in me as your
         <span class="text-primary font-medium">family photographer</span>. I
         provide an experience you will always remember!
       </p>
+      <div class="nf-divider lg:ml-auto mx-auto mt-6 lg:mb-0 mb-5" />
     </div>
     <div class="lg:w-1/2 lg:px-20">
       <NuxtImg
@@ -99,52 +101,34 @@ if (import.meta.server) {
         class="object-cover"
       />
     </div>
-    <div class="lg:w-8/12 w-full lg:px-0 md:px-20 px-3">
-      <table class="table">
-        <tbody>
-          <tr>
-            <td class="text-8xl hide-on-mobile">01</td>
-            <td>
-              <FaqPoint>
-                <template #question>Where can I do a photo shoot?</template>
-                <template #answer>
-                  Anywhere! Remember, when you book us, we work for you. We can
-                  go to a park in the city. We can go to your house. We can go
-                  to a special location like a stadium or a coffee house. I'm
-                  mobile so let me know where you want to go.
-                </template>
-              </FaqPoint>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-8xl hide-on-mobile">02</td>
-            <td>
-              <FaqPoint>
-                <template #question>What is your turnaround time?</template>
-                <template #answer>
-                  For traditional photo shoots such as families, one on ones,
-                  graduations, maternity, etc., those pictures will be ready
-                  within 15 days of the scheduled shoot.
-                </template>
-              </FaqPoint>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-8xl hide-on-mobile">03</td>
-            <td>
-              <FaqPoint>
-                <template #question>Where can I take pictures?</template>
-                <template #answer>
-                  There are no restrictions to where you can take your pictures.
-                  Just know that I specialize in natural light photograph which
-                  means I prefer the outdoors but I am competent to do indoor
-                  photography.
-                </template>
-              </FaqPoint>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="lg:w-8/12 w-full lg:px-12 md:px-20 px-5">
+      <div class="flex flex-col gap-6 lg:py-10 py-6">
+        <FaqPoint number="01">
+          <template #question>Where can I do a photo shoot?</template>
+          <template #answer>
+            Anywhere! Remember, when you book us, we work for you. We can go to
+            a park in the city. We can go to your house. We can go to a special
+            location like a stadium or a coffee house. I'm mobile so let me know
+            where you want to go.
+          </template>
+        </FaqPoint>
+        <FaqPoint number="02">
+          <template #question>What is your turnaround time?</template>
+          <template #answer>
+            For traditional photo shoots such as families, one on ones,
+            graduations, maternity, etc., those pictures will be ready within 15
+            days of the scheduled shoot.
+          </template>
+        </FaqPoint>
+        <FaqPoint number="03">
+          <template #question>Where can I take pictures?</template>
+          <template #answer>
+            There are no restrictions to where you can take your pictures. Just
+            know that I specialize in natural light photograph which means I
+            prefer the outdoors but I am competent to do indoor photography.
+          </template>
+        </FaqPoint>
+      </div>
     </div>
   </section>
   <ContactPane />

@@ -24,10 +24,10 @@ const props = defineProps<{
           provider="cloudinary"
           placeholder
         />
-        <div class="mx-8">
+        <div class="mx-8 my-8 flex flex-col gap-6">
           <PriceBlurb textClass="drop-shadow-2xl" :price="425">
             <template #heading="{ textClass }">
-              <h2 :class="textClass" class="mt-10 normal-case mb-5">
+              <h2 :class="textClass" class="font-brand normal-case mb-5">
                 Full Flare
               </h2>
             </template>
@@ -39,10 +39,11 @@ const props = defineProps<{
               </p>
             </template>
           </PriceBlurb>
-          <hr class="border-1 border-primary my-5 w-3/5" />
           <PriceBlurb textClass="drop-shadow-2xl" :price="350">
             <template #heading="{ textClass }">
-              <h2 :class="textClass" class="normal-case mb-5">Half Session</h2>
+              <h2 :class="textClass" class="font-brand normal-case mb-5">
+                Half Session
+              </h2>
             </template>
             <template #blurb="{ textClass }">
               <p :class="textClass" class="text-xl mb-5">
@@ -68,10 +69,14 @@ const props = defineProps<{
           placeholder
         />
         <div class="nf-img-overlay"></div>
-        <div class="absolute inset-0 px-20 pt-20 flex flex-col justify-start">
-          <PriceBlurb textClass="text-white drop-shadow-2xl" :price="425">
+        <div class="absolute inset-0 flex flex-col justify-start p-5">
+          <PriceBlurb
+            textClass="text-white drop-shadow-2xl"
+            :price="425"
+            cardClass="bg-charcoal/60 backdrop-blur-sm border-2 border-primary rounded-2xl p-10"
+          >
             <template #heading="{ textClass }">
-              <h2 :class="textClass" class="mt-10 normal-case mb-5">
+              <h2 :class="textClass" class="font-brand normal-case mb-5">
                 Full Flare
               </h2>
             </template>
@@ -96,9 +101,9 @@ const props = defineProps<{
           provider="cloudinary"
           placeholder
         />
-        <PriceBlurb textClass="drop-shadow-2xl" :price="350">
+        <PriceBlurb textClass="drop-shadow-2xl" :price="350" class="mt-10">
           <template #heading="{ textClass }">
-            <h2 :class="textClass" class="mt-10 normal-case mb-5">
+            <h2 :class="textClass" class="font-brand normal-case mb-5">
               Half Session
             </h2>
           </template>

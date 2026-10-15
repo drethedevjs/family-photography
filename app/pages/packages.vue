@@ -34,7 +34,15 @@ if (import.meta.server) {
 </script>
 <template>
   <div class="hf-container">
-    <h1 class="text-4xl text-center mb-10 mt-5">Packages</h1>
+    <div class="text-center mb-10 mt-5">
+      <p class="nf-eyebrow mb-3">Session Options</p>
+      <h1
+        class="font-brand text-5xl lg:text-7xl text-charcoal dark:text-cream leading-none"
+      >
+        Packages
+      </h1>
+      <div class="nf-divider mx-auto mt-6" />
+    </div>
     <p class="mb-10 text-xl">
       Your family will only be this age once. Let's capture the warmth, the
       laughter, and the honey-sweet chaos of your family life right now—moments
@@ -87,7 +95,16 @@ if (import.meta.server) {
         </ul>
       </div>
     </div>
-    <div class="text-center mt-10">
+    <div class="text-center mt-16 lg:mt-20">
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <div class="h-px w-8 bg-honey" />
+        <p
+          class="font-heading text-xs tracking-[0.25em] uppercase text-honey! lg:text-xs!"
+        >
+          Natural Light · Timeless Warmth
+        </p>
+        <div class="h-px w-8 bg-honey" />
+      </div>
       <p class="text-xl mb-5">
         Ready to preserve your family's story? Sessions book 2-3 weeks in
         advance during peak season (September-November and March-May).
